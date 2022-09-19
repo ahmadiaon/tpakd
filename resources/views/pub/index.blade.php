@@ -129,65 +129,25 @@
             </div>
 
             <div class="row gy-5">
-
+                @foreach($newss as $news)
                 <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="post-box">
-                        <div class="post-img"><img src="{{ env('APP_URL') }}assets/img/berita1.jpg"
+                        <div class="post-img"><img src="{{ env('APP_URL') }}{{ $news->photo_path }}"
                                 style="height: 200px; width: 300px;" class="img-fluid" alt=""></div>
                         <div class="meta">
-                            <span class="post-date">Rabu, 05 Oktober 2021</span>
+                            <span class="post-date">{{ $news->date }}</span>
                         </div>
-                        <h3 class="post-title">Rapat Koordinasi TPAKD Kabupaten Kotawaringin Timur dan Kabupaten
-                            Kotawaringin Barat</h3>
+                        <h3 class="post-title">{{ $news->title }}</h3>
                         <!-- <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi qui magni est...</p> -->
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
+                        <a href="/berita/{{ $news->slug }}" class="readmore stretched-link"><span>Read More</span><i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="post-box">
-                        <div class="post-img"><img src="{{ env('APP_URL') }}assets/img/berita2.jpeg"
-                                style="height: 200px; width: 300px;" class="img-fluid" alt=""></div>
-                        <div class="meta">
-                            <span class="post-date">Rabu, 13 Juli 2021</span>
-                        </div>
-                        <h3 class="post-title">Pengukuhan Tim Percepatan Akses Keuangan Daerah Kabupaten Kapuas</h3>
-                        <!-- <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis doloribus...</p> -->
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="post-box">
-                        <div class="post-img"><img src="{{ env('APP_URL') }}assets/img/berita3.jpg"
-                                style="height: 200px; width: 300px;" class="img-fluid" alt=""></div>
-                        <div class="meta">
-                            <span class="post-date">Selasa, Juni 21 2021</span>
-                        </div>
-                        <h3 class="post-title">Pengukuhan Tim Percepatan Akses Keuangan Daerah Kabupaten Sukamara
-                        </h3>
-                        <!-- <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam...</p> -->
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="post-box">
-                        <div class="post-img"><img src="{{ env('APP_URL') }}assets/img/berita4.jpg"
-                                style="height: 200px; width: 300px;" class="img-fluid" alt=""></div>
-                        <div class="meta">
-                            <span class="post-date">Kamis, 15 April 2021</span>
-                        </div>
-                        <h3 class="post-title">Kunjungan Co-working Space dan Diskusi OJK Kalimantan Tengah, Bank
-                            Indonesia dan Industri Jasa Keuangan Bersama Walikota Palangka Raya</h3>
-                        <!-- <p>Et consequatur eveniet nam voluptas commodi cumque ea est ex. Aut quis omnis sint ipsum earum quia eligendi...</p> -->
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
+
 
             </div>
 

@@ -91,7 +91,7 @@
                     <span class="user-icon">
 
                     </span>
-                    <span class="user-name">Ross C. Lopez</span>
+                    <span class="user-name">{{ session('dataUser')->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>

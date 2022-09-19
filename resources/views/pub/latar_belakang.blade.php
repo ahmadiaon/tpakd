@@ -29,49 +29,13 @@
                             <article class="d-flex flex-column">
 
                                 <div class="row gy-12" data-aos="fade-up">
-                                    <img src="{{ env('APP_URL') }}assets/img/latar_belakang.png" class="img-fluid"
-                                        alt="">
+                                    <img src="{{ env('APP_URL') }}{{ $profile->latar_belakang_photo_path }}"
+                                        class="img-fluid" alt="">
                                 </div>
-
 
                                 <div class="content">
-                                    <p>
-                                        Akses keuangan merupakan hak dasar bagi seluruh masyarakat dan memiliki
-                                        peran penting dalam meningkatkan taraf hidup masyarakat. Hal ini sejalan
-                                        dengan Rencana Pembangunan Jangka Menengah Nasional (RPJMN) 2015-2019 bahwa
-                                        salah satu sasaran penguatan sektor keuangan dalam lima tahun mendatang
-                                        adalah meningkatnya akses masyarakat dan UMKM terhadap layanan jasa keuangan
-                                        formal dalam kerangka pembangunan ekonomi yang inklusif dan berkeadilan.
-                                    </p>
-                                    <p>
-                                        Hasil Survei Nasional Literasi Keuangan yang dilakukan oleh Otoritas Jasa
-                                        Keuangan (OJK) pada tahun 2013 menunjukkan bahwa tingkat pemahaman
-                                        masyarakat terhadap produk serta layanan jasa keuangan masih rendah yaitu
-                                        hanya 21,84%, sementara tingkat inklusi keuangan mencapai 59,74%. Tingkat
-                                        literasi dan inklusi tersebut tidak merata di sektor jasa keuangan, dimana
-                                        tingkat literasi dan inklusi sektor perbankan relatif lebih tinggi dari pada
-                                        sektor keuangan lainnnya.
-                                    </p>
-                                    <p>
-                                        Dalam berbagai forum kebijakan publik, isu akses keuangan sering dikaitkan
-                                        dengan upaya untuk mendorong UMKM dan sektor produktif. Dalam pertemuan
-                                        tahunan OJK dengan pelaku industri jasa keuangan tanggal 15 Januari 2016
-                                        yang dihadiri oleh Presiden Republik Indonesia, disebutkan perlunya upaya
-                                        nyata untuk mendorong kegiatan ekonomi produktif melalui pemberdayaan
-                                        kemampuan UMKM, pengembangan ekonomi daerah, dan penguatan sektor ekonomi
-                                        prioritas. Hal ini memerlukan program yang mampu mempercepat akses keuangan
-                                        di daerah dalam rangka menciptakan pertumbuhan ekonomi yang lebih merata,
-                                        partisipatif, dan inklusif.
-                                    </p>
-                                    <p>
-                                        Program percepatan akses keuangan tersebut sangat membutuhkan peran aktif
-                                        dari Pemerintah Daerah dan stakeholders terkait. Untuk itu, OJK dan
-                                        Kementerian Dalam Negeri serta institusi terkait lainnya membentuk Tim
-                                        Percepatan Akses Keuangan Daerah atau yang disingkat dengan TPAKD.
-                                    </p>
+                                    {{ $profile->latar_belakang_description }}
                                 </div>
-
-
                             </article>
                         </div><!-- End post list item -->
 

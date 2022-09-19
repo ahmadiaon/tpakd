@@ -26,27 +26,13 @@
                             <article class="d-flex flex-column">
 
                                 <div class="row gy-12" data-aos="fade-up">
-                                    <img src="{{ env('APP_URL') }}assets/img/dasar_pembentukan.png" class="img-fluid"
-                                        alt="">
+                                    <img src="{{ env('APP_URL') }}{{ $profile->dasar_pembentukan_photo_path }}"
+                                        class="img-fluid" alt="">
                                 </div>
 
                                 <div class="content">
                                     <p>
-                                        Dalam pertemuan Presiden RI dengan perwakilan industri jasa keuangan yang
-                                        diinisiasi oleh OJK serta dihadiri oleh Ketua dan Pimpinan Lembaga Tinggi
-                                        Negara, Gubernur Bank Indonesia dan para Menteri Kabinet Kerja termasuk seluruh
-                                        Kepala Daerah tanggal 15 Januari 2016 di Istana Negara, salah satu issue yang
-                                        diangkat adalah pentingnya percepatan akses keuangan daerah dalam mendorong
-                                        perekonomian daerah.
-                                    </p>
-                                    <p>
-                                        Terkait hal tersebut, dalam pertemuan dimaksud diamanatkan adanya pembentukan
-                                        Tim Percepatan Akses Keuangan Daerah (TPAKD) bekerjasama dengan Kementerian
-                                        Dalam Negeri dan instansi/lembaga terkait lainnya. Sebagai tindak lanjutnya,
-                                        telah dikeluarkan Radiogram Menteri Dalam Negeri nomor T-900/634/Keuda tanggal
-                                        19 Februari 2016 yang isinya meminta Kepala Daerah dalam hal ini Gubernur,
-                                        Bupati dan Walikota untuk membentuk TPAKD di Provinsi/Kabupaten/Kota.
-                                    </p>
+                                        {{ $profile->dasar_pembentukan_description }}
                                 </div>
 
                             </article>

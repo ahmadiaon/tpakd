@@ -18,7 +18,10 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('photo_path')->nullable();
-            $table->string('date')->nullable();
+            $table->string('status')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('excerpt')->nullable();
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

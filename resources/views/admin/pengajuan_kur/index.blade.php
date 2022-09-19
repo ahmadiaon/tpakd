@@ -45,9 +45,6 @@
                 </tbody>
             </table>
         </div>
-
-
-
         <div class="footer-wrap pd-20 mb-20 card-box">
             TPAKD web By
             <a href="https://github.com/dropways" target="_blank">TPAKD</a>
@@ -57,6 +54,5 @@
 @endsection
 
 @section('js')
-@include('layout_admin.js_datatable')
 
 @endsection

@@ -107,7 +107,7 @@ class AdminController extends Controller
         // ->get()
         ;
         // return $banks;
-        return view('admin.bank.index', [
+        return view('admin.admin_bank.index', [
             'banks'=>$banks,
             
         ]);

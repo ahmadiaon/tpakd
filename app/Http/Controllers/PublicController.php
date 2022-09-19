@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
+use App\Models\Profile;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,11 +12,20 @@ class PublicController extends Controller
 {
     //
     public function index(){
+        $newss = News::latest()->get()->take(4);
         $data = [
             'title' => 'Home',
-            'active'=> 'home'
+            'active'=> 'home',
+            'newss' => $newss
         ];
         return view('pub.index',$data);
+    }
+    public function mapsIndex(){
+        $data = [
+            'title' => 'Home',
+            'active'=> 'home',
+        ];
+        return view('pub.maps',$data);
     }
     public function pengajuanSukses($no_pengajuan){
         // return $no_pengajuan;
@@ -23,15 +35,18 @@ class PublicController extends Controller
             'no_pengajuan' => $no_pengajuan ]);
     }
     public function latar_belakang(){
+        $profile = Profile::get()->first();
         $data = [
-            
+            'profile'   => $profile,
             'title' => 'Latar Belakang',
             'active'=> 'home'
         ];
         return view('pub.latar_belakang',$data);
     }
     public function dasar_pembentukan(){
+        $profile = Profile::get()->first();
         $data = [
+            'profile'   => $profile,
             'title' => 'Dasar Pembentukan',
             'active'=> 'home'
         ];
@@ -86,6 +101,14 @@ class PublicController extends Controller
         ];
         return view('pub.informasi_kur',$data);
     }
+    public function detail_berita($slug){
+        $data = [
+            'title' => 'Berita',
+            'active'=> 'berita',
+            'news'  => $news = News::where('slug', $slug)->first()
+        ];
+        return view('pub.detail_berita', $data);
+    }
     public function pengajuan_kur(){
         $banks = DB::select('select * from 
         `banks`, users , 
@@ -117,5 +140,84 @@ class PublicController extends Controller
         ];
         // return redirect()->route('/pengajuan-sukses/'.$data->id);
         return view('pub.pengajuan_kur',$data);
+    }
+
+
+
+
+
+
+
+
+
+    public function createLatar_belakang(){
+        $profile = Profile::get()->first();
+        
+        $news='';
+        $data = [
+            'news'  => $news,
+            'profile'   => $profile
+        ];
+        // dd($data);
+        return view('admin.superadmin.tentang_tpakd.latar_belakang', $data);
+    }
+    public function storeLatar_belakang(Request $request){
+        $validatedData = $request->validate([
+            'latar_belakang_description'      => 'required'
+        ]);
+        if ($request->file('image')) {
+            $imageName =  'latar_belakang.' . $request->image->extension();
+            $name = 'image/assets/'.$imageName;
+            if(file_exists($name)){
+                 $da = unlink($name);
+            }
+            // dd();
+            $isMoved = $request->image->move('image/assets/', $imageName);
+
+            if($isMoved){
+                $validatedData['latar_belakang_photo_path'] = 'image/assets/'.$imageName;
+            }
+        }
+
+        $created = Profile::updateOrCreate(['id' =>1], $validatedData);
+        return redirect('/superadmin/latar-belakang')->with('success', 'Latar Belakang Edited');
+        // dd($created);
+        // return $request;
+    }
+
+    
+    public function createDasarPembentukan(){
+        $profile = Profile::get()->first();
+        
+        $news='';
+        $data = [
+            'news'  => $news,
+            'profile'   => $profile
+        ];
+        // dd($data);
+        return view('admin.superadmin.tentang_tpakd.dasar_pembentukan', $data);
+    }
+    public function storeDasarPembentukan(Request $request){
+        $validatedData = $request->validate([
+            'dasar_pembentukan_description'      => 'required'
+        ]);
+        if ($request->file('image')) {
+            $imageName =  'dasar_pembentukan.' . $request->image->extension();
+            $name = 'image/assets/'.$imageName;
+            if(file_exists($name)){
+                 $da = unlink($name);
+            }
+            // dd();
+            $isMoved = $request->image->move('image/assets/', $imageName);
+
+            if($isMoved){
+                $validatedData['dasar_pembentukan_photo_path'] = 'image/assets/'.$imageName;
+            }
+        }
+
+        $created = Profile::updateOrCreate(['id' =>1], $validatedData);
+        return redirect('/superadmin/dasar-pembentukan')->with('success', 'Dasar Pembentukan Edited');
+        // dd($created);
+        // return $request;
     }
 }

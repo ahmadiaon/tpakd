@@ -6,12 +6,14 @@
         <div class="card-box pd-20">
             <div class="row mb-20">
                 <div class="col">
-                    <h3>BANK</h3>
+                    <h3>Admin BANK</h3>
                 </div>
                 <div class="col">
 
                     @if(session('dataUser')->role_id == 1) {{-- superadmin --}}
-
+                    <a href="{{ (session('dataUser')->role_id == 1) ?'/bank-group/create':'/admin/bank/create' }}">
+                        <button class="btn btn-primary float-right">Tambah Bank Group</button>
+                    </a>
                     @else
                     <a href="{{ (session('dataUser')->role_id == 1) ?'/bank-group/create':'/admin/bank/create' }}"><button
                             class="btn btn-primary float-right">Tambah Bank</button></a>

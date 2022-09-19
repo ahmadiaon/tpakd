@@ -37,9 +37,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-
                 </div>
-                <input type="hidden" name="role_id" value="2">
 
                 <a href="/admin/setup">
                     <button type="button" class="btn btn-secondary">Batal</button>

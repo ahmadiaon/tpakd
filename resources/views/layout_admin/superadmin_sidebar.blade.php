@@ -123,6 +123,18 @@
                         <li><a href="/superadmin/berita">Berita</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-house"></span><span class="mtext">Tentang TPAKD</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="/superadmin/latar-belakang">Latar Belakang</a></li>
+                        <li><a href="/superadmin/dasar-pembentukan">Dasar Pembentukan</a></li>
+                        <li><a href="/superadmin/tentang">Tentang TPAKD</a></li>
+                        <li><a href="/superadmin/berita">Berita</a></li>
+                        <li><a href="/superadmin/berita">Berita</a></li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
