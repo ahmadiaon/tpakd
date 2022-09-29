@@ -3,41 +3,7 @@
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="row">
-            <div class="col-lg-6 col-md-6 mb-20">
-                <div class="card-box height-100-p pd-20 min-height-200px">
-                    <div class="d-flex justify-content-between pb-10">
-                        <div class="h5 mb-0">Bank Group</div>
-                        <div class="dropdown">
-                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                data-color="#1b3133" href="#" role="button" data-toggle="dropdown">
-                                <i class="dw dw-more"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                <a class="dropdown-item" href="/bank-group/create"><i class="dw dw-eye"></i> Add</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="user-list">
-                        <ul>
-                            @foreach($bank_groups as $bank_group)
-                            <li class="d-flex align-items-center justify-content-between">
-                                <div class="name-avatar d-flex align-items-center pr-2">
-                                    <div class="txt">
-                                        <div class="font-14 weight-600">{{ $bank_group->bank_name }}</div>
-                                        <div class="font-12 weight-500" data-color="#b2b1b6">
-                                            {{ $bank_group->bank_name }}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cta flex-shrink-0">
-                                    <a href="#" class="btn btn-sm btn-outline-primary">Schedule</a>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-lg-6 col-md-6 mb-20">
                 <div class="card-box height-100-p pd-20 min-height-200px">
                     <div class="d-flex justify-content-between pb-10">
@@ -197,7 +163,7 @@
             </div>
         </div>
         <div class="row mb-30">
-            <div class="col-5">
+            <div class="col-7">
                 <div class="card-box pb-10">
                     <div class="h5 pd-20 mb-0">Dat II</div>
                     <table class="data-table table nowrap">

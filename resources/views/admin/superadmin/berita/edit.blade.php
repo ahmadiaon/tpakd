@@ -14,11 +14,13 @@
                 </div>
                 <form action="/superadmin/berita" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="id" id="id" value="{{ $news->id }}">
                     <div class="form-group">
                         <label>Judul</label>
                         <input required name="title" type="text"
-                            class="form-control  @error('title') is-invalid @enderror" value="{{ old('title') }}"
-                            id="title" placeholder="Rupiah Menguat hingga Rp. 1" />
+                            class="form-control  @error('title') is-invalid @enderror"
+                            value="{{ old('title', $news->title) }}" id="title"
+                            placeholder="Rupiah Menguat hingga Rp. 1" />
                         @error('title')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -46,7 +48,7 @@
                         <label>Little Description</label>
                         <textarea class="form-control  @error('description') is-invalid @enderror"
                             name="little_description" id="little_description" cols="100"
-                            rows="20">{{ old('little_description') }}</textarea>
+                            rows="20">{{ old('little_description', $news->little_description) }}</textarea>
                         @error('little_description')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -55,19 +57,20 @@
                     </div>
                     <div class="form-group">
                         <label>Paragrafh 1</label>
-                        <textarea name="paragrafh_1" class="form-control"></textarea>
+                        <textarea name="paragrafh_1" class="form-control">{{ $news->paragrafh_1 }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Paragrafh 2</label>
-                        <textarea name="paragrafh_2" class="form-control"></textarea>
+                        <textarea name="paragrafh_2" class="form-control">{{ $news->paragrafh_2 }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Paragrafh 3</label>
-                        <textarea name="paragrafh_3" class="form-control"></textarea>
+                        <textarea name="paragrafh_3" class="form-control">{{ $news->paragrafh_3 }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Post Image</label>
-                        <img class="img-preview img-fluid mb-3 col-sm-5" src="" alt="">
+                        <img class="img-preview img-fluid mb-3 col-sm-5" src="{{  env('APP_URL').$news->photo_path }}"
+                            alt="">
                         <input name="image" class="form-control  @error('image') is-invalid @enderror" type="file"
                             id="image" onchange="previewImage()">
                         @error('image')

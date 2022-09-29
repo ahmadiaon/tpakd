@@ -25,41 +25,40 @@
                         <div class="col-lg-12">
                             <article class="d-flex flex-column">
 
-                                <div class="row gy-12" data-aos="fade-up">
-                                    <img src="{{ env('APP_URL') }}assets/img/dasar_pembentukan.png" class="img-fluid"
-                                        alt="">
-                                </div>
+
 
                                 <div class="content">
-                                    <span>
-                                        <h1>Pengajuan anda berhasil, silahkan cek dengan nomor, </h1>
-                                        <h2>{{ $id_kur }}</h2>
-                                    </span>
-                                    <span>
-                                        atau bisa anda cek pada link,<a href="{{env('APP_URL')
-                                        }}pengajuan-saya">{{env('APP_URL')
-                                            }}pengajuan-saya</a>
-                                    </span>
-                                    {{-- <embed src="{{ env('APP_URL') }}surat.pdf" type="application/pdf" width="100%"
-                                        --}} {{-- height="600px" /> --}}
-
-                                    {{-- <p>
-                                        Dalam pertemuan Presiden RI dengan perwakilan industri jasa keuangan yang
-                                        diinisiasi oleh OJK serta dihadiri oleh Ketua dan Pimpinan Lembaga Tinggi
-                                        Negara, Gubernur Bank Indonesia dan para Menteri Kabinet Kerja termasuk seluruh
-                                        Kepala Daerah tanggal 15 Januari 2016 di Istana Negara, salah satu issue yang
-                                        diangkat adalah pentingnya percepatan akses keuangan daerah dalam mendorong
-                                        perekonomian daerah.
-                                    </p>
-                                    <p>
-                                        Terkait hal tersebut, dalam pertemuan dimaksud diamanatkan adanya pembentukan
-                                        Tim Percepatan Akses Keuangan Daerah (TPAKD) bekerjasama dengan Kementerian
-                                        Dalam Negeri dan instansi/lembaga terkait lainnya. Sebagai tindak lanjutnya,
-                                        telah dikeluarkan Radiogram Menteri Dalam Negeri nomor T-900/634/Keuda tanggal
-                                        19 Februari 2016 yang isinya meminta Kepala Daerah dalam hal ini Gubernur,
-                                        Bupati dan Walikota untuk membentuk TPAKD di Provinsi/Kabupaten/Kota.
-                                    </p> --}}
+                                    <form action="/pengajuan-saya" method="POST">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <input name="no_pengajuan" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="submit" class="btn btn-primary">Cari</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
+                                @if(session()->has('data'))
+                                <div class="content">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Data Pengajuan</h5>
+                                            @if(session('data')== false)
+                                            <p class="card-text">Tidak ada pengajuan ditemukan</p>
+                                            @else
+                                            {{-- @dd(session('data')) --}}
+                                            <p class="card-text">Nama : {{ session('data')->kur_nama }}</p>
+                                            <p class="card-text">Email : {{ session('data')->kur_email }}</p>
+                                            <p class="card-text">Status Ajuan : {{ session('data')->status }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
 
                             </article>
                         </div><!-- End post list item -->

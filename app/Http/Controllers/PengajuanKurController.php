@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use Carbon\Carbon;
 use App\Models\Bank;
+use App\Mail\SendMail;
 use App\Models\BankAdmin;
 use App\Models\PengajuanKur;
 use Illuminate\Http\Request;
@@ -20,11 +23,25 @@ class PengajuanKurController extends Controller
             'kur_tanggal_lahir'        => 'required',
             'bank_id'        => 'required'
         ]);
-
+        $validatedData['date_pending']  = Carbon::today('Asia/Jakarta')->isoFormat('Y-M-D');
+        $validatedData['status']  = 'pending';
         $pengajuanKurs = PengajuanKur::create($validatedData);
-        return redirect()->intended('/');
 
-        
+
+        $id_kur = 'KUR-'.$pengajuanKurs->id;
+        $mailData = [
+            'title' => 'Mail from ItSolutionStuff.com',
+            'body' => 'This is for testing email using smtp.'
+        ];   
+        //  dd($mailData);
+        Mail::to($pengajuanKurs->kur_email)->send(new SendMail($mailData));
+        return view('pub.pengajuan_sukses',[
+            'title'=>'pengajuan kur',
+            'active' => 'home',
+            'id_kur'    => $id_kur,
+            'data'     => $pengajuanKurs,
+        ]);
+
     }
     public function pengajuanKur(){
 

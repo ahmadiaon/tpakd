@@ -3,15 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BankAdminController;
 use App\Http\Controllers\BankGroupController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\PengajuanKurController;
+use App\Http\Controllers\FinancialInformationController;
 
 // authentication admin
 
@@ -39,6 +41,8 @@ Route::get('/maps', [PublicController::class, 'mapsIndex']);
 
 
 Route::post('/pengajuan-kur', [PengajuanKurController::class, 'store']);
+Route::get('/pengajuan-saya', [PublicController::class, 'pengajuanSaya']);
+Route::post('/pengajuan-saya', [PublicController::class, 'cariPengajuanSaya']);
 
 
 // Route::get('/admin/', [AdminController::class, 'index']);
@@ -68,21 +72,28 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/superadmin/admin-bank',  [AdminController::class, 'adminBank']);  
 
         Route::get('/superadmin/berita',  [NewsController::class, 'index']);  
+        Route::get('/superadmin/berita/{slug}/edit',  [NewsController::class, 'show']);  
         Route::get('/superadmin/berita/create',  [NewsController::class, 'create']);  
         Route::post('/superadmin/berita',  [NewsController::class, 'store']);  
 
 
         // tentang tpakd
-        Route::get('/superadmin/latar-belakang',  [PublicController::class, 'createLatar_belakang']);  
-        Route::post('/superadmin/latar-belakang',  [PublicController::class, 'storeLatar_belakang']); 
         
         Route::get('/superadmin/dasar-pembentukan',  [PublicController::class, 'createDasarPembentukan']);  
         Route::post('/superadmin/dasar-pembentukan',  [PublicController::class, 'storeDasarPembentukan']);  
 
+        Route::get('/superadmin/grafik',  [GrafikController::class, 'index']); 
+        Route::post('/superadmin/grafik-1',  [GrafikController::class, 'store']);
+        Route::post('/superadmin/grafik-2',  [GrafikController::class, 'storeDua']);
        
         Route::get('/bank-name-create', [BankController::class, 'createBank']);
         Route::post('/bank-group', [BankGroupController::class, 'store']);
         Route::get('/bank-group/create', [BankGroupController::class, 'create']);
+
+        Route::get('/superadmin/financial-information', [FinancialInformationController::class, 'index']);
+        Route::get('/superadmin/financial-information/{id}/edit', [FinancialInformationController::class, 'show']);
+        Route::post('/superadmin/financial-information', [FinancialInformationController::class, 'store']);
+        
     });
     
     Route::middleware(['isAdminBank'])->group(function () {
@@ -92,9 +103,9 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/admin/our-bank',  [BankController::class, 'index']);  
     });
     Route::middleware(['isAdmin'])->group(function () {
-        Route::get('/bank-admin', [AdminAuthController::class, 'indexBank'])->name('bank-page');
-        
+        Route::get('/bank-admin', [AdminAuthController::class, 'indexBank']);
+        Route::get('/bank-admin/kur', [PengajuanKurController::class, 'pengajuanKur'])->name('bank-page');
     });
-    Route::get('/bank-admin/kur', [PengajuanKurController::class, 'pengajuanKur'])->name('bank-page');
+    
     
 });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

@@ -13,19 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('financial_information', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->nullable();
+            $table->string('financial')->nullable();
             $table->string('title')->nullable();
-            $table->text('little_description')->nullable();
-            $table->string('photo_path')->nullable();
-            
+            $table->text('litte_description')->nullable();
             $table->text('paragrafh_1')->nullable();
             $table->text('paragrafh_2')->nullable();
             $table->text('paragrafh_3')->nullable();
-            $table->string('status')->nullable();
-            $table->string('slug')->nullable();
-            $table->string('excerpt')->nullable();
-            $table->date('date')->nullable();
+            $table->string('path_image')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('financial_information');
     }
 };

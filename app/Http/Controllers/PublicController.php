@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Grafik;
 use App\Models\Profile;
+use App\Models\GrafikDua;
 use Illuminate\Http\File;
+use App\Models\PengajuanKur;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,9 +16,13 @@ class PublicController extends Controller
     //
     public function index(){
         $newss = News::latest()->get()->take(4);
+        $grafik1 = Grafik::where('is_aktif', 1)->get()->first();
+        $grafik2 = GrafikDua::where('is_aktif', 1)->get()->first();
         $data = [
             'title' => 'Home',
             'active'=> 'home',
+            'grafik1'=> $grafik1,
+            'grafik2'=> $grafik2,
             'newss' => $newss
         ];
         return view('pub.index',$data);
@@ -26,6 +33,14 @@ class PublicController extends Controller
             'active'=> 'home',
         ];
         return view('pub.maps',$data);
+    }
+    public function pengajuanSaya(){
+        // return 'aaa';
+        $data = [
+            'title' => 'Pengajuan',
+            'active'=> 'pengajuan',
+        ];
+        return view('pub.pengajuan_saya',$data);
     }
     public function pengajuanSukses($no_pengajuan){
         // return $no_pengajuan;
@@ -110,7 +125,7 @@ class PublicController extends Controller
         return view('pub.detail_berita', $data);
     }
     public function pengajuan_kur(){
-        $banks = DB::select('select * from 
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
         `banks`, users , 
         `bank_names`,
         `office_statuses`,
@@ -143,24 +158,49 @@ class PublicController extends Controller
     }
 
 
+    public function cariPengajuanSaya(Request $request){
+        $validatedData = $request->validate([
+            'no_pengajuan'         => 'required|max:255'
+        ]);
+        $jenis;
+
+        $no = explode('-',$validatedData['no_pengajuan']);
+        if($no[0] == 'KUR'){
+            $jenis = "pengajuan_kurs";
+        }else{
+            return 'else';
+        }
+       
+
+        $search = DB::table($jenis)->where('id', $no[1])
+        ->get();
 
 
+        if($search->isNotEmpty()){
+            // dd( $search->first());
+            $data = [
+                'searched' => $search->first(),
+                'data'  => true
+            ];
+            // dd($data);
+            return back()->with('data', $search->first());
+        }else{
+            return back()->with('data', false);
+        }
 
+        $pengajuanKurs = PengajuanKur::create($validatedData);
 
-
-
-
-    public function createLatar_belakang(){
-        $profile = Profile::get()->first();
-        
-        $news='';
-        $data = [
-            'news'  => $news,
-            'profile'   => $profile
-        ];
-        // dd($data);
-        return view('admin.superadmin.tentang_tpakd.latar_belakang', $data);
     }
+
+
+
+
+
+
+
+
+
+   
     public function storeLatar_belakang(Request $request){
         $validatedData = $request->validate([
             'latar_belakang_description'      => 'required'

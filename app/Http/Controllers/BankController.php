@@ -102,7 +102,7 @@ class BankController extends Controller
     }
     public function store(Request $request)
     {
-        
+        // dd($request);
         $request->validate([
             'id_bank'      => 'required',
         ]);

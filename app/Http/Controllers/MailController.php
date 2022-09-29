@@ -13,7 +13,7 @@ class MailController extends Controller
         $mailData = [
             'title' => 'Mail from ItSolutionStuff.com',
             'body' => 'This is for testing email using smtp.'
-        ];
+        ];   
         //  dd($mailData);
         Mail::to('clanuciha31@gmail.com')->send(new SendMail($mailData));
            
