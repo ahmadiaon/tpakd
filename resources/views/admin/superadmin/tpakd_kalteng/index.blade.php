@@ -11,19 +11,15 @@
             <table class="data-table table stripe hover nowrap">
                 <thead>
                     <tr>
-                        <th class="table-plus datatable-nosort">Service</th>
-                        <th>Title</th>
-                        <th>Little Description</th>
+                        <th class="table-plus datatable-nosort">Name</th>
                         <th>Image</th>
                         <th class="datatable-nosort">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($financialInformations as $value)
+                    @foreach($tpakd_kaltengs as $value)
                     <tr>
-                        <td class="table-plus">{{ $value->financial }}</td>
-                        <td>{{ $value->title }}</td>
-                        <td>{{ Illuminate\Support\Str::limit($value->litte_description, 20, $end='...') }}</td>
+                        <td>{{ $value->name }}</td>
                         <td>
                             <div class="name-avatar d-flex align-items-center">
                                 <div class="mr-2 flex-shrink-0">
@@ -39,8 +35,7 @@
                                     <i class="dw dw-more"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                    <a class="dropdown-item"
-                                        href="/superadmin/financial-information/{{ $value->slug }}/edit"><i
+                                    <a class="dropdown-item" href="/superadmin/tpakd-kalteng/edit/{{ $value->slug }}"><i
                                             class="dw dw-edit2"></i> Edit</a>
                                 </div>
                             </div>

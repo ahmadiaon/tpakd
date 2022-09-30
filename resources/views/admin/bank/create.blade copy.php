@@ -434,6 +434,7 @@
                             <div class="form-group" data-select2-id="7">
                                 <input name="bank_date_close" class="form-control date-picker" placeholder="Select Date"
                                     type="text">
+
                             </div>
                         </div>
                     </div>
@@ -463,9 +464,12 @@
                             <div class="form-group" data-select2-id="7">
                                 <input name="bank_date_change" class="form-control date-picker"
                                     placeholder="Select Date" type="text">
+
+
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="form-group">
                     <label for="">Place Bank</label>
@@ -482,29 +486,51 @@
                             </div>
                         </div>
                         <div class="col-4">
-
+                            <select id="select-maps" onchange="toMarkers(this)" class="country" style="width: 80%"
+                                name="state"></select>
                             <div class="container" style="height: 300px">
                                 <form>
                                     <div class="form-group">
                                         <label for="latitute">Latitute</label>
                                         <input type="text" class="form-control" id="latitute" />
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with anyone else.</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="longituted">longituted</label>
                                         <input type="text" class="form-control" id="longituted" />
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with anyone else.</small>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
+                            <div class="card">
+                                <div class="footer-links">
+                                    <h4>Nearby Rekomendation</h4>
+                                    <ul id="nearby"></ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
                 <a href="/admin/setup">
                     <button type="button" class="btn btn-secondary">Batal</button>
                 </a>
                 <button class="btn btn-primary">Simpan</button>
+
             </form>
+
         </div>
+
+
+
+
+
+
         <div class="footer-wrap pd-20 mb-20 card-box">
             TPAKD web By
             <a href="https://github.com/dropways" target="_blank">TPAKD</a>
@@ -555,6 +581,7 @@
         var center = map.getCenter();
         var lat = center["lat"];
         var lang = center["lng"];
+        document.getElementById("nearby").innerHTML = "";
         for (const feature of featuress) {
         // create a HTML element for each feature
         var cod = feature.geometry.coordinates;
@@ -571,13 +598,41 @@
                 )
             )
             .addTo(map);
+
+
+        var from = turf.point([lang, lat]);
+        var to = turf.point([cod[0], cod[1]]);
+        var options = { units: "kilometers" };
+
+        var distance = turf.distance(from, to, options);
+        console.log(i);
+        console.log(distance);
+        if (distance < 4) {
+            var ul = document.getElementById("nearby");
+            var li = document.createElement("li");
+
+            var ii = document.createElement("i");
+            ii.classList.add("bi", "bi-dash");
+
+            var texta = document.createTextNode(feature.properties.title);
+            var aa = document.createElement("a");
+            aa.appendChild(texta);
+            aa.href = "#";
+            aa.setAttribute("onclick", "toMark(" + i + ");");
+
+            li.appendChild(ii);
+            li.appendChild(aa);
+            ul.appendChild(li);
+            //
+        }
+        i++;
         }
     });
     let dataJson = [{
             type: "Feature",
             properties: {
                 // "marker-color": "#f76565",
-                title: "Kupu-kupu Udin",
+                title: "Anjing Udin",
                 description: 'kantor ',
                 // "marker-symbol": "restaurant",
             },
@@ -599,7 +654,11 @@
                 coordinates: [113.92553897303208, -2.201525949482445],
             },
         }];
+    //    let u = '{{ $test }}';
+    // var obj = jQuery.parseJSON ( '[ {"name" : "John"}, {"name" : "John"}] ' );
     var obj = jQuery.parseJSON ('{!! $test !!}');
+    console.log(dataJson)  
+    console.log(obj)
 
     let featuress = obj;
   var i = 0;
@@ -620,6 +679,38 @@
       )
       .addTo(map);
 
+    var x = document.getElementById("select-maps");
+    var option = document.createElement("option");
+    var coordinates = i;
+    option.value = coordinates;
+    option.setAttribute("onclick", "toMark(" + coordinates + ");");
+    option.text = feature.properties.title;
+    x.add(option);
+
+    var ul = document.getElementById("nearby");
+    var li = document.createElement("li");
+
+    var text = document.createTextNode(feature.properties.title);
+    var ii = document.createElement("i");
+    ii.classList.add("bi", "bi-dash");
+
+    var texta = document.createTextNode(feature.properties.title);
+    var aa = document.createElement("a");
+    aa.appendChild(texta);
+    aa.href = "#";
+    aa.setAttribute("onclick", "toMark(" + coordinates + ");");
+
+    li.appendChild(ii);
+    li.appendChild(aa);
+    ul.appendChild(li);
+
+    var from = turf.point([centerCoordinate[0], centerCoordinate[1]]);
+    var to = turf.point([cod[0], cod[1]]);
+    var options = { units: "kilometers" };
+
+    var distance = turf.distance(from, to, options);
+    console.log(distance);
+    i++;
   }
 
   
@@ -709,15 +800,7 @@
       .addTo(map);
   }
 
-
-  //add search
-  map.addControl(
-        new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-        })
-    );
-    // Add geolocate control to the map.
+  // Add geolocate control to the map.
   map.addControl(
     new mapboxgl.GeolocateControl({
       positionOptions: {
@@ -729,6 +812,14 @@
       showUserHeading: true,
     })
   );
+  //add search
+  map.addControl(
+        new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+        })
+    );
+  
 </script>
 <script>
     function previewImage(element){

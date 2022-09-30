@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BankAdminController;
 use App\Http\Controllers\BankGroupController;
 use App\Http\Controllers\PengajuanKurController;
+use App\Http\Controllers\TpakdKaltengController;
 use App\Http\Controllers\FinancialInformationController;
 
 // authentication admin
@@ -35,6 +36,8 @@ Route::get('/pengajuan-kur', [PublicController::class, 'pengajuan_kur']);
 Route::get('/pengajuan-sukses/{no_pengajuan}', [PublicController::class, 'pengajuanSukses']);
 Route::get('/informasi-kpmr', [PublicController::class, 'informasi_kpmr']);
 Route::get('/informasi-kur', [PublicController::class, 'informasi_kur']);
+Route::get('/informasi-qris', [PublicController::class, 'informasi_qris']);
+Route::get('/informasi-simpel', [PublicController::class, 'informasi_simpel']);
 Route::get('/berita/{slug}', [PublicController::class, 'detail_berita']);
 
 Route::get('/maps', [PublicController::class, 'mapsIndex']);
@@ -81,6 +84,11 @@ Route::middleware(['islogin'])->group(function () {
         
         Route::get('/superadmin/dasar-pembentukan',  [PublicController::class, 'createDasarPembentukan']);  
         Route::post('/superadmin/dasar-pembentukan',  [PublicController::class, 'storeDasarPembentukan']);  
+
+        Route::get('superadmin/tpakd-kalteng',  [TpakdKaltengController::class, 'index']); 
+        Route::get('/superadmin/tpakd-kalteng/edit/{slug}',  [TpakdKaltengController::class, 'show']); 
+        Route::post('/superadmin/tpakd-kalteng', [TpakdKaltengController::class, 'store']);
+
 
         Route::get('/superadmin/grafik',  [GrafikController::class, 'index']); 
         Route::post('/superadmin/grafik-1',  [GrafikController::class, 'store']);

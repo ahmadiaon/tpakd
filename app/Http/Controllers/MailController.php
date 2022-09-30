@@ -11,7 +11,7 @@ class MailController extends Controller
     public function index()
     {
         $mailData = [
-            'title' => 'Mail from ItSolutionStuff.com',
+            'title' => 'Mail from TPAKD',
             'body' => 'This is for testing email using smtp.'
         ];   
         //  dd($mailData);

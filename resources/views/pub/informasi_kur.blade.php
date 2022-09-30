@@ -28,29 +28,22 @@
               <article class="d-flex flex-column">
 
                 <div class="row gy-12" data-aos="fade-up">
-                  <img src="assets/img/informasi_kur.jpg" class="img-fluid" alt="">
+                  <img src="{{ env('APP_URL') }}{{ $profile->path_image }}" class="img-fluid" alt="">
                 </div>
-
                 <div class="content">
                   <p>
-                    Program Kredit Usaha Rakyat (KUR) adalah salah satu program pemerintah dalam meningkatkan akses
-                    pembiayaan kepada Usaha Mikro, Kecil, dan Menengah (UMKM) yang disalurkan melalui lembaga keuangan
-                    dengan pola penjaminan. Program KUR dimaksudkan untuk memperkuat kemampuan permodalan usaha dalam
-                    rangka pelaksanaan kebijakan percepatan pengembangan sektor riil dan pemberdayaan UMKM.
+                    {{ $profile->paragrafh_1 }}
                   </p>
                   <p>
-                    Dalam rangka mewujudkan hal tersebut, pemerintah menerbitkan Instruksi Presiden Nomor 6 Tahun 2007
-                    tentang Kebijakan Percepatan Pengembangan Sektor Riil dan Pemberdayaan UMKM. Program KUR secara
-                    resmi diluncurkan pada tanggal 5 November 2007. Pembiayaan yang disalurkan KUR bersumber dari dana
-                    perbankan atau lembaga keuangan yang merupakan Penyalur KUR. Dana yang disediakan berupa dana
-                    keperluan modal kerja serta investasi yang disalurkan kepada pelaku UMKM individu/perseorangan,
-                    badan usaha dan/atau kelompok usaha yang memiliki usaha produktif dan layak namun belum memiliki
-                    agunan tambahan atau feasible namun belum bankable.
+                    {{ $profile->paragrafh_2 }}
+                  </p>
+                  <p>
+                    {{ $profile->paragrafh_3 }}
                   </p>
                 </div>
-
               </article>
             </div><!-- End post list item -->
+
           </div><!-- End blog posts list -->
         </div>
 

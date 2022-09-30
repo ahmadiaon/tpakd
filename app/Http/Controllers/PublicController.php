@@ -8,8 +8,10 @@ use App\Models\Profile;
 use App\Models\GrafikDua;
 use Illuminate\Http\File;
 use App\Models\PengajuanKur;
+use App\Models\TpakdKalteng;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\FinancialInformation;
 
 class PublicController extends Controller
 {
@@ -50,7 +52,7 @@ class PublicController extends Controller
             'no_pengajuan' => $no_pengajuan ]);
     }
     public function latar_belakang(){
-        $profile = Profile::get()->first();
+        $profile = FinancialInformation::where('financial', 'Latar Belakang')->get()->first();
         $data = [
             'profile'   => $profile,
             'title' => 'Latar Belakang',
@@ -59,7 +61,7 @@ class PublicController extends Controller
         return view('pub.latar_belakang',$data);
     }
     public function dasar_pembentukan(){
-        $profile = Profile::get()->first();
+        $profile = FinancialInformation::where('financial', 'Dasar Pembentukan')->get()->first();
         $data = [
             'profile'   => $profile,
             'title' => 'Dasar Pembentukan',
@@ -68,15 +70,19 @@ class PublicController extends Controller
         return view('pub.dasar_pembentukan',$data);
     }
     public function roadmap(){
+        $profile = FinancialInformation::where('financial', 'Latar Belakang')->get()->first();
         $data = [
             'title' => 'Roadmap',
+            'profile'   => $profile,
             'active'=> 'home'
         ];
         return view('pub.roadmap',$data);
     }
     public function tpakd_kalteng(){
+        $tpkad_kaltengs = TpakdKalteng::all();
         $data = [
             'title' => 'Tpakd Kalteng',
+            'tpkad_kaltengs'    =>$tpkad_kaltengs,
             'active'=> 'home'
         ];
         return view('pub.tpakd',$data);
@@ -103,18 +109,40 @@ class PublicController extends Controller
         return view('pub.layanan_konsumen',$data);
     }
     public function informasi_kpmr(){
+        $profile = FinancialInformation::where('financial', 'K-PMR')->get()->first();
         $data = [
-            'title' => 'Layanan Konsumen',
+            'title' => 'Informasi K-PMR',
+            'profile'   => $profile,
             'active'=> 'layanan_konsumen'
         ];
         return view('pub.informasi_kpmr',$data);
     }
     public function informasi_kur(){
+        $profile = FinancialInformation::where('financial', 'KUR')->get()->first();
         $data = [
-            'title' => 'Layanan Konsumen',
-            'active'=> 'layanan_konsumen'
+            'title' => 'Informasi KUR',
+            'profile'   => $profile,
+            'active'=> 'informasi-kur'
         ];
         return view('pub.informasi_kur',$data);
+    }
+    public function informasi_simpel(){
+        $profile = FinancialInformation::where('financial', 'SIMPEL')->get()->first();
+        $data = [
+            'title' => 'Informasi SIMPEL',
+            'profile'   => $profile,
+            'active'=> 'informasi'
+        ];
+        return view('pub.informasi_simpel',$data);
+    }
+    public function informasi_QRIS(){
+        $profile = FinancialInformation::where('financial', 'QRIS')->get()->first();
+        $data = [
+            'title' => 'Informasi KUR',
+            'profile'   => $profile,
+            'active'=> 'informasi-kur'
+        ];
+        return view('pub.informasi_qris',$data);
     }
     public function detail_berita($slug){
         $data = [

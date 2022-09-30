@@ -15,32 +15,46 @@
         </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
+
             <div class="row g-5">
 
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+
                     <div class="row gy-5 posts-list">
+
                         <div class="col-lg-12">
                             <article class="d-flex flex-column">
 
                                 <div class="row gy-12" data-aos="fade-up">
-                                    <img src="{{ env('APP_URL') }}{{ $profile->dasar_pembentukan_photo_path }}"
-                                        class="img-fluid" alt="">
+                                    <img src="{{ env('APP_URL') }}{{ $profile->path_image }}" class="img-fluid" alt="">
                                 </div>
+
+
 
                                 <div class="content">
                                     <p>
-                                        {{ $profile->dasar_pembentukan_description }}
+                                        {{ $profile->paragrafh_1 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_2 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_3 }}
+                                    </p>
                                 </div>
-
                             </article>
                         </div><!-- End post list item -->
+
                     </div><!-- End blog posts list -->
+
+
+
                 </div>
 
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+
                     <div class="sidebar ps-lg-4">
 
                         <div class="sidebar-item categories">
@@ -70,9 +84,18 @@
                                     </div>
                                 </div><!-- End recent post item-->
 
+
+
+
+
                             </div>
+
                         </div><!-- End sidebar recent posts-->
+
+
+
                     </div><!-- End Blog Sidebar -->
+
                 </div>
 
             </div>

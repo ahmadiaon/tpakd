@@ -7,11 +7,11 @@
     style="background-image: url('{{ env('APP_URL') }}assets/img/blog-header.jpg');">
     <div class="container position-relative d-flex flex-column align-items-center">
 
-      <h2>Informasi K/PMR</h2>
+      <h2>Informasi SimPel</h2>
       <ol>
         <li><a href="#">Akses Keuangan</a></li>
-        <li><a href="#">K/PMR</a></li>
-        <li>Informasi K/PMR</li>
+        <li><a href="#">SimPel</a></li>
+        <li>Informasi SimPel</li>
       </ol>
 
     </div>

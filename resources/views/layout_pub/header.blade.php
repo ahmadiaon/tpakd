@@ -43,9 +43,21 @@
                                 <li><a href="pengajuan_kpmr.html">Pengajuan K/PMR</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown"><a href="/"><span>QRIS</span> <i
+                                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <ul>
+                                <li><a href="/informasi-qris">Informasi QRIS</a></li>
+                                <li><a href="pengajuan_kpmr.html">Pengajuan QRIS</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="/"><span>SimPel</span> <i
+                                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <ul>
+                                <li><a href="/informasi-simpel">Informasi SimPel</a></li>
+                                <li><a href="pengajuan_kpmr.html">Pengajuan SimPel</a></li>
+                            </ul>
+                        </li>
                         <li><a href="bank_daftar_pembukaan_rekening.html" class="active">Pembukaan Rekening</a></li>
-                        <li><a href="bank_daftar_peminjaman_dana.html">Peminjaman Dana</a></li>
-                        <li><a href="bank_daftar_simpel.html">Simpel</a></li>
                     </ul>
                 </li>
                 <li><a class="{{ ($active == 'berita')?'active':'' }}" href="/berita">Berita</a></li>

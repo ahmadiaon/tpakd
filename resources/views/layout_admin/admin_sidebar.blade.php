@@ -90,8 +90,8 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="index.html">
-            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
-            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
+            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="dark-logo" />
+            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>

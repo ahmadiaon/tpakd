@@ -24,6 +24,28 @@
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 
                     <div class="row gy-5 posts-list">
+                        <div class="col-lg-12">
+                            <article class="d-flex flex-column">
+
+                                <div class="row gy-12" data-aos="fade-up">
+                                    <img src="{{ env('APP_URL') }}{{ $profile->path_image }}" class="img-fluid" alt="">
+                                </div>
+
+
+
+                                <div class="content">
+                                    <p>
+                                        {{ $profile->paragrafh_1 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_2 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_3 }}
+                                    </p>
+                                </div>
+                            </article>
+                        </div><!-- End post list item -->
 
                         <div class="col-lg-12">
                             <article class="d-flex flex-column">
@@ -35,32 +57,6 @@
                                         allowfullscreen></iframe>
                                 </div>
 
-                                <div class="content">
-                                    <p>
-                                        Otoritas Jasa Keuangan (OJK) bersama Kementerian/Lembaga terkait, Pemerintah
-                                        Daerah dan Lembaga Jasa Keuangan berkomitmen untuk terus melakukan berbagai
-                                        upaya dan inovasi guna meningkatkan akses keuangan masyarakat di daerah sesuai
-                                        arahan Presiden RI Joko Widodo dalam Rakornas Tim Percepatan Akses Keuangan
-                                        Daerah (TPAKD) 2020 yang digelar secara virtual di Jakarta pada tanggal 10
-                                        Desember 2020.
-                                    </p>
-                                    <p>
-                                        Sejalan dengan harapan Presiden, dalam Rakornas TPAKD ini diluncurkan Roadmap
-                                        TPAKD 2021-2025 yang memuat strategi dan arah kebijakan pengembangan TPAKD untuk
-                                        lima tahun ke depan.
-                                    </p>
-                                    <p>
-                                        Roadmap ini disusun bersama oleh OJK, Kemenko Bidang Perekonomian (Sekretariat
-                                        Dewan Nasional Keuangan Inklusif), Kementerian Dalam Negeri dan didukung oleh
-                                        Asian Development Bank (ADB).
-                                    </p>
-                                    <p>
-                                        Sesuai tujuan awal TPAKD, maka roadmap TPAKD mengutamakan sinergi berbagai pihak
-                                        terkait dalam meningkatkan ketersediaan berbagai produk serta layanan keuangan
-                                        formal secara konsisten yang juga bertujuan mendorong peningkatan produktifitas
-                                        ekonomi masyarakat.
-                                    </p>
-                                </div>
                                 <h2 class="title">
                                     <u> <a
                                             href="https://www.ojk.go.id/id/berita-dan-kegiatan/publikasi/Documents/Pages/Roadmap-TPAKD-2021-2025/Tayangan%20Roadmap%20TPAKD%202021-2025.pdf">Tayangan

@@ -29,12 +29,21 @@
                             <article class="d-flex flex-column">
 
                                 <div class="row gy-12" data-aos="fade-up">
-                                    <img src="{{ env('APP_URL') }}{{ $profile->latar_belakang_photo_path }}"
-                                        class="img-fluid" alt="">
+                                    <img src="{{ env('APP_URL') }}{{ $profile->path_image }}" class="img-fluid" alt="">
                                 </div>
 
+
+
                                 <div class="content">
-                                    {{ $profile->latar_belakang_description }}
+                                    <p>
+                                        {{ $profile->paragrafh_1 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_2 }}
+                                    </p>
+                                    <p>
+                                        {{ $profile->paragrafh_3 }}
+                                    </p>
                                 </div>
                             </article>
                         </div><!-- End post list item -->
