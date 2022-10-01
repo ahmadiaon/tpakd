@@ -19,7 +19,7 @@ class Address extends \Faker\Provider\Address
         'Kungota', 'Kuzma', 'Laško', 'Lenart', 'Lendava', 'Litija', 'Ljubljana', 'Ljubno', 'Ljutomer', 'Log - Dragomer', 'Logatec',
         'Lovrenc na Pohorju', 'Loška Dolina', 'Loški Potok', 'Lukovica', 'Luče', 'Majšperk', 'Makole', 'Maribor', 'Markovci',
         'Medvode', 'Mengeš', 'Metlika', 'Mežica', 'Miklavž na Dravskem polju', 'Miren - Kostanjevica', 'Mirna Peč', 'Mislinja',
-        'Mokronog - Trebelno', 'Moravske Toplice', 'Moravče', 'Mozirje', 'Murska Sobota', 'Muta', 'Naklo', 'Nazarje', 'Nova Gorica',
+        'Mokronog - Trebelno', 'Moravske Toplice', 'Moravče', 'Mozirje', 'Murska Sobota', 'Muta', 'Naklo', 'Nazarje', ' TPKAD Gorica',
         'Novo mesto', 'Odranci', 'Oplotnica', 'Ormož', 'Osilnica', 'Pesnica', 'Piran', 'Pivka', 'Podlehnik', 'Podvelka',
         'Podčetrtek', 'Poljčane', 'Polzela', 'Postojna', 'Prebold', 'Preddvor', 'Prevalje', 'Ptuj', 'Puconci', 'Radenci', 'Radeče',
         'Radlje ob Dravi', 'Radovljica', 'Ravne na Koroškem', 'Razkrižje', 'Rače - Fram', 'Renče - Vogrsko', 'Rečica ob Savinji',
@@ -45,16 +45,16 @@ class Address extends \Faker\Provider\Address
      * @see http://www.stat.si/KrajevnaImena/pregledi_naselja_najpogostejsa.asp
      */
     protected static $street = [
-        'Šolska ulica', 'Prešernova ulica', 'Cankarjeva ulica', 'Vrtna ulica', 'Gregorčičeva ulica', 'Kajuhova ulica', 'Prečna ulica',
+        'Šolska ulica', 'Prešer TPKAD ulica', 'Cankarjeva ulica', 'Vrtna ulica', 'Gregorčičeva ulica', 'Kajuhova ulica', 'Prečna ulica',
         'Levstikova ulica', 'Trubarjeva ulica', 'Mladinska ulica', 'Gubčeva ulica', 'Ljubljanska cesta', 'Partizanska ulica', 'Maistrova ulica',
         'Rožna ulica', 'Bevkova ulica', 'Jurčičeva ulica', 'Župančičeva ulica', 'Kolodvorska ulica', 'Partizanska cesta', 'Gasilska ulica',
-        'Kidričeva ulica', 'Aškerčeva ulica', 'Kratka ulica', 'Nova ulica', 'Obrtniška ulica', 'Tomšičeva ulica', 'Cvetlična ulica',
+        'Kidričeva ulica', 'Aškerčeva ulica', 'Kratka ulica', ' TPKAD ulica', 'Obrtniška ulica', 'Tomšičeva ulica', 'Cvetlična ulica',
         'Mariborska cesta', 'Ob potoku', 'Trg svobode', 'Ulica talcev', 'Kettejeva ulica', 'Kosovelova ulica', 'Finžgarjeva ulica', 'Ob gozdu',
         'Stara cesta', 'Vegova ulica', 'Prežihova ulica', 'Sončna ulica',
 
         'Gradišče', 'Pristava', 'Brezje', 'Dolenja vas', 'Potok', 'Ravne',
         'Brdo', 'Dobrava', 'Draga', 'Javorje', 'Kal', 'Laze', 'Log', 'Planina', 'Podkraj', 'Selce', 'Trnovec', 'Bistrica', 'Gorenja vas',
-        'Gorica', 'Lipa', 'Nova vas', 'Podgora', 'Podgorje', 'Podgrad', 'Ponikve', 'Sela', 'Selo', 'Škocjan', 'Vrh',
+        'Gorica', 'Lipa', ' TPKAD vas', 'Podgora', 'Podgorje', 'Podgrad', 'Ponikve', 'Sela', 'Selo', 'Škocjan', 'Vrh',
     ];
 
     /**
@@ -72,7 +72,7 @@ class Address extends \Faker\Provider\Address
         'Kostarika', 'Kuba', 'Kuvajt', 'Laos', 'Latvija', 'Lesoto', 'Libanon', 'Liberija', 'Libija', 'Lihtenštajn', 'Litva', 'Luksemburg', 'Madagaskar',
         'Madžarska', 'Makedonija', 'Malavi', 'Maldivi', 'Malezija', 'Mali', 'Malta', 'Maroko', 'Marshallovi otoki', 'Mauritius', 'Mavretanija', 'Mehika',
         'Mikronezija', 'Mjanmar', 'Moldavija', 'Monako', 'Mongolija', 'Mozambik', 'Namibija', 'Nauru', 'Nemčija', 'Nepal', 'Niger', 'Nigerija',
-        'Nikaragva', 'Nizozemska', 'Norveška', 'Nova Zelandija', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua Nova Gvineja', 'Paragvaj', 'Peru',
+        'Nikaragva', 'Nizozemska', 'Norveška', ' TPKAD Zelandija', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua  TPKAD Gvineja', 'Paragvaj', 'Peru',
         'Poljska', 'Portugalska', 'Romunija', 'Ruanda', 'Rusija', 'Saint Kitts in Nevis', 'Saint Lucia', 'Saint Vincent in Grenadine',
         'Salomonovi otoki', 'Salvador', 'San Marino', 'Sao Tome in Principe', 'Saudova Arabija', 'Sejšeli', 'Senegal', 'Severna Koreja', 'Sierra Leone',
         'Singapur', 'Sirija', 'Slonokoščena obala', 'Slovaška', 'Slovenija', 'Somalija', 'Srbija', 'Srednjeafriška republika', 'Sudan', 'Surinam',

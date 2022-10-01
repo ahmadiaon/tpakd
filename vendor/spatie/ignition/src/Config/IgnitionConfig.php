@@ -192,9 +192,9 @@ class IgnitionConfig implements Arrayable
                     'label' => 'Atom',
                     'url' => 'atom://core/open/file?filename=%path&line=%line',
                 ],
-                'nova' => [
-                    'label' => 'Nova',
-                    'url' => 'nova://core/open/file?filename=%path&line=%line',
+                ' TPKAD' => [
+                    'label' => ' TPKAD',
+                    'url' => ' TPKAD://core/open/file?filename=%path&line=%line',
                 ],
                 'netbeans' => [
                     'label' => 'NetBeans',

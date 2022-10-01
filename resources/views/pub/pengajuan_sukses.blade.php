@@ -8,7 +8,7 @@
 
             <h2>Dasar Pembentukan</h2>
             <ol>
-                <li><a href="index.html">Tentang TPAKD</a></li>
+                <li><a href="/">Tentang TPAKD</a></li>
                 <li>Dasar Pembentukan</li>
             </ol>
 
@@ -37,8 +37,8 @@
                                     </span>
                                     <span>
                                         atau bisa anda cek pada link,<a href="{{env('APP_URL')
-                                        }}pengajuan-saya">{{env('APP_URL')
-                                            }}pengajuan-saya</a>
+                                        }}pengajuan-saya/{{ $id_kur }}">{{env('APP_URL')
+                                            }}pengajuan-saya/{{ $id_kur }}</a>
                                     </span>
                                     {{-- <embed src="{{ env('APP_URL') }}surat.pdf" type="application/pdf" width="100%"
                                         --}} {{-- height="600px" /> --}}

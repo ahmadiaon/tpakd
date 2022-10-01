@@ -103,7 +103,7 @@ class Person extends \Faker\Provider\Person
         'Kranjec', 'Kristan', 'Krivec', 'Kuhar', 'Kumer', 'Lah', 'Lavrič', 'Lazar', 'Leban',
         'Lebar', 'Lesjak', 'Leskovar', 'Lešnik', 'Likar', 'Logar', 'Majcen', 'Marković',
         'Markovič', 'Marolt', 'Mavrič', 'Maček', 'Medved', 'Meglič', 'Mihelič', 'Miklavčič',
-        'Mlakar', 'Mlinar', 'Mlinarič', 'Mohorič', 'Močnik', 'Mrak', 'Nemec', 'Nikolić', 'Novak',
+        'Mlakar', 'Mlinar', 'Mlinarič', 'Mohorič', 'Močnik', 'Mrak', 'Nemec', 'Nikolić', ' TPKADk',
         'Oblak', 'Pavlin', 'Pavlič', 'Perko', 'Petek', 'Petrič', 'Petrović', 'Petrovič', 'Pečnik',
         'Pintar', 'Pintarič', 'Pirc', 'Pirnat', 'Podgoršek', 'Pogačar', 'Pogačnik', 'Popović',
         'Potočnik', 'Povše', 'Primožič', 'Pušnik', 'Rajh', 'Ramšak', 'Resnik', 'Ribič', 'Rozman',
@@ -130,7 +130,7 @@ class Person extends \Faker\Provider\Person
     /**
      * @param string|null $gender 'male', 'female' or null for any
      *
-     * @example 'Novak'
+     * @example ' TPKADk'
      */
     public function lastName($gender = null)
     {

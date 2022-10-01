@@ -89,7 +89,7 @@
 </div>
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
+        <a href="/">
             <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
             <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>

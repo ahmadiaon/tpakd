@@ -28,7 +28,7 @@ uphold this code.
 
 Install this package as a dependency using [Composer](https://getcomposer.org).
 
-``` bash
+```bash
 composer require ramsey/collection
 ```
 
@@ -47,7 +47,7 @@ and [Composer](https://getcomposer.org).
 
 After cloning this repository locally, execute the following commands:
 
-``` bash
+```bash
 cd /path/to/repository
 composer install
 ```
@@ -77,6 +77,5 @@ The ramsey/collection library is copyright © [Ben Ramsey](https://benramsey.com
 and licensed for use under the terms of the
 MIT License (MIT). Please see [LICENSE](LICENSE) for more information.
 
-
-[java]: http://docs.oracle.com/javase/8/docs/technotes/guides/collections/index.html
+[java]: http://docs.oracle.com/javase/8/docs/technotes/guides/collections//
 [security.md]: https://github.com/ramsey/collection/blob/master/SECURITY.md

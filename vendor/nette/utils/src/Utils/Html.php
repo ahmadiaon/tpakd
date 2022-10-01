@@ -56,7 +56,7 @@ use function is_array, is_float, is_object, is_string;
  * @property string|null $formaction
  * @property string|null $formenctype
  * @property string|null $formmethod
- * @property bool|null   $formnovalidate
+ * @property bool|null   $form TPKADlidate
  * @property string|null $formtarget
  * @property string|null $headers
  * @property int|null    $height
@@ -84,7 +84,7 @@ use function is_array, is_float, is_object, is_string;
  * @property bool|null   $multiple
  * @property bool|null   $muted
  * @property string|null $name
- * @property bool|null   $novalidate
+ * @property bool|null   $ TPKADlidate
  * @property bool|null   $open
  * @property float|null  $optimum
  * @property string|null $pattern
@@ -163,7 +163,7 @@ use function is_array, is_float, is_object, is_string;
  * @method self formaction(?string $val)
  * @method self formenctype(?string $val)
  * @method self formmethod(?string $val)
- * @method self formnovalidate(?bool $val)
+ * @method self form TPKADlidate(?bool $val)
  * @method self formtarget(?string $val)
  * @method self headers(?string $val, bool $state = null)
  * @method self height(?int $val)
@@ -190,7 +190,7 @@ use function is_array, is_float, is_object, is_string;
  * @method self multiple(?bool $val)
  * @method self muted(?bool $val)
  * @method self name(?string $val)
- * @method self novalidate(?bool $val)
+ * @method self  TPKADlidate(?bool $val)
  * @method self open(?bool $val)
  * @method self optimum(?float $val)
  * @method self pattern(?string $val)

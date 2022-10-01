@@ -8,7 +8,7 @@
 
             <h2>Roadmap</h2>
             <ol>
-                <li><a href="index.html">Tentang TPAKD</a></li>
+                <li><a href="/">Tentang TPAKD</a></li>
                 <li>Roadmap</li>
             </ol>
 

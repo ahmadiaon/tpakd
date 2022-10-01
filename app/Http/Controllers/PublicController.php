@@ -29,6 +29,15 @@ class PublicController extends Controller
         ];
         return view('pub.index',$data);
     }
+
+    public function maps(){
+        $data = [
+            'title' => 'Maps',
+            'active'=> 'maps'
+        ];
+        return view('pub.maps',$data);
+    }
+
     public function mapsIndex(){
         $data = [
             'title' => 'Home',
@@ -186,17 +195,15 @@ class PublicController extends Controller
     }
 
 
-    public function cariPengajuanSaya(Request $request){
-        $validatedData = $request->validate([
-            'no_pengajuan'         => 'required|max:255'
-        ]);
+    public function cariPengajuanSaya($no_pengajuan){
+        
         $jenis;
 
-        $no = explode('-',$validatedData['no_pengajuan']);
+        $no = explode('-',$no_pengajuan);
         if($no[0] == 'KUR'){
             $jenis = "pengajuan_kurs";
         }else{
-            return 'else';
+            return redirect('/pengajuan-saya')->with('data', false);
         }
        
 
@@ -211,9 +218,9 @@ class PublicController extends Controller
                 'data'  => true
             ];
             // dd($data);
-            return back()->with('data', $search->first());
+            return  redirect('/pengajuan-saya')->with('data', $search->first());
         }else{
-            return back()->with('data', false);
+            return  redirect('/pengajuan-saya')->with('data', false);
         }
 
         $pengajuanKurs = PengajuanKur::create($validatedData);

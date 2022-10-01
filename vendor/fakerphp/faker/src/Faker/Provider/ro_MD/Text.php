@@ -429,7 +429,7 @@ decât poftim la masă, zise el. Nici tu sat, nici tu târg, nici
 tu nimica. De ce mergi înainte, numai peste pustietăți dai;
 parcă a pierit sămânța omenească de pe fața pământului. Îmi pare
 rău că n-am luat măcar spânul cel de-al doilea cu mine. Dacă s-a
-aruncat în partea mâne-sa, ce-i vinovat el? Tata așa a zis, însă
+aruncat în partea mâne-sa, ce-i vi TPKADt el? Tata așa a zis, însă
 la mare nevoie ce-i de făcut? vorba ceea: Rău-i cu rău, dar e
 mai rău făr' de rău. Și tot horhăind el când pe o cărare, când
 pe un drum părăsit, numai iaca ce iar îi iese Spânul înainte,
@@ -1189,7 +1189,7 @@ furnici trecea și ea tocmai atunci podul. Ce să facă HarapAlb ?
 Stă el oleacă și se sfătuiește cu gândul: "Să trec peste
 dânsele, am să omor o mulțime; să dau prin apă, mă tem că m-oi
 îneca, cu cal cu tot. Dar tot mai bine să dau prin apă, cum a da
-Dumnezeu, decât să curm viața atâtor gâzulițe nevinovate". Și
+Dumnezeu, decât să curm viața atâtor gâzulițe nevi TPKADte". Și
 zicând Doamne-ajută, se aruncă cu calul în apă, o trece înot
 dincolo, la cela mal, fără primejdie și apoi își ia drumul
 înainte. Și cum mergea el, numai iaca i se înfățișază o furnică

@@ -8,7 +8,7 @@
 
             <h2>Latar Belakang</h2>
             <ol>
-                <li><a href="index.html">Tentang TPAKD</a></li>
+                <li><a href="/">Tentang TPAKD</a></li>
                 <li>Latar Belakang</li>
             </ol>
 

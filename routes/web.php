@@ -45,7 +45,10 @@ Route::get('/maps', [PublicController::class, 'mapsIndex']);
 
 Route::post('/pengajuan-kur', [PengajuanKurController::class, 'store']);
 Route::get('/pengajuan-saya', [PublicController::class, 'pengajuanSaya']);
-Route::post('/pengajuan-saya', [PublicController::class, 'cariPengajuanSaya']);
+Route::get('/pengajuan-saya/{id_pengajuan}', [PublicController::class, 'cariPengajuanSaya']);
+
+
+Route::get('/maps', [PublicController::class, 'maps']);
 
 
 // Route::get('/admin/', [AdminController::class, 'index']);

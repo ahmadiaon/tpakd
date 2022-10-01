@@ -8,7 +8,7 @@
 
             <h2>Dasar Pembentukan</h2>
             <ol>
-                <li><a href="index.html">Tentang TPAKD</a></li>
+                <li><a href="/">Tentang TPAKD</a></li>
                 <li>Dasar Pembentukan</li>
             </ol>
 
@@ -28,19 +28,19 @@
 
 
                                 <div class="content">
-                                    <form action="/pengajuan-saya" method="POST">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-8">
-                                                <div class="form-group">
-                                                    <input name="no_pengajuan" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <button type="submit" class="btn btn-primary">Cari</button>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="form-group">
+                                                <input onchange="go()" name="search" id="search" type="text"
+                                                    class="form-control">
                                             </div>
                                         </div>
-                                    </form>
+                                        <div class="col-4">
+                                            <a id="togo" href="">
+                                                <button onclick="submit()" class="btn btn-primary">Cari</button>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                                 @if(session()->has('data'))
                                 <div class="content">
@@ -107,4 +107,17 @@
 
 </main><!-- End #main -->
 
+@endsection
+
+@section('js')
+<script>
+    function go(){
+        var x = document.getElementById("search");
+        var currentVal = x.value;
+        
+        console.log(currentVal)
+        document.getElementById("togo").href = '/pengajuan-saya/'+currentVal
+
+    }
+</script>
 @endsection

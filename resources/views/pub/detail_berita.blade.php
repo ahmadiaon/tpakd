@@ -83,11 +83,11 @@
                                     Republik Indonesia, Bapak Joko
                                     WiDodo, diminta kepada setiap Kepala
                                     Daerah untuk melakukan cara-cara
-                                    yang inovatif dan cepat dalam
+                                    yang i TPKADtif dan cepat dalam
                                     menjalankan segala kebijakan dan
                                     program yang ada, seperti
                                     peningkatan literasi kuangan melaui
-                                    cara &nbsp;yang inovatif, mendorong
+                                    cara &nbsp;yang i TPKADtif, mendorong
                                     kelompok-kelompok usaha, penguatan
                                     infrastruktur keuangan daerah yang
                                     agresif dan peningkatan tingkat

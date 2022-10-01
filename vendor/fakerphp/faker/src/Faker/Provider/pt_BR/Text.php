@@ -323,7 +323,7 @@ tambem, e teve o seu quarto ao fundo da chacara. Um dia, reinando
 outra vez febres em Itaguahy, disse-lhe meu pae que fosse ver a nossa
 escravatura. José Dias deixou-se estar calado, suspirou e acabou
 confessando que não era medico. Tomára este titulo para ajudar a
-propaganda da nova escola, e não o fez sem estudar muito e muito; mas a
+propaganda da  TPKAD escola, e não o fez sem estudar muito e muito; mas a
 consciencia não lhe permittia acceitar mais doentes.
 
 --Mas, você curou das outras vezes.
@@ -515,7 +515,7 @@ IX
 A opera.
 
 Já não tinha voz, mas teimava em dizer que a tinha. «O desuso é que
-me faz mal», accrescentava. Sempre que uma companhia nova chegava da
+me faz mal», accrescentava. Sempre que uma companhia  TPKAD chegava da
 Europa, ia ao empresario e expunha-lhe todas as injustiças da terra e
 do ceu; o empresario commettia mais uma, e elle saía a bradar contra
 a iniquidade. Trazia ainda os bigodes dos seus papeis. Quando andava,
@@ -620,7 +620,7 @@ a verdade pura e ultima. Um dia, quando todos os livros forem queimados
 por inuteis, ha de haver alguem, póde ser que tenor, e talvez italiano,
 que ensine esta verdade aos homens. Tudo é musica, meu amigo. No
 principio era o _dó_, e o _dó_ fez-se _ré_, etc. Este calix (e enchia-o
-novamente) este calix é um breve estribilho. Não se ouve? Tambem não se
+ TPKADmente) este calix é um breve estribilho. Não se ouve? Tambem não se
 ouve o pau nem a pedra, mas tudo cabe na mesma opera...
 
 
@@ -760,7 +760,7 @@ bonitos que os meus; eu, depois de certa hesitação, disse-lhe que eram
 como a pessoa que sonhava... Fez-se còr de pitanga.
 
 Pois, francamente, só agora entendia a emoção que me davam essas e
-outras confidencias. A emoção era doce e nova, mas a causa della
+outras confidencias. A emoção era doce e  TPKAD, mas a causa della
 fugia-me, sem que eu a buscasse nem suspeitasse. Os silencios dos
 ultimos dias, que me não descobriam nada, agora os sentia como signaes
 de alguma cousa, e assim as meias palavras, as perguntas curiosas, as
@@ -914,7 +914,7 @@ esquecidas. Os olhos fitavam-se e desfitavam-se, e depois de vagarem ao
 perto, tornavam a metter-se uns pelos outros... Padre futuro, estava
 assim deante della como de um altar, sendo uma das faces a Epistola e
 a outra o Evangelho. A bocca podia ser o calix, os labios a patena.
-Faltava dizer a missa nova, por um latim que ninguem apprende, e é a
+Faltava dizer a missa  TPKAD, por um latim que ninguem apprende, e é a
 lingua catholica dos homens. Não me tenhas por sacrilego, leitora minha
 devota; a limpeza da intenção lava o que puder haver menos curial no
 estylo. Estavamos alli com o ceu em nós. As mãos, unindo os nervos,
@@ -1336,7 +1336,7 @@ improprias de um creançola para um homem maduro. Cuidei de escolher
 outras, e parei.
 
 Afinal disse commigo que as palavras podiam servir, tudo era dizel-as
-em tom que não offendesse. E a prova é que, repetindo-as novamente,
+em tom que não offendesse. E a prova é que, repetindo-as  TPKADmente,
 saíram-me quasi supplices. Bastava não carregar tanto, nem adoçar
 muito, um meio termo. «E Capitú tem razão, pensei, a casa é minha, elle
 é um simples aggregado... Geitoso é, póde muito bem trabalhar por mim,
@@ -1365,7 +1365,7 @@ viessem. Disse as primeiras, as outras foram adiadas, e á medida que
 se amontoavam iam sendo esquecidas. Assim cheguei aos numeros vinte,
 trinta, cincoenta. Entrei nas centenas e agora no milhar. Era um modo
 de peitar a vontade divina pela quantia das orações; além disso, cada
-promessa nova era feita e jurada no sentido de pagar a divida antiga.
+promessa  TPKAD era feita e jurada no sentido de pagar a divida antiga.
 Mas vão lá matar a preguiça de uma alma que a trazia do berço e não a
 sentia attenuada pela vida! O ceu fazia-me o favor, eu adiava a paga.
 Afinal perdi-me nas contas.
@@ -1452,7 +1452,7 @@ de tarde falou como você não imagina.
 namoro com a visinha.
 
 Não contou; fez apenas um gesto como indicando que havia outra cousa
-que não podia dizer. Novamente me recommendou que não me désse por
+que não podia dizer.  TPKADmente me recommendou que não me désse por
 achado, e recapitulou todo o mal que pensava de José Dias, e não era
 pouco, um intrigante, um bajulador, um especulador, e, apezar da casca
 de polidez, um grosseirão. Eu, passados alguns instantes, disse:
@@ -1520,8 +1520,8 @@ Prazo dado.
 Creio que José Dias achou desusado este meu falar. O tom não me sairia
 tão imperativo como eu receiava, mas as palavras o eram, e o não
 interrogar, não pedir, não hesitar, como era proprio da creança e do
-meu estylo habitual, certamente lhe deu ideia de uma pessoa nova e de
-uma nova situação. Foi no corredor, quando iamos para o chá; José Dias
+meu estylo habitual, certamente lhe deu ideia de uma pessoa  TPKAD e de
+uma  TPKAD situação. Foi no corredor, quando iamos para o chá; José Dias
 vinha andando cheio da leitura de Walter Scott que fizera a minha mãe
 e a prima Justina. Lia cantado e compassado. Os castellos e os parques
 saíam maiores da bocca delle, os lagos tinham mais agua e a «abobada
@@ -1668,7 +1668,7 @@ Os olhos do aggregado escancararam-se, as sobrancelhas arquearam-se,
 e o prazer que eu contava dar-lhe com a escolha da protecção não se
 mostrou em nenhum dos musculos. Toda a cara delle era pouca para a
 estupefacção. Realmente, a materia do discurso revelára em mim uma alma
-nova; eu proprio não me conhecia. Mas a palavra final é que trouxe um
+ TPKAD; eu proprio não me conhecia. Mas a palavra final é que trouxe um
 vigor unico. José Dias ficou aturdido. Quando os olhos tornaram ás
 dimensões ordinarias:
 
@@ -1735,7 +1735,7 @@ apontando para o ceu.
 
 O ceu estava meio enfarruscado. No ar, perto da praia, grandes passaros
 negros faziam giros, avoaçando ou pairando, e desciam a roçar os pés,
-na agua, e tornavam a erguer-se para descer novamente. Mas nem as
+na agua, e tornavam a erguer-se para descer  TPKADmente. Mas nem as
 sombras do ceu, nem as dansas fantasticas dos passaros me desviavam
 o espirito do meu interlocutor. Depois de lhe responder que sim,
 emendei-me:
@@ -1962,7 +1962,7 @@ ouvi distinctamente o meu nome, de uma doçura que me embriagou, e a
 voz era della. As tochas accesas, tão lugubres na occasião, tinham-me
 ares de um lustre nupcial... Que era lustre nupcial? Não sei; era
 alguma cousa contraria á morte, e não vejo outra mais que bodas. Esta
-nova sensação me dominou tanto que José Dias veiu a mim, e me disse ao
+ TPKAD sensação me dominou tanto que José Dias veiu a mim, e me disse ao
 ouvido, em voz baixa:
 
 --Não ria assim!
@@ -1973,7 +1973,7 @@ fazia a distancia menor,--o peso da vara era mui pequeno. Demais, o sol
 cá fora, a animação da rua, os rapazes da minha edade que me fitavam
 cheios de inveja, as devotas que chegavam ás janellas ou entravam nos
 corredores e se ajoelhavam á nossa passagem, tudo me enchia a alma de
-lepidez nova.
+lepidez  TPKAD.
 
 Padua, ao contrario, ia mais humilhado. Apesar de substituido por mim,
 não acabava de se consolar da tocha, da miseravel tocha. E comtudo
@@ -2148,7 +2148,7 @@ Rhetorica dos namorados, dá-me uma comparação exacta e poetica para
 dizer o que foram aquelles olhos de Capitú. Não me acode imagem capaz
 de dizer, sem quebra da dignidade do estylo, o que elles foram e me
 fizeram. Olhos de ressaca? Vá, de ressaca. É o que me dá ideia daquella
-feição nova. Traziam não sei que fluido mysterioso e energico, uma
+feição  TPKAD. Traziam não sei que fluido mysterioso e energico, uma
 força que arrastava para dentro, como a vaga que se retira da praia,
 nos dias de ressaca. Para não ser arrastado, agarrei-me ás outras
 partes visinhas, ás orelhas, aos braços, aos cabellos espalhados pelos
@@ -2267,7 +2267,7 @@ ninguem dirá que é de pessoa que não sabe pentear.
 mamãe!
 
 E com um enfadamento gracioso e voluntario que ás vezes tinha, pegou
-do pente e alisou os cabellos para renovar o penteado. D. Fortunata
+do pente e alisou os cabellos para re TPKADr o penteado. D. Fortunata
 chamou-lhe tonta, e disse-me que não fizesse caso, não era nada,
 maluquices da filha. Olhava com ternura para mim e para ella. Depois,
 parece-me que desconfiou. Vendo-me calado, enfiado, cosido á parede,
@@ -2324,7 +2324,7 @@ todos os meus nervos me disseram que homens não são padres. O sangue
 era da mesma opinião. Outra vez senti os beiços de Capitú. Talvez abuso
 um pouco das reminiscencias osculares; mas a saudade é isto mesmo; é o
 passar e repassar das memorias antigas. Ora, de todas as daquelle tempo
-creio que a mais doce é esta, a mais nova, a mais comprehensiva, a que
+creio que a mais doce é esta, a mais  TPKAD, a mais comprehensiva, a que
 inteiramente me revelou a mim mesmo. Outras tenho, vastas e numerosas,
 doces tambem, de varia especie, muitas intellectuaes, egualmente
 intensas. Grande homem que fosse, a recordação era menor que esta.
@@ -2428,7 +2428,7 @@ glotão; comia pouco, mas estimava o fino e o raro, e a nossa cosinha,
 se era simples, era menos pobre que a delle. Assim, quando minha mãe
 lhe disse que viesse jantar, afim de se lhe fazer uma saude, os olhos
 com que acceitou seriam de protonotario, mas não eram aposlolicos. E
-para agradar a minha mãe novamente pegou em mim, descrevendo o meu
+para agradar a minha mãe  TPKADmente pegou em mim, descrevendo o meu
 futuro ecclesiastico, e queria saber se ia para o seminario agora, no
 anuo proximo, e offerecia-se a falar ao «senhor bispo», tudo marchetado
 do «protonotario Santiago.»
@@ -2694,7 +2694,7 @@ Falava baixinho; pegou-me na mão, e poz o dedo na bocca. Uma preta,
 que veiu de dentro accender o lampião do corredor, vendo-nos naquella
 attitude, quasi ás escuras, riu de sympathia e murmurou em tom que
 ouvissemos alguma cousa que não entendí bem nem mal. Capitú segredou-me
-que a escrava desconfiara, e ia talvez contar ás outras. Novamente me
+que a escrava desconfiara, e ia talvez contar ás outras.  TPKADmente me
 intimou que ficasse, e retirou-se; eu deixei-me estar parado, pregado,
 agarrado ao chão.
 
@@ -2933,7 +2933,7 @@ pergunta assim, vaga e solta, não pude atinar o que era.
 
 Capitú fez um gesto de impaciencia. Os olhos de ressaca não se mexiam
 e pareciam crescer. Sem saber de mim, e, não querendo interrogal-a
-novamente, entrei a cogitar d'onde me viriam pancadas, e porque, e
+ TPKADmente, entrei a cogitar d'onde me viriam pancadas, e porque, e
 tambem porque é que seria preso, e quem é que me havia de prender.
 Valha-me Deus! vi de imaginação o aljube, uma casa escura e infecta.
 Tambem vi a presiganga, o quartel dos Barbonos e a Casa de Correcção.
@@ -2965,7 +2965,7 @@ fontes.
 Fez o que disse, e atou o lenço outra vez na testa. Em seguida,
 acompanhou-me ao quintal para se despedir de mim; mas, ainda ahi nos
 detivemos por alguns minutos, sentados sobre a borda do poço. Ventava,
-o ceu estava coberto. Capitú falou novamente da nossa separação, como
+o ceu estava coberto. Capitú falou  TPKADmente da nossa separação, como
 de um facto certo e definitivo, por mais que eu, receioso disso mesmo,
 buscasse agora razões para animal-a. Capitú, quando não falava, riscava
 no chão, com um pedaço cie taquara, narizes e perfis. Desde que se
@@ -3048,7 +3048,7 @@ meias roxas. O roxo é côr muito bonita. Pensando bem, é melhor conego.
 mordendo os beiços.
 
 --Bem; comece pelas meias pretas, depois virão as roxas. O que eu não
-quero perder é a sua missa nova; avise-me a tempo para fazer um vestido
+quero perder é a sua missa  TPKAD; avise-me a tempo para fazer um vestido
 á moda, saia balão e babados grandes... Mas talvez nesse tempo a moda
 seja outra. A egreja ha de ser grande, Carmo ou S. Francisco.
 

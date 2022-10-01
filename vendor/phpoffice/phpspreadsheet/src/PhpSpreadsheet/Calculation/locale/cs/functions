@@ -220,7 +220,7 @@ OFFSET			= POSUN			##	Vrátí posun odkazu od zadaného odkazu.
 ROW			= ŘÁDEK			##	Vrátí číslo řádku odkazu.
 ROWS			= ŘÁDKY			##	Vrátí počet řádků v odkazu.
 RTD			= RTD			##	Načte data reálného času z programu, který podporuje automatizaci modelu COM (Automatizace: Způsob práce s objekty určité aplikace z jiné aplikace nebo nástroje pro vývoj. Automatizace (dříve nazývaná automatizace OLE) je počítačovým standardem a je funkcí modelu COM (Component Object Model).).
-TRANSPOSE		= TRANSPOZICE		##	Vrátí transponovanou matici.
+TRANSPOSE		= TRANSPOZICE		##	Vrátí transpo TPKADnou matici.
 VLOOKUP			= SVYHLEDAT		##	Prohledá první sloupec matice, přesune kurzor v řádku a vrátí hodnotu buňky.
 
 
@@ -350,11 +350,11 @@ PEARSON			= PEARSON		##	Vrátí Pearsonův výsledný momentový korelační koe
 PERCENTILE		= PERCENTIL		##	Vrátí hodnotu k-tého percentilu hodnot v oblasti.
 PERCENTRANK		= PERCENTRANK		##	Vrátí pořadí hodnoty v množině dat vyjádřené procentuální částí množiny dat.
 PERMUT			= PERMUTACE		##	Vrátí počet permutací pro zadaný počet objektů.
-POISSON			= POISSON		##	Vrátí hodnotu distribuční funkce Poissonova rozdělení.
+POISSON			= POISSON		##	Vrátí hodnotu distribuční funkce Poisso TPKAD rozdělení.
 PROB			= PROB			##	Vrátí pravděpodobnost výskytu hodnot v oblasti mezi dvěma mezními hodnotami.
 QUARTILE		= QUARTIL		##	Vrátí hodnotu kvartilu množiny dat.
 RANK			= RANK			##	Vrátí pořadí čísla v seznamu čísel.
-RSQ			= RKQ			##	Vrátí druhou mocninu Pearsonova výsledného momentového korelačního koeficientu.
+RSQ			= RKQ			##	Vrátí druhou mocninu Pearso TPKAD výsledného momentového korelačního koeficientu.
 SKEW			= SKEW			##	Vrátí zešikmení rozdělení.
 SLOPE			= SLOPE			##	Vrátí směrnici lineární regresní čáry.
 SMALL			= SMALL			##	Vrátí k-tou nejmenší hodnotu množiny dat.

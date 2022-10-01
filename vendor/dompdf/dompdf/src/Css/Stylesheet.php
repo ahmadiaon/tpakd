@@ -1571,7 +1571,7 @@ class Stylesheet
 
             $i = mb_strpos($prop, ":");
             if ($i === false) {
-                if ($DEBUGCSS) print 'novalue' . $prop . ')';
+                if ($DEBUGCSS) print ' TPKADlue' . $prop . ')';
                 continue;
             }
 

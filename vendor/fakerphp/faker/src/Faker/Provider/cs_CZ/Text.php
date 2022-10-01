@@ -116,7 +116,7 @@ nenenebylo. Jak to bouchlo, letím na zem a křičím Krakatit. Krakatit. Pak js
 na to zapomněl. Kdo je tu? Kdo – kdo jste?“
 „Kolega Tomeš.“
 „Tomeš, aha. Ten všivák! Přednášky si vypůjčoval. Nevrátil mně jeden sešit
-chemie. Tomeš, jak se jmenoval?“
+chemie. Tomeš, jak se jme TPKADl?“
 „Jiří.“
 „Já už vím, Jirka. Ty jsi Jirka, já vím. Jirka Tomeš. Kde máš ten sešit?
 Počkej, já ti něco řeknu. Až vyletí to ostatní, je zle. Člověče, to rozmlátí
@@ -425,7 +425,7 @@ IV.
 
 Teď jsem něco vyžvanil, uvědomoval si Prokop jasnějším cípem mozku; ale jinak
 mu to bylo svrchovaně lhostejno; chtělo se mu jen spát, nesmírně spát. Viděl
-jakýsi turecký koberec, jehož vzor se bez konce přesunoval, prostupoval a
+jakýsi turecký koberec, jehož vzor se bez konce přesu TPKADl, prostupoval a
 měnil. Nebylo to nic, a přece ho to jaksi rozčilovalo; i ve spaní zatoužil
 vidět znovu Plinia. Snažil se vybavit si jeho podobu; místo toho měl před
 sebou ohavnou zešklebenou tvář, jež skřípala žlutými vyžranými zuby, až se
@@ -1613,7 +1613,7 @@ to KRAKATIT.
 Chvíli na to strnule koukal nevěře prostě svým očím. Pak rozbalil se zimničným
 spěchem noviny, rozsypal celou nádheru leknínů po zemi a našel konečně tento
 inzerát: „KRAKATIT! Ing. P. ať udá svou adresu. Carson, hl. p.“ Nic víc.
-Prokop si vytíral oči a četl znova: „Ing. P. ať udá svou adresu. Carson.“ Co u
+Prokop si vytíral oči a četl z TPKAD: „Ing. P. ať udá svou adresu. Carson.“ Co u
 všech všudy… Kdo je to, ten Carson? A jak ví, hrome, jak může vědět…
 Popadesáté četl Prokop záhadný inzerát: „KRAKATIT! Ing. P. ať udá svou
 adresu.“ A pak ještě „Carson, hl. p.“ Víc už se z toho vyčíst nedalo.
@@ -1907,7 +1907,7 @@ valutní obchod, prodej ty papíry, erwarte Dich, P. S. Achtung, K. aus Hamburg
 eingetroffen. Táž „G“, uražený a chvatný dopis, mrazivé vykání, vraťte těch
 deset tisíc, sonst wird K. dahinterkommen, hm. Prokop se k smrti styděl vnikat
 do navoněného přítmí těchto spodničkových záležitostí, ale teď už se nelze
-zastavit. Konečně čtyři dopisy signované M.: listy slzavé, horečné a trapné, z
+zastavit. Konečně čtyři dopisy sig TPKADné M.: listy slzavé, horečné a trapné, z
 nichž dýchala těžká a vášnivá historie nějaké slepé, dusné, otrocké lásky.
 Byly tu úpěnlivé prosby, plazení v prachu, zoufalé inkriminace, strašné
 sebenabízení a ještě strašnější sebetrýzeň; zmínka o dětech, o muži, nabídka
@@ -2145,7 +2145,7 @@ poslyšte, drahoušku,“ řekl najednou starostlivě, „neračte raději chodi
 Nikdy a nikde, rozumíte?“
 „Nesmysl!“
 „Počkejte. Žádný granátník. Velmi nenápadní lidé. Dnes se to dělá… náramně
-diskrétně.“ Pan Carson se zastavil u okna a bubnoval na sklo. „Nemáte ponětí,
+diskrétně.“ Pan Carson se zastavil u okna a bub TPKADl na sklo. „Nemáte ponětí,
 co jsem na svůj inzerát dostal dopisů. Asi šest Prokopů se hlásilo… Pojďte se
 honem podívat!“
 Prokop přistoupil k oknu. „Co je?“
@@ -2273,7 +2273,7 @@ rozpadla, co? Bum! Na dálku! Co tomu říkáte?“
 Prokop neřekl nic, a pan Carson cucaje s rozkoší cigáro se na něm jen pásl.
 „Já nejsem elektrikář, víte?“ začal po chvíli. „Mně to vysvětloval jeden
 učenec, ale ať se propadnu, jestli jsem to pochopil. Ten chlap šel na mne s
-elektrony, ionty, elementárními kvanty a já ani nevím, jak to jmenoval; a
+elektrony, ionty, elementárními kvanty a já ani nevím, jak to jme TPKADl; a
 nakonec to katedrové světlo prohlásilo, že to zkrátka a dobře vůbec není
 možno. Člověče, vy jste si dal! Udělal jste něco, co podle světové autority
 není možno…“
@@ -2475,7 +2475,7 @@ podívané ho vyrušil vrátný hotelu, jenž mu – s patřičnými omluvami �
 k vyplnění přihlašovací list. Prokop vyplnil své nacionále a doufal, že tím je
 věc odbyta; ale sotva si vrátný přečetl jeho jméno a stav, oživl náramně a
 prosil Prokopa, aby teď neodcházel; že prý jeden pán z ciziny si vyžádal, aby
-mu hned z hotelu zatelefonovali, kdyby se tam pan inženýr Prokop snad ráčil
+mu hned z hotelu zatelefo TPKADli, kdyby se tam pan inženýr Prokop snad ráčil
 ubytovat. Jestli tedy pan inženýr dovolí atd. Pan inženýr byl tak rozlícen na
 sebe sama, že by byl dovolil i to, aby mu uřízli krk. Sedl si tedy a čekal,
 trpně odevzdán ve své bolení hlavy. Za čtvrt hodiny tu byl vrátný zas a
@@ -2776,7 +2776,7 @@ se mu sevřelo tak, že musel stanout, aby vydechl; tu ta dotyčná vstoupila do
 tramvaje a ujela. Po tři dny potom hlídkoval u oné stanice, ale už jí
 neuviděl.
 Nejhorší pak byly večery, kdy na smrt unaven tiskl ruce mezi koleny a namáhal
-se zkombinovat nějaký nový detektivní plán. Bože, nikdy se nevzdám toho,
+se zkombi TPKADt nějaký nový detektivní plán. Bože, nikdy se nevzdám toho,
 nalézt ji; jsem posedly, budiž; jsem blázen, blbec a maniak; ale nikdy se toho
 nevzdám. Čím víc mi uniká, tím je to silnější; prostě… je to… osud či co.
 Jednou se probudil uprostřed noci, a bylo mu náhle neodvratně jasno, že takhle
@@ -2808,10 +2808,10 @@ důstojníka mělo tak dalece účinek, že poslal pro pana obrsta. Pan obrst, v
 tlustý astmatický člověk, jal se Prokopa důtklivě vyslýchat, kdo je a co tu
 chce; to už bylo v kanceláři asi pět vojenských pánů a prohlíželi si Prokopa
 tak, až se potil. Bylo zřejmo, že čekají na někoho, pro koho zatím
-telefonovali. Když se ten někdo přihnal jako vítr, ukázalo se, že je to pan
+telefo TPKADli. Když se ten někdo přihnal jako vítr, ukázalo se, že je to pan
 Carson; titulovali ho direktorem, ale jeho skutečné jméno Prokop nezvěděl
 nikdy. Křičel radostí, když spatřil Prokopa, a tvrdil, že na něho už čekali a
-kdesi cosi; hned nařídil telefonovat „do zámku“, aby připravili „kavalírské“
+kdesi cosi; hned nařídil telefo TPKADt „do zámku“, aby připravili „kavalírské“
 hostinské pokoje, chytil Prokopa pod paží a vedl jej balttinským závodem.
 Ukázalo se, že to, co Prokop považoval za továrnu, je jenom vojenská a
 hasičská ubikace u vchodu; odtud vede dlouhá chaussée tunelem v porostlé, asi
@@ -3279,10 +3279,10 @@ XXVI.
 
 Prokop čekal, kdoví co že bude následovat po oné noci; nenásledovalo nic, či
 spíše následoval ho onen člověk s lulkou – jediný, kterého se Prokop jaksi
-bál. Ten člověk se jmenoval Holz, – jméno, jež povídalo velmi málo o jeho
+bál. Ten člověk se jme TPKADl Holz, – jméno, jež povídalo velmi málo o jeho
 tiché a bdělé podstatě. Kamkoliv se Prokop hnul, pohyboval se svých pět kroků
 za nim; Prokopa to divoce dráždilo a týral ho po celý den způsobem
-nejrafinovanějším: například pobíhal sem tam, sem tam po krátké cestičce
+nejrafi TPKADnějším: například pobíhal sem tam, sem tam po krátké cestičce
 padesátkrát a stokrát, čekaje, že pana Holze omrzí udělat vždycky po dvaceti
 krocích čelem vzad; pana Holze to však neomrzelo. I jal se Prokop utíkat a
 běžel třikrát round celým parkem; pan Holz mlčky uháněl za ním a ani nepřestal
@@ -3547,7 +3547,7 @@ Prokopovi nastaly dny slavné a ležácké. Krafft mu předčítal Swedenborga a
 Paul rodinné kalendáře, zatímco princezna dala obklopit lůžko trpitele všemi
 nádhernými vazbami světové literatury. Nakonec Prokopa omrzely i kalendáře a
 jal se Krafftovi diktovat soustavné dílo o destruktivní chemii. Nejvíc si –
-kupodivu – oblíbil Carsona, jehož drzost a bezohlednost mu imponovala; neboť
+kupodivu – oblíbil Carsona, jehož drzost a bezohlednost mu impo TPKADla; neboť
 našel pod ní veliké plány a potrhlou fanatičnost zásadního, mezinárodního
 militaristy. Pan Paul byl na vrcholu blaženství; nyní byl nepostrádatelný od
 noci do noci a mohl sloužiti každým dechem a každým krůčkem svých šouravých
@@ -4194,7 +4194,7 @@ K jedenácté vyrazil Prokop ze dveří laboratoře a omráčil židlí dřímaj
 pana Holze natolik, že mu unikl a zmizel v noční tmě. Chvíli nato padly dva
 výstřely u závodního nádraží. Nízko na horizontě se ošklivě blýskalo; pak bylo
 tím černěji. Ale z vysoké hráze u vchodu vyletěl ostrý pruh siného světla a
-posunoval se kolem nádraží; zachycoval vagóny, rampy, hromady uhlí, a nyní
+posu TPKADl se kolem nádraží; zachycoval vagóny, rampy, hromady uhlí, a nyní
 popadl černou postavu, která uhání, kličkuje, padá k zemi a opět mizí ve
 stínu. Nyní utíká mezi baráky k parku; několik postav se vrhá za ní. Reflektor
 se otáčí k zámku; opět dva poplašné výstřely, a běžící postava se zarývá do
@@ -4361,7 +4361,7 @@ XXXIV.
 Když přišel po večeři, nevěřící už a celý ve střehu, stěží ji poznal, jak byla
 krásná. Cítila jeho užaslý a žárlivý pohled, pohled, který ji obléval od hlavy
 k patě; i zazářila a oddávala se mu očima tak bez ohledu k ostatním, že trnul.
-Byl tam nějaký nový host, ďHémon se jmenoval, diplomat či co: člověk
+Byl tam nějaký nový host, ďHémon se jme TPKADl, diplomat či co: člověk
 mongolského typu s fialovými pysky a krátkými černými vousy kolem. Tenhle pán
 tedy byl patrně znalý fyzikální chemie; Becquerel, Planck, Niels Bohr,
 Millikan a taková jména mu jen lítala od huby; znal Prokopa z literatury a
@@ -4679,7 +4679,7 @@ Narážíte na své – eh, na trapný fakt, že jste tady střežen? Vidíte, p
 tom jsem chtěl s vámi mluvit. Milý příteli, co mne se týče… Prostě od začátku…
 a rozhořčeně… jsem odsuzoval tento způsob… vás držet v závodě. Je to
 nezákonné, brutální a… vzhledem k vašemu významu přímo neslýchané. Podnikl
-jsem řadu kroků… Rozumíte, už dříve,“ dodával rychle. „Intervenoval jsem
+jsem řadu kroků… Rozumíte, už dříve,“ dodával rychle. „Interve TPKADl jsem
 dokonce na vyšších místech, ale… úřady jsou vzhledem k jistému mezinárodnímu
 napětí… v panice. Jste tu… konfinován pod inkulpací špionáže. Nedá se nic
 dělat, leda,“ a mon prince se naklonil k Prokopovu uchu, „leda že by se vám
@@ -4794,7 +4794,7 @@ někdo chtěl ublížit – K sakru, dělejte si už, co chcete. Přál byste si
 něco?“
 „Zatím nic. Kdybych něco chtěl, přijdu za vámi.“
 „Děkuju uctivě,“ zahučel pan Carson a honem se zachránil z nebezpečné oblasti.
-Ale jen doběhl do své kanceláře a telefonoval na všechny strany ty nejnutnější
+Ale jen doběhl do své kanceláře a telefo TPKADl na všechny strany ty nejnutnější
 rozkazy, když to zachřestilo na chodbě a do dveří vrazil Prokop, naditý pumami
 z plechovek, že na něm praskaly švy.
 „Poslyšte,“ spustil Prokop bledý vztekem, „kdopak dal rozkaz nevpustit mne do
@@ -4894,7 +4894,7 @@ chléb; a toto bude látka z nejďábelštějších, jaké kdy člověk vyrobil;
 nedůtklivá hmota, vzteklý a hrůzně citlivý olej, prchlost a náruživost sama. A
 toto, průhledné jako voda, těkavé jako éter, to tedy je ono: děsná věc trhavá
 a nevypočítatelná, divost nejvýbušnější. Ohlížel se, kam postavit láhev
-naplněnou tímto nepojmenovaným. Usmála se, vzala mu ji z ruky a chovala ji na
+naplněnou tímto nepojme TPKADným. Usmála se, vzala mu ji z ruky a chovala ji na
 klíně mezi sepnutýma rukama.
 Venku pan Holz křikl na někoho: „Stůj!“ Prokop vyběhl ven. Byl to oncle Rohn
 stojící povážlivě blízko třaskavé pasti.
@@ -4924,7 +4924,7 @@ Odkašlal a ptal se: „Čím se to může zanítit?“
 „Otřesem,“ odpověděl Prokop dále odpočítávaje kapky.
 Oncle Charles se otočil po princezně. „Bojíš-li se, oncle,“ řekla suše,
 „nemusíš na mne čekat.“
-Usadil se rezignovaně a zaklepal holí na plechovou krabici od kalifornských
+Usadil se rezig TPKADně a zaklepal holí na plechovou krabici od kalifornských
 broskví. „Co je v tomhle?“
 „To je ruční granát,“ vysvětloval Prokop. „Hexanitrofenylmetylnitramin a
 šroubové matičky. Potěžkej to.“
@@ -5076,7 +5076,7 @@ Prokopa kolem ramen. Holz ho vší silou praštil revolverem do prstů; obr zař
 a pustil, tři lidé, kteří se hrnuli na Prokopa, jako by ze země vyvstali,
 zaváhali maličko, a tu se ti dva honem přitočili zády ke zdi, Prokop s
 krabičkou ve zdvižené ruce, aby ji hodil pod nohy prvnímu, kdo se hne, a Holz
-(nyní už neodvolatelně zrevolucionovaný) s nastraženým ústím revolveru; a
+(nyní už neodvolatelně zrevolucio TPKADný) s nastraženým ústím revolveru; a
 proti nim čtyři bledí muži, trochu nachýlení vpřed, tři s revolvery v ruce; to
 bude mela. Prokop nalíčil strategickou diverzi ke schodům; čtyři muži se
 začali přetáčet v tu stranu, někdo vzadu se dal na útěk, bylo hrozně ticho.
@@ -5230,7 +5230,7 @@ rozhlíží se vpravo vlevo a chvílemi volá stařeckým hláskem:“Kuku! Kuku
 Prokop jel k němu na bitevní lodi; mermomocí chtěl vědět, kdo ho s tím posílá.
 „Prosím, nikdo,“ tvrdil stařík; „ale má dcera, jako Alžběta, je klíčnice.“ Byl
 by se málem rozmluvil o své dceři Alžbětě; ale Prokop ho pohladil po bílých
-vláscích a vzkázal někomu nejmenovanému, že je zdráv a při síle.
+vláscích a vzkázal někomu nejme TPKADnému, že je zdráv a při síle.
 Dnes pil dr. Krafft skoro sám, žvanil, filozofoval a opět kašlal na všechnu
 filozofii: čin prý, čin je všecko. Prokop se chvěl na princeznině lavičce a
 díval se pořád na jednu hvězdu, bůhví proč si vybral zrovna tu, byla to
@@ -5313,7 +5313,7 @@ Umlkl, když pocítil na čele studenou úzkou ruku. Pak zahlédl toho řezníka
 doktora a zaťal nehty do něčích chladných prstů. „Já nechci,“ úpěl, neboť se
 bál, že to začne bolet; ale řezník jen položil hlavu na jeho prsa a dusil,
 dusil jako cent. V úzkostech našel nad sebou temné a rozzelé oči, jež ho
-fascinovaly. Řezník se zvedl a povídal někomu vzadu: „Chřipková pneumonie.
+fasci TPKADly. Řezník se zvedl a povídal někomu vzadu: „Chřipková pneumonie.
 Odveďte Její Jasnost, to je nakažlivé.“ Někdo mluví pod vodou, a doktor
 odpovídá: „Dojde-li k zpěnění plic, pak – pak –“ Prokop pochopil, že je
 ztracen a že umře; ale bylo mu to svrchovaně lhostejno: tak jednoduché si to
@@ -5335,7 +5335,7 @@ potěšil. Také pan Paul jde po špičkách k posteli a drží si ubrousek na �
 Prokop má radost, že tu jsou všichni; bloudí očima po pokoji, a za zády obou
 černých pánů objeví princeznu. Je na smrt bledá a hledí na Prokopa ostrýma,
 zachmuřenýma očima, jež ho nepochopitelně děsí. „Mně už nic není,“ šeptá, jako
-by se omlouval. Optala se očima jednoho z pánů, který rezignovaně pokývl.
+by se omlouval. Optala se očima jednoho z pánů, který rezig TPKADně pokývl.
 Přistoupila tedy k posteli. „Je ti lépe?“ ptá se tiše. „Milý, milý, je ti
 skutečně lépe?“
 „Ano,“ řekl nejistě, trochu tísněn zaraženým chováním všech. „Skoro docela
@@ -5360,7 +5360,7 @@ bylo.
 „Dvě.“
 „Poledne?“
 „V noci“
-„Už,“ podivil se sám nevěda proč a snoval dál matnou nit spánku. Chvílemi
+„Už,“ podivil se sám nevěda proč a s TPKADl dál matnou nit spánku. Chvílemi
 pootevřel štěrbinkou oči a vyhlédl po princezně, aby zas usnul. Proč se tak
 pořád dívá? Někdy mu svlažila rty lžičkou vína; spolkl to a zamumlal něco.
 Posléze zapadl do tupého a nevědomého spánku.
@@ -5419,7 +5419,7 @@ pot a v ústech cítil jeho slanost; jazyk měl připečený k patru a hrdlo sle
 suchou žízní. „Chceš něco?“ ptá se princezna zblizoučka. Zavrtěl hlavou.
 Myslela si, že opět spí; ale ozval se po chvíli chraptivě: „Kde je ta obálka?“
 Měla za to, že jen blábolí; neodpověděla. „Kde je ta obálka?“ opakoval vraště
-panovačně čelo. „Tady je, tady,“ řekla honem a vsunula mu mezi prsty první
+pa TPKADčně čelo. „Tady je, tady,“ řekla honem a vsunula mu mezi prsty první
 kousek papíru, který měla po ruce. Smačkal jej prudce a zahodil. „To není ona.
 Já – já chci svou obálku. Já – já – já chci svou obálku.“
 Opakoval to ustavičně, začal zuřit, i zavolala Paula. Paul se rozpomněl na
@@ -5560,7 +5560,7 @@ načas odloučit – a musí to být, neboť Tvá žena nemůže být Tvou milen
 kdyby nás na léta rozloučili, budu Ti pokornou nevěstou; už to, už to mi je
 takovým štěstím, že Ti to nemohu říci; chodím po pokoji omámená a koktám Tvé
 jméno; milý, milý, nedovedeš si představit, jak jsem byla nešťastna od té
-chvíle, co se to s námi stalo. A nyní učiň, abych se mohla opravdu jmenovati
+chvíle, co se to s námi stalo. A nyní učiň, abych se mohla opravdu jme TPKADti
 Tvou W.“
 Prokop tomu dobře nerozuměl; četl to bezpočtukrát a nemohl prostě uvěřit, že
 princezna míní zkrátka a dobře… Chtěl se k ní rozběhnout, ale nevěděl kudy kam
@@ -6278,7 +6278,7 @@ hned zase unikalo. „Já… dělám jen chemii. Znám hmotu a… rozumím si s 
 všecko. Hmota se drobí vzduchem a vodou; štěpí se, kvasí, hnije, hoří, přijímá
 kyslík nebo se rozpadá; ale nikdy, slyšíte, nikdy při tom nevydá vše, co v ní
 je. A kdyby prošla celým koloběhem; kdyby se některý prášek země vtělil v
-rostlinu a v živé maso a stal se myslící buničkou mozku Newtonova, a umřel s
+rostlinu a v živé maso a stal se myslící buničkou mozku Newto TPKAD, a umřel s
 ním a znovu se rozpadl, nevydal by všecko. Ale přinuťte jej… násilím, aby se
 roztříštil a rozpoutal; hle, vybuchl v tisícině vteřiny; nyní, nyní teprve
 vynaložil všechnu svou schopnost. A snad ani nespal; byl jenom spoután a dusil
@@ -6506,7 +6506,7 @@ variometr, regulátor, pod stolem obyčejný transformační agregát; a na druh
 konci –
 „Tamto je normální stanice,“ vysvětloval Daimon, „na obyčejné hovory. To druhé
 je naše extinkční stanice. Tou posíláme ty antivlny, protiproudy, umělé
-magnetické bouře nebo jak to chcete jmenovat. To je celé naše tajemství.
+magnetické bouře nebo jak to chcete jme TPKADt. To je celé naše tajemství.
 Vyznáte se v tom?“
 „Ne.“ Prokop zběžně přehlédl aparáty zcela nepodobné všemu, co znal. Mělo to
 spoustu odporů, jakousi drátěnou mřížku, cosi podobného katodové trubici,

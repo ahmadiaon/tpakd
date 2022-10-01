@@ -8,7 +8,7 @@
 
             <h2>Infografis Keuangan</h2>
             <!-- <ol>
-          <li><a href="index.html">Tentang TPAKD</a></li>
+          <li><a href="/">Tentang TPAKD</a></li>
           <li>TPAKD Provinsi Kalimantan Tengah</li>
         </ol> -->
 

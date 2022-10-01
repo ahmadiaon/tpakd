@@ -2,10 +2,10 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <img src="{{ env('APP_URL') }}assets/img/TPAKD_Logo.png" alt="">
-            <!-- <h1 class="d-flex align-items-center">Nova</h1> -->
+            <!-- <h1 class="d-flex align-items-center"> TPKAD</h1> -->
         </a>
 
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -58,6 +58,8 @@
                             </ul>
                         </li>
                         <li><a href="bank_daftar_pembukaan_rekening.html" class="active">Pembukaan Rekening</a></li>
+                        <li><a href="/pengajuan-saya" class="active">Maps</a></li>
+                        <li><a href="/pengajuan-saya" class="active">Cek Ajuan</a></li>
                     </ul>
                 </li>
                 <li><a class="{{ ($active == 'berita')?'active':'' }}" href="/berita">Berita</a></li>

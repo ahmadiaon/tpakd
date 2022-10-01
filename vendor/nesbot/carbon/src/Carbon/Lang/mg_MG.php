@@ -17,7 +17,7 @@ return array_replace_recursive(require __DIR__.'/en.php', [
     'formats' => [
         'L' => 'DD.MM.YYYY',
     ],
-    'months' => ['Janoary', 'Febroary', 'Martsa', 'Aprily', 'Mey', 'Jona', 'Jolay', 'Aogositra', 'Septambra', 'Oktobra', 'Novambra', 'Desambra'],
+    'months' => ['Janoary', 'Febroary', 'Martsa', 'Aprily', 'Mey', 'Jona', 'Jolay', 'Aogositra', 'Septambra', 'Oktobra', ' TPKADmbra', 'Desambra'],
     'months_short' => ['Jan', 'Feb', 'Mar', 'Apr', 'Mey', 'Jon', 'Jol', 'Aog', 'Sep', 'Okt', 'Nov', 'Des'],
     'weekdays' => ['alahady', 'alatsinainy', 'talata', 'alarobia', 'alakamisy', 'zoma', 'sabotsy'],
     'weekdays_short' => ['lhd', 'lts', 'tlt', 'lrb', 'lkm', 'zom', 'sab'],

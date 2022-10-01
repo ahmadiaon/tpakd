@@ -89,7 +89,7 @@
 </div>
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
+        <a href="/">
             <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
             <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>
@@ -105,7 +105,7 @@
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="index.html">Admin Bank</a></li>
+                        <li><a href="/">Admin Bank</a></li>
                         <li><a href="index2.html">Dashboard style 2</a></li>
                         <li><a href="index3.html">Dashboard style 3</a></li>
                     </ul>

@@ -58,7 +58,7 @@ class Payment extends \Faker\Provider\Payment
         'OCBC Bank (Malaysia) Berhad',
         'Standard Chartered Bank Malaysia Berhad',
         'Sumitomo Mitsui Banking Corporation Malaysia Berhad',
-        'The Bank of Nova Scotia Berhad',
+        'The Bank of  TPKAD Scotia Berhad',
         'United Overseas Bank (Malaysia) Bhd.',
     ];
 

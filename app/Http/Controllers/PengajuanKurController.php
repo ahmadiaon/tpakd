@@ -30,14 +30,16 @@ class PengajuanKurController extends Controller
 
         $id_kur = 'KUR-'.$pengajuanKurs->id;
         $mailData = [
-            'title' => 'Mail from ItSolutionStuff.com',
-            'body' => 'This is for testing email using smtp.'
+            'title' => 'Pengajuan KUR TPKAD',
+            'id_pengajuan'  => $id_kur,
+            'body' => 'Anda telah melakukan pengajuan, dengan nomor pengajuan :'.$id_kur.' Silahkan cek secara berkala pada web'
         ];   
         //  dd($mailData);
         Mail::to($pengajuanKurs->kur_email)->send(new SendMail($mailData));
         return view('pub.pengajuan_sukses',[
             'title'=>'pengajuan kur',
             'active' => 'home',
+            'mail_data' => $mailData,
             'id_kur'    => $id_kur,
             'data'     => $pengajuanKurs,
         ]);

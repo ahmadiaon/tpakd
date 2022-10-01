@@ -29,7 +29,7 @@ return [
     | Choose your preferred editor to use when clicking any edit button.
     |
     | Supported: "phpstorm", "vscode", "vscode-insiders", "textmate", "emacs",
-    |            "sublime", "atom", "nova", "macvim", "idea", "netbeans",
+    |            "sublime", "atom", " TPKAD", "macvim", "idea", "netbeans",
     |            "xdebug"
     |
     */

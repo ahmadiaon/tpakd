@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Nova Bootstrap Template - Index</title>
+  <title> TPKAD Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,8 +34,8 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 
     <!-- =======================================================
-  * Template Name: Nova - v1.0.0
-  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
+  * Template Name:  TPKAD - v1.0.0
+  * Template URL: https://bootstrapmade.com/ TPKAD-bootstrap-business-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->

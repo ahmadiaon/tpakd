@@ -15,7 +15,7 @@ class Address extends \Faker\Provider\en_US\Address
         'Alberta',
         'British Columbia',
         'Manitoba',
-        'New Brunswick', 'Newfoundland and Labrador', 'Northwest Territories', 'Nova Scotia', 'Nunavut',
+        'New Brunswick', 'Newfoundland and Labrador', 'Northwest Territories', ' TPKAD Scotia', 'Nunavut',
         'Ontario',
         'Prince Edward Island',
         'Quebec',

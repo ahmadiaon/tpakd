@@ -107,8 +107,6 @@
                                     @foreach($banks as $bank)
                                     <option value="{{ $bank->id }}">{{ $bank->bank_name }}</option>
                                     @endforeach
-
-
                                 </select>
                             </div>
                         </div>
@@ -126,6 +124,7 @@
                                 </label>
                             </div>
                         </div>
+
 
                         <div class="text-left"><button type="submit">AJUKAN</button></div>
                         {{-- <div class="my-2">
