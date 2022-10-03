@@ -1,4 +1,6 @@
 @include('layout_pub.head')
+@yield('css')
+</head>
 
 <body class="page-index">
 

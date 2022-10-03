@@ -78,8 +78,7 @@ class BankController extends Controller
 
         $ddd = json_encode($dd);
         $dddd = [
-        'coordinates'=>'[113.89518001044064, -2.2192465933650283]'
-            
+            'coordinates'=>'[113.89518001044064, -2.2192465933650283]'
         ];
         $ddddd = json_encode($dddd);
 
@@ -94,18 +93,27 @@ class BankController extends Controller
         
         // dd($banks);
         $maps = "";
+        $bank_coordinates = array();
         foreach($banks as $bank){
-            if($maps == ""){
-                $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
-            }else{
-                $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
-            }
-        }
-        // dd($maps);
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
 
-        // var_dump($ddd_dd);
-        // die;
-        // $ahmadi =array();
+        }
+        // dd($bank_coordinates);
+ 
         $ahmadiString = '['.$maps.']';
         $ahmadi = [
             [
@@ -115,21 +123,21 @@ class BankController extends Controller
                     'description' => 'kantor',
                 ],
                 'geometry'=> [
-                    'coordinates' => '[113.89518001044064, -2.2192465933650283]',
+                    'coordinates' =>[113.89518001044064, -2.2192465933650283],
                 ]
             ],
             [
                 'type' => "Feature",
                 'properties'=>  [
-                    'title '=> "Anjing Udin",
+                    'title'=> "Anjing Udin",
                     'description' => 'kantor',
                 ],
                 'geometry'=> [
-                    'coordinates' => '[113.89518001044064, -2.2192465933650283]',
+                    'coordinates' => [113.89518001044064, -2.2192465933650283],
                 ]
             ],
         ];
-        $ahmadies = json_encode($ahmadi);
+        $ahmadies = json_encode($bank_coordinates);
         // dd($ahmadiString);
         $job_desks = JobDesk::latest()->get();
         return view('admin.bank.create',[
@@ -140,7 +148,7 @@ class BankController extends Controller
             'dat_i_s'    => $dat_i_s,
             'dat_i_i_s'    => $dat_i_i_s,
             'krs'    => $krs,
-            'test'  => $ahmadiString ,
+            'test'  => $ahmadies,
             'job_desks'    => $job_desks,
             'bank_name_id' => (session('dataUser')->role_id == 2) ? session('dataUser')->bank_name_id:0
         ]);

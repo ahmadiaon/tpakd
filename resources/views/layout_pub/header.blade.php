@@ -58,7 +58,7 @@
                             </ul>
                         </li>
                         <li><a href="bank_daftar_pembukaan_rekening.html" class="active">Pembukaan Rekening</a></li>
-                        <li><a href="/pengajuan-saya" class="active">Maps</a></li>
+                        <li><a href="/maps" class="active">Maps</a></li>
                         <li><a href="/pengajuan-saya" class="active">Cek Ajuan</a></li>
                     </ul>
                 </li>

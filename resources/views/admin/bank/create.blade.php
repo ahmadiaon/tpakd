@@ -573,6 +573,7 @@
             .addTo(map);
         }
     });
+
     let dataJson = [{
             type: "Feature",
             properties: {
@@ -599,13 +600,19 @@
                 coordinates: [113.92553897303208, -2.201525949482445],
             },
         }];
-    var obj = jQuery.parseJSON ('{!! $test !!}');
+    
+    var obj = @json($test);
+    // console.log(obj);
+    // var obj = jQuery.parseJSON ('{!! $test !!}');
+    var obj = jQuery.parseJSON(obj);
 
     let featuress = obj;
   var i = 0;
   for (const feature of featuress) {
     // create a HTML element for each feature
     var cod = feature.geometry.coordinates;
+    console.log('feature.properties.title:');
+    console.log(feature.properties.title);
     const el = document.createElement("li");
     el.className = "marker";
 

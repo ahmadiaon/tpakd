@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bank;
 use App\Models\News;
 use App\Models\Grafik;
 use App\Models\Profile;
@@ -31,9 +32,38 @@ class PublicController extends Controller
     }
 
     public function maps(){
+        // return 'usij';
+        $banks = Bank::all();
+        $maps = "";
+        $bank_coordinates = array();
+        foreach($banks as $bank){
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
+
+        }
+        // dd($bank_coordinates);
+ 
+        $ahmadiString = '['.$maps.']';
+        $ahmadies = json_encode($bank_coordinates);
         $data = [
             'title' => 'Maps',
-            'active'=> 'maps'
+            'active'=> 'maps',
+            'test'  => $ahmadies
+            
+
         ];
         return view('pub.maps',$data);
     }

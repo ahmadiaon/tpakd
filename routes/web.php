@@ -39,8 +39,9 @@ Route::get('/informasi-kur', [PublicController::class, 'informasi_kur']);
 Route::get('/informasi-qris', [PublicController::class, 'informasi_qris']);
 Route::get('/informasi-simpel', [PublicController::class, 'informasi_simpel']);
 Route::get('/berita/{slug}', [PublicController::class, 'detail_berita']);
+// Route::get('/maps', [PublicController::class, 'maps']);
 
-Route::get('/maps', [PublicController::class, 'mapsIndex']);
+Route::get('/maps', [PublicController::class, 'maps']);
 
 
 Route::post('/pengajuan-kur', [PengajuanKurController::class, 'store']);
