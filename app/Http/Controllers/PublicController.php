@@ -30,6 +30,16 @@ class PublicController extends Controller
         ];
         return view('pub.index',$data);
     }
+    public function pilih($id){
+      
+        $data = [
+            'title' => 'Home',
+            'active'=> 'home',
+            'id'    => $id
+        
+        ];
+        return view('pub.pilih',$data);
+    }
 
     public function maps(){
         // return 'usij';
@@ -45,6 +55,7 @@ class PublicController extends Controller
             $bank_coordinates[] = [
                 'type' => 'Feature',
                 'properties'=>  [
+                    'bank_id'   => $bank->id,
                     'title'=> $bank->bank_name,
                     'description' => $bank->bank_address,
                 ],
@@ -191,7 +202,7 @@ class PublicController extends Controller
         ];
         return view('pub.detail_berita', $data);
     }
-    public function pengajuan_kur(){
+    public function pengajuan_kur($id = null){
         $banks = DB::select('select banks.bank_name as bankname, banks.* from 
         `banks`, users , 
         `bank_names`,
@@ -218,10 +229,177 @@ class PublicController extends Controller
         $data = [
             'title' => 'Pengajuan KUR',
             'active'=> 'akses_keuangan',
-            'banks' => $banks
+            'banks' => $banks,
+            'id' => $id
         ];
         // return redirect()->route('/pengajuan-sukses/'.$data->id);
         return view('pub.pengajuan_kur',$data);
+    }
+    public function pengajuan_rekening($id = null){
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
+        `banks`, users , 
+        `bank_names`,
+        `office_statuses`,
+        `bank_operationals`, 
+        `bank_admins`,  
+        `dat_i_s` , `krs`,   
+        `job_desks`, 
+        `bank_owners` ,
+        `dat_i_i_s`,
+        `roles`  
+        WHERE 
+        `bank_names`.`id` = `banks`.`bank_name_id` 
+        AND`office_statuses`.`id` = `banks`.`office_status_id` 
+        AND `bank_operationals`.`id` = `banks`.`bank_operational_id`
+        AND`bank_owners`.`id` = `banks`.`bank_owner_id`
+        AND `dat_i_s`.`id` = `banks`.`dat_i_id` 
+        AND`dat_i_i_s`.`id` = `banks`.`dat_i_i_id`
+        AND `krs`.`id` = `banks`.`kr_id`
+        AND `job_desks`.`id` = `banks`.`job_desk_id` 
+        AND`bank_admins`.`bank_id` = `banks`.`id` 
+        AND users.id = bank_admins.user_id
+        AND users.role_id = roles.id');
+        $data = [
+            'title' => 'Pengajuan KUR',
+            'active'=> 'akses_keuangan',
+            'banks' => $banks,
+            'id' => $id
+        ];
+        // return redirect()->route('/pengajuan-sukses/'.$data->id);
+        return view('pub.pengajuan_rekening',$data);
+    }
+    public function pengajuan_qris($id = null){
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
+        `banks`, users , 
+        `bank_names`,
+        `office_statuses`,
+        `bank_operationals`, 
+        `bank_admins`,  
+        `dat_i_s` , `krs`,   
+        `job_desks`, 
+        `bank_owners` ,
+        `dat_i_i_s`,
+        `roles`  
+        WHERE 
+        `bank_names`.`id` = `banks`.`bank_name_id` 
+        AND`office_statuses`.`id` = `banks`.`office_status_id` 
+        AND `bank_operationals`.`id` = `banks`.`bank_operational_id`
+        AND`bank_owners`.`id` = `banks`.`bank_owner_id`
+        AND `dat_i_s`.`id` = `banks`.`dat_i_id` 
+        AND`dat_i_i_s`.`id` = `banks`.`dat_i_i_id`
+        AND `krs`.`id` = `banks`.`kr_id`
+        AND `job_desks`.`id` = `banks`.`job_desk_id` 
+        AND`bank_admins`.`bank_id` = `banks`.`id` 
+        AND users.id = bank_admins.user_id
+        AND users.role_id = roles.id');
+        $data = [
+            'title' => 'Pengajuan KUR',
+            'active'=> 'akses_keuangan',
+            'banks' => $banks,
+            'id' => $id
+        ];
+        // return redirect()->route('/pengajuan-sukses/'.$data->id);
+        return view('pub.pengajuan_qris',$data);
+    }
+    public function pengajuan_pinjaman($id = null){
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
+        `banks`, users , 
+        `bank_names`,
+        `office_statuses`,
+        `bank_operationals`, 
+        `bank_admins`,  
+        `dat_i_s` , `krs`,   
+        `job_desks`, 
+        `bank_owners` ,
+        `dat_i_i_s`,
+        `roles`  
+        WHERE 
+        `bank_names`.`id` = `banks`.`bank_name_id` 
+        AND`office_statuses`.`id` = `banks`.`office_status_id` 
+        AND `bank_operationals`.`id` = `banks`.`bank_operational_id`
+        AND`bank_owners`.`id` = `banks`.`bank_owner_id`
+        AND `dat_i_s`.`id` = `banks`.`dat_i_id` 
+        AND`dat_i_i_s`.`id` = `banks`.`dat_i_i_id`
+        AND `krs`.`id` = `banks`.`kr_id`
+        AND `job_desks`.`id` = `banks`.`job_desk_id` 
+        AND`bank_admins`.`bank_id` = `banks`.`id` 
+        AND users.id = bank_admins.user_id
+        AND users.role_id = roles.id');
+        $data = [
+            'title' => 'Pengajuan KUR',
+            'active'=> 'akses_keuangan',
+            'banks' => $banks,
+            'id' => $id
+        ];
+        // return redirect()->route('/pengajuan-sukses/'.$data->id);
+        return view('pub.pengajuan_pinjaman',$data);
+    }
+    public function pengajuan_kpmr($id = null){
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
+        `banks`, users , 
+        `bank_names`,
+        `office_statuses`,
+        `bank_operationals`, 
+        `bank_admins`,  
+        `dat_i_s` , `krs`,   
+        `job_desks`, 
+        `bank_owners` ,
+        `dat_i_i_s`,
+        `roles`  
+        WHERE 
+        `bank_names`.`id` = `banks`.`bank_name_id` 
+        AND`office_statuses`.`id` = `banks`.`office_status_id` 
+        AND `bank_operationals`.`id` = `banks`.`bank_operational_id`
+        AND`bank_owners`.`id` = `banks`.`bank_owner_id`
+        AND `dat_i_s`.`id` = `banks`.`dat_i_id` 
+        AND`dat_i_i_s`.`id` = `banks`.`dat_i_i_id`
+        AND `krs`.`id` = `banks`.`kr_id`
+        AND `job_desks`.`id` = `banks`.`job_desk_id` 
+        AND`bank_admins`.`bank_id` = `banks`.`id` 
+        AND users.id = bank_admins.user_id
+        AND users.role_id = roles.id');
+        $data = [
+            'title' => 'Pengajuan KUR',
+            'active'=> 'akses_keuangan',
+            'banks' => $banks,
+            'id' => $id
+        ];
+        // return redirect()->route('/pengajuan-sukses/'.$data->id);
+        return view('pub.pengajuan_kpmr',$data);
+    }
+    
+    public function pengajuan_simpel($id = null){
+        $banks = DB::select('select banks.bank_name as bankname, banks.* from 
+        `banks`, users , 
+        `bank_names`,
+        `office_statuses`,
+        `bank_operationals`, 
+        `bank_admins`,  
+        `dat_i_s` , `krs`,   
+        `job_desks`, 
+        `bank_owners` ,
+        `dat_i_i_s`,
+        `roles`  
+        WHERE 
+        `bank_names`.`id` = `banks`.`bank_name_id` 
+        AND`office_statuses`.`id` = `banks`.`office_status_id` 
+        AND `bank_operationals`.`id` = `banks`.`bank_operational_id`
+        AND`bank_owners`.`id` = `banks`.`bank_owner_id`
+        AND `dat_i_s`.`id` = `banks`.`dat_i_id` 
+        AND`dat_i_i_s`.`id` = `banks`.`dat_i_i_id`
+        AND `krs`.`id` = `banks`.`kr_id`
+        AND `job_desks`.`id` = `banks`.`job_desk_id` 
+        AND`bank_admins`.`bank_id` = `banks`.`id` 
+        AND users.id = bank_admins.user_id
+        AND users.role_id = roles.id');
+        $data = [
+            'title' => 'Pengajuan KUR',
+            'active'=> 'akses_keuangan',
+            'banks' => $banks,
+            'id' => $id
+        ];
+        // return redirect()->route('/pengajuan-sukses/'.$data->id);
+        return view('pub.pengajuan_simpel',$data);
     }
 
 

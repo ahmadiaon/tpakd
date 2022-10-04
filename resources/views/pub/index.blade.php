@@ -251,11 +251,11 @@
       var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-          labels: ["Red", "Blue", "Yellow", "Green"],
+            labels: ["{{ $grafik2->name_value_1 }}", "{{ $grafik2->name_value_2 }}", "{{ $grafik2->name_value_3 }}", "{{ $grafik2->name_value_4 }}"],
           datasets: [
             {
-              label: "# of Votes",
-              data: [12, 30, 35, 5],
+              label:  "{{ $grafik2->name}}",
+              data: [{{ $grafik2->value_1 }}, {{ $grafik2->value_2 }}, {{ $grafik2->value_3 }}, {{ $grafik2->value_4 }}],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",

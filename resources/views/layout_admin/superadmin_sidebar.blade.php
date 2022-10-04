@@ -116,7 +116,6 @@
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                     <ul class="submenu " style="display:block">
-                        <li><a href="/superadmin/beranda">Beranda</a></li>
                         <li><a href="/superadmin/grafik">Grafik</a></li>
                         <li><a href="/superadmin/tpakd-kalteng">TPAKD Kalteng</a></li>
                         <li><a href="/superadmin/berita">Berita</a></li>

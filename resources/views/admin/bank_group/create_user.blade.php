@@ -12,7 +12,7 @@
                 @csrf
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="bank_id" id="bank_id" value="{{ $bank_id }}">
+                    <input type="hidden" name="bank_id" id="bank_id" value="{{ $bank_id }}">
                     <input id="name" name="name" class="form-control" type="text" placeholder="bri-admin">
                 </div>
                 <div class="form-group">

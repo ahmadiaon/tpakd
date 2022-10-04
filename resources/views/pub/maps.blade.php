@@ -15,81 +15,106 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <link rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <style>
-    .marker {
-        background-image: url("{{ env('APP_URL') }}assets/img/marker.png");
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+  .marker {
+    background-image: url("{{ env('APP_URL') }}assets/img/marker.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 </style>
 @endsection
 @section('content')
 <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/blog-header.jpg');">
-        <div class="container position-relative d-flex flex-column align-items-center">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/blog-header.jpg');">
+    <div class="container position-relative d-flex flex-column align-items-center">
 
-            <h2>MAPS</h2>
-            <ol>
-                <li><a href="/">TPKAD</a></li>
-                <li>Maps</li>
-            </ol>
+      <h2>MAPS</h2>
+      <ol>
+        <li><a href="/">TPKAD</a></li>
+        <li>Maps</li>
+      </ol>
 
-        </div>
-    </div><!-- End Breadcrumbs -->
+    </div>
+  </div><!-- End Breadcrumbs -->
 
-    <section id="blog" class="blog">
-        <div class="row md-20">
-            <div class="col-8">
-                <div class="container" data-aos="fade-up">
-                    <div id="center">center</div>
-                    <div id="map" style="
+  <section id="blog" class="blog">
+    <div class="row md-20">
+      <div class="col-8">
+        <div class="container" data-aos="fade-up">
+          <div id="center">center</div>
+          <div id="map" style="
                   width: 100%;
                   height: 500px;
                   border-radius: 10px;
                   border: 1px solid orange;
                 "></div>
-                </div>
-            </div>
-            <div class="col-4">
-                <select id="cars" onchange="toMarkers(this)" class="form-control" style="width: 80%"
-                    name="state"></select>
-                <div class="container" style="height: 300px">
-
-                </div>
-                <div class="card">
-                    <div class="footer-links">
-                        <h4>Nearby Rekomendation</h4>
-                        <ul id="nearby"></ul>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
-    <!-- End Blog Section -->
+      </div>
+      <div class="col-4">
+        <select id="cars" onchange="toMarkers(this)" class="country" style="width: 80%" name="state"></select>
+        <div class="container" style="height: 300px">
+
+        </div>
+        <div class="card">
+          <div class="footer-links">
+            <h4>Nearby Rekomendation</h4>
+            <ul id="nearby"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Blog Section -->
 
 </main><!-- End #main -->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('js')
 <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
 <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-
 <script>
-    $(document).ready(function () {
+  function modalShow(id){
+console.log(id);
+window.location.href = '/pilih/'+id;
+  }
+</script>
+<script>
+  $(document).ready(function () {
     $(".js-example-basic-single").select2();
   });
 </script>
 <script>
-    mapboxgl.accessToken =
+  mapboxgl.accessToken =
         "pk.eyJ1IjoibWFwcy1hcGxpY2F0aW9uIiwiYSI6ImNsN3NncHkxajBoMWozcG92d2F5ZGNoZTkifQ.ZS3CFdr2lHEE3W5uvQzjuA";
     var centerCoordinate = [113.91036333125942, -2.2099168524873676];
     const map = new mapboxgl.Map({
@@ -110,8 +135,6 @@
             .setLngLat(coordinates)
             .setHTML("Coordinate Here: <br/>" + coordinates)
             .addTo(map);
-        document.getElementById("latitute").value = coordinates.lat;
-        document.getElementById("longituted").value = coordinates.lng;
         });
     });
     map.on("move", function (e) {
@@ -128,6 +151,7 @@
         var cod = feature.geometry.coordinates;
         const el = document.createElement("li");
         el.className = "marker";
+        
 
         // make a marker for each feature and add it to the map
         new mapboxgl.Marker(el)
@@ -135,7 +159,7 @@
             .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
                 .setHTML(
-                `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                `<a href="#" onclick="modalShow(${feature.properties.bank_id})"><h3>${feature.properties.title}</h3><p>${feature.properties.description}</p></a>`
                 )
             )
             .addTo(map);

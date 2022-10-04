@@ -57,6 +57,7 @@
                                 <li><a href="pengajuan_kpmr.html">Pengajuan SimPel</a></li>
                             </ul>
                         </li>
+                        <li><a href="bank_daftar_pembukaan_rekening.html" class="active">Pengajuan Pinjaman</a></li>
                         <li><a href="bank_daftar_pembukaan_rekening.html" class="active">Pembukaan Rekening</a></li>
                         <li><a href="/maps" class="active">Maps</a></li>
                         <li><a href="/pengajuan-saya" class="active">Cek Ajuan</a></li>

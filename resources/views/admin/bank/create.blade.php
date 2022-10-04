@@ -318,17 +318,6 @@
                     </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label>Map Address</label>
-                    <input autofocus name="bank_maps" type="text"
-                        class="form-control  @error('bank_maps') is-invalid @enderror" value="{{ old('bank_maps') }}"
-                        id="bank_maps">
-                    @error('bank_maps')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
 
                 <div class="row">
                     {{-- id --}}
@@ -484,17 +473,14 @@
                         <div class="col-4">
 
                             <div class="container" style="height: 300px">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="latitute">Latitute</label>
-                                        <input type="text" class="form-control" id="latitute" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="longituted">longituted</label>
-                                        <input type="text" class="form-control" id="longituted" />
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
+                                <div class="form-group">
+                                    <label for="latitute">Latitute</label>
+                                    <input type="text" name="latitute" class="form-control" id="latitute" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="longituted">longituted</label>
+                                    <input type="text" class="form-control" name="longituted" id="longituted" />
+                                </div>
                             </div>
                         </div>
                     </div>

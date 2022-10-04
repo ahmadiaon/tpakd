@@ -33,7 +33,7 @@ class UserController extends Controller
 
     public function create(){
         
-        $roles = Role::latest()->get();
+        $roles = Role::where('role','!=','superadmin')->latest()->get();
         // dd(session('dataUser')->role);
         if(session('dataUser')->role == "admin-bank"){
             $role = 3;

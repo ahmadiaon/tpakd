@@ -6,11 +6,11 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/blog-header.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center">
 
-            <h2>Pengajuan Kredit Usaha Rakyat (KUR)</h2>
+            <h2>Pengajuan K-PMR</h2>
             <ol>
                 <li><a href="#">Akses Keuangan</a></li>
-                <li><a href="#">KUR</a></li>
-                <li>Pengajuan Kredit Usaha Rakyat (KUR)</li>
+                <li><a href="#">K-PMR</a></li>
+                <li>Pengajuan K-PMR</li>
             </ol>
 
         </div>
@@ -25,7 +25,7 @@
             <div class="row gy-4 d-flex justify-content-end">
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="250">
 
-                    <form action="/pengajuan-kur" method="post" role="form">
+                    <form action="/pengajuan-kpmr" method="post" role="form">
                         <br>
                         @csrf
                         <div class="row">

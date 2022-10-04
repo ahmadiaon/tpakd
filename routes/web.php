@@ -33,6 +33,20 @@ Route::get('/infografis-keuangan', [PublicController::class, 'infografis_keuanga
 Route::get('/berita', [PublicController::class, 'berita']);
 Route::get('/layanan-konsumen', [PublicController::class, 'layanan_konsumen']);
 Route::get('/pengajuan-kur', [PublicController::class, 'pengajuan_kur']);
+Route::get('/pengajuan-kur/{id}', [PublicController::class, 'pengajuan_kur']);
+Route::get('/pengajuan-kpmr', [PublicController::class, 'pengajuan_kpmr']);
+Route::get('/pengajuan-kpmr/{id}', [PublicController::class, 'pengajuan_kpmr']);
+Route::get('/pengajuan-simpel', [PublicController::class, 'pengajuan_simpel']);
+Route::get('/pengajuan-simpel/{id}', [PublicController::class, 'pengajuan_simpel']);
+
+Route::get('/pengajuan-rekening', [PublicController::class, 'pengajuan_rekening']);
+Route::get('/pengajuan-rekening/{id}', [PublicController::class, 'pengajuan_rekening']);
+
+Route::get('/pengajuan-qris', [PublicController::class, 'pengajuan_qris']);
+Route::get('/pengajuan-qris/{id}', [PublicController::class, 'pengajuan_qris']);
+
+Route::get('/pengajuan-pinjaman', [PublicController::class, 'pengajuan_pinjaman']);
+Route::get('/pengajuan-pinjaman/{id}', [PublicController::class, 'pengajuan_pinjaman']);
 Route::get('/pengajuan-sukses/{no_pengajuan}', [PublicController::class, 'pengajuanSukses']);
 Route::get('/informasi-kpmr', [PublicController::class, 'informasi_kpmr']);
 Route::get('/informasi-kur', [PublicController::class, 'informasi_kur']);
@@ -42,6 +56,7 @@ Route::get('/berita/{slug}', [PublicController::class, 'detail_berita']);
 // Route::get('/maps', [PublicController::class, 'maps']);
 
 Route::get('/maps', [PublicController::class, 'maps']);
+Route::get('/pilih/{id}', [PublicController::class, 'pilih']);
 
 
 Route::post('/pengajuan-kur', [PengajuanKurController::class, 'store']);

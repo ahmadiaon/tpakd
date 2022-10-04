@@ -71,7 +71,7 @@ class BankController extends Controller
         $krs = kr::latest()->get();
 
         $dd = [
-            'title'=> "Anjing Udin",
+            'title'=> "Create Bank",
             'description'=> 'kantor '
         ];
        
@@ -114,29 +114,29 @@ class BankController extends Controller
         }
         // dd($bank_coordinates);
  
-        $ahmadiString = '['.$maps.']';
-        $ahmadi = [
-            [
-                'type' => 'Feature',
-                'properties'=>  [
-                    'title '=> "Anjing Udin",
-                    'description' => 'kantor',
-                ],
-                'geometry'=> [
-                    'coordinates' =>[113.89518001044064, -2.2192465933650283],
-                ]
-            ],
-            [
-                'type' => "Feature",
-                'properties'=>  [
-                    'title'=> "Anjing Udin",
-                    'description' => 'kantor',
-                ],
-                'geometry'=> [
-                    'coordinates' => [113.89518001044064, -2.2192465933650283],
-                ]
-            ],
-        ];
+        // $ahmadiString = '['.$maps.']';
+        // $ahmadi = [
+        //     [
+        //         'type' => 'Feature',
+        //         'properties'=>  [
+        //             'title '=> "Anjing Udin",
+        //             'description' => 'kantor',
+        //         ],
+        //         'geometry'=> [
+        //             'coordinates' =>[113.89518001044064, -2.2192465933650283],
+        //         ]
+        //     ],
+        //     [
+        //         'type' => "Feature",
+        //         'properties'=>  [
+        //             'title'=> "Anjing Udin",
+        //             'description' => 'kantor',
+        //         ],
+        //         'geometry'=> [
+        //             'coordinates' => [113.89518001044064, -2.2192465933650283],
+        //         ]
+        //     ],
+        // ];
         $ahmadies = json_encode($bank_coordinates);
         // dd($ahmadiString);
         $job_desks = JobDesk::latest()->get();
