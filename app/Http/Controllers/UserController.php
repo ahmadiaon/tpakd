@@ -50,7 +50,7 @@ class UserController extends Controller
         
     }
     public function storeUser(Request $request){
- 
+//  dd($request);
         $validatedData = $request->validate([
             'name'         => 'required|max:255',
             'password'       => 'required',
@@ -67,6 +67,17 @@ class UserController extends Controller
             'bank_id' => $request->bank_id,
             'user_id' => $user->id 
         ]);
+        // dd(session('dataUser'));
+        if(session('dataUser')->role == "admin-bank"){
+            // dd('admin');
+            $role = 3;
+            return redirect('/admin/our-bank')->with('success', 'Group Added!'); 
+        }else if(session('dataUser')->role == "superadmin"){
+            $role = 2;
+            // dd('super');
+            return redirect('/superadmin/admin-bank')->with('success', 'Group Added!'); 
+        }
+        // dd("udin");
         return redirect('/superadmin/admin-bank')->with('success', 'Group Added!');  
     }
 

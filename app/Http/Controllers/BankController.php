@@ -202,6 +202,8 @@ class BankController extends Controller
                 'bank_date_change' => $request->bank_date_change ,
                 'bank_date_close' => $request->bank_date_close ,
                 'bank_no_close' => $request->bank_no_close ,
+                'latitude' => $request->latitute ,
+                'longitude' => $request->longituted ,
                 'bank_status' => 'active' ,
 
             ]
