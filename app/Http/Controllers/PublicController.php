@@ -145,8 +145,11 @@ class PublicController extends Controller
         return view('pub.infografis_keuangan',$data);
     }
     public function berita(){
+        $data = News::latest()->take(40)->get();
+        // dd($data);
         $data = [
             'title' => 'Tpakd Berita',
+            'data'  => $data,
             'active'=> 'berita'
         ];
         return view('pub.berita',$data);
@@ -195,11 +198,14 @@ class PublicController extends Controller
         return view('pub.informasi_qris',$data);
     }
     public function detail_berita($slug){
+        $datas = News::latest()->take(4)->get();
         $data = [
             'title' => 'Berita',
             'active'=> 'berita',
+            'newses'    =>$datas,
             'news'  => $news = News::where('slug', $slug)->first()
         ];
+        // dd($data);
         return view('pub.detail_berita', $data);
     }
     public function pengajuan_kur($id = null){
