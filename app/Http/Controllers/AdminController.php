@@ -26,13 +26,6 @@ class AdminController extends Controller
     }
 
     public function setup(){
-        // $bank_groups =  DB::select(
-        // 'SELECT `banks`.`bank_name_id`, `users`.`name`, `bank_names`.`bank_name` 
-        // FROM `banks`, `bank_admins`, `users`, `bank_names`
-        // WHERE `banks`.`id` = `bank_admins`.`bank_id`
-        // AND `banks`.`bank_name_id` = `bank_names`.`id`
-        // AND `bank_admins`.`user_id` = `users`.`id`
-        // AND `users`.`role_id` = 2');
         $office_statuses = OfficeStatus::latest()->simplePaginate(4);
         $bank_operationals = BankOperational::latest()->simplePaginate(4);
         $bank_owners = BankOwner::latest()->simplePaginate(4);

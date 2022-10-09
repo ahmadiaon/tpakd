@@ -31,6 +31,7 @@
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label>Nama*</label>
+                                <input type="hidden" name="jenis_pengajuan" id="">
                                 <p> </p>
                                 <input type="text" name="kur_nama" value="{{ old('kur_nama') }}"
                                     class="form-control  @error('kur_nama') is-invalid @enderror" id="kur_nama"

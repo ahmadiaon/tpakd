@@ -3,84 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\BankOwner;
-use App\Http\Requests\StoreBankOwnerRequest;
-use App\Http\Requests\UpdateBankOwnerRequest;
+use Illuminate\Http\Request;
 
 class BankOwnerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'id' => '',
+            'bank_owner' => '',
+        ]);
+             
+        $store = BankOwner::updateOrCreate(['id' => $validatedData['id']], $validatedData);
+        return response()->json(['code'=>200, 'message'=>'Data Storeed','data' => $store], 200);
+    }
+    public function show($id){
+        $data = BankOwner::where('id', $id)->get()->first();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreBankOwnerRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreBankOwnerRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\BankOwner  $bankOwner
-     * @return \Illuminate\Http\Response
-     */
-    public function show(BankOwner $bankOwner)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BankOwner  $bankOwner
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BankOwner $bankOwner)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBankOwnerRequest  $request
-     * @param  \App\Models\BankOwner  $bankOwner
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateBankOwnerRequest $request, BankOwner $bankOwner)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\BankOwner  $bankOwner
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(BankOwner $bankOwner)
-    {
-        //
+    public function delete(Request $request){
+        $data = BankOwner::where('id', $request->id)->delete();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
 }

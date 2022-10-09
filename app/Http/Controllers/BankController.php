@@ -39,6 +39,11 @@ class BankController extends Controller
         ]);
     }
 
+    public function udin(Request $request){
+        $udin = $request->dat_i_code;
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $udin], 200);
+    }
+
     public function create()
     {
         $bank_names = BankName::latest()->get();

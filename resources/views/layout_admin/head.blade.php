@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ env('APP_URL') }}vendors/images/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{ env('APP_URL') }}vendors/images/favicon-16x16.png" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
@@ -26,3 +26,5 @@
     <link rel="stylesheet" type="text/css"
         href="{{ env('APP_URL') }}src/plugins/datatables/css/responsive.bootstrap4.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}vendors/styles/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>

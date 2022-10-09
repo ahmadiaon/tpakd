@@ -1,19 +1,25 @@
 <?php
 
+use App\Models\BankOwner;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\DatIController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DatIIController;
 use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BankAdminController;
 use App\Http\Controllers\BankGroupController;
+use App\Http\Controllers\BankOwnerController;
+use App\Http\Controllers\OfficeStatusController;
 use App\Http\Controllers\PengajuanKurController;
 use App\Http\Controllers\TpakdKaltengController;
+use App\Http\Controllers\BankOperationalController;
 use App\Http\Controllers\FinancialInformationController;
 
 // authentication admin
@@ -88,6 +94,24 @@ Route::middleware(['islogin'])->group(function () {
     Route::middleware(['isSuperAdmin'])->group(function () {
         Route::get('/superadmin', [AdminAuthController::class, 'indexSuperAdmin']);
         Route::get('/superadmin/setup', [AdminController::class, 'setup'])->name('superadmin-page'); 
+        Route::post('/superadmin/setup/bank-owner/store', [BankOwnerController::class, 'store']);
+
+        Route::get('/superadmin/setup/bank-owner/{id}/get', [BankOwnerController::class, 'show']);   
+        Route::get('/superadmin/setup/dat-i/{id}/get', [DatIController::class, 'show']);   
+        Route::get('/superadmin/setup/dat-i-i/{id}/get', [DatIIController::class, 'show']);   
+        Route::get('/superadmin/setup/bank-operational/{id}/get', [BankOperationalController::class, 'show']);  
+        Route::get('/superadmin/setup/office-status/{id}/get', [OfficeStatusController::class, 'show']); 
+
+        Route::post('/superadmin/bank-owner/delete', [BankOwnerController::class, 'delete']);
+        Route::post('/superadmin/dat-i/delete', [DatIController::class, 'delete']);
+        Route::post('/superadmin/dat-i-i/delete', [DatIIController::class, 'delete']);
+        Route::post('/superadmin/bank-operational/delete', [BankOperationalController::class, 'delete']);
+        Route::post('/superadmin/office-status/delete', [OfficeStatusController::class, 'delete']);
+
+        Route::post('/superadmin/dat-i/store', [DatIController::class, 'store']); 
+        Route::post('/superadmin/dat-i-i/store', [DatIIController::class, 'store']); 
+        Route::post('/superadmin/bank-operational/store', [BankOperationalController::class, 'store']); 
+        Route::post('/superadmin/office-status/store', [OfficeStatusController::class, 'store']); 
         Route::get('/superadmin/bank/create', [BankController::class, 'createBank']); 
 
         Route::get('/superadmin/bank',  [BankController::class, 'index']);     

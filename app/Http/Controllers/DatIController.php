@@ -3,84 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\DatI;
-use App\Http\Requests\StoreDatIRequest;
-use App\Http\Requests\UpdateDatIRequest;
+use Illuminate\Http\Request;
 
 class DatIController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'id'         => '',
+            'dat_i_code'       => '',
+            'dat_i_name'    => '',
+        ]);
+        $store = DatI::updateOrCreate(['id' => $validatedData['id']], $validatedData);
+        return response()->json(['code'=>200, 'message'=>'Data Storeed','data' => $validatedData], 200);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function show($id){
+        $data = DatI::where('id', $id)->get()->first();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreDatIRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreDatIRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\DatI  $datI
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DatI $datI)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\DatI  $datI
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(DatI $datI)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateDatIRequest  $request
-     * @param  \App\Models\DatI  $datI
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateDatIRequest $request, DatI $datI)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\DatI  $datI
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(DatI $datI)
-    {
-        //
+    public function delete(Request $request){
+        $data = DatI::where('id', $request->id)->delete();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
 }
