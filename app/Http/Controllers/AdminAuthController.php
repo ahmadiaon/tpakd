@@ -27,7 +27,7 @@ class AdminAuthController extends Controller
                 $request->session()->put('dataUser', $dataUser);
                 switch($dataUser->role) {
                     case('superadmin'):
-                        return redirect()->intended('/superadmin/admin-bank');
+                        return redirect()->intended('/superadmin/setup');
                         break;
                     case('admin-bank'):
                          $dataUser = DB::table('users')

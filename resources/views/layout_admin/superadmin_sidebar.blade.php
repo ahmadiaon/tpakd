@@ -117,6 +117,7 @@
                     </a>
                     <ul class="submenu " style="display:block">
                         <li><a href="/superadmin/grafik">Grafik</a></li>
+                        <li><a href="/superadmin/setup">Setup</a></li>
                         <li><a href="/superadmin/tpakd-kalteng">TPAKD Kalteng</a></li>
                         <li><a href="/superadmin/berita">Berita</a></li>
                         <li><a href="/superadmin/financial-information">Financial Service Information</a></li>
