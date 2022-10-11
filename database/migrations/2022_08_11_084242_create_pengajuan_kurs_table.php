@@ -22,7 +22,10 @@ return new class extends Migration
             $table->text('kur_no_telepon')->nullable();
             $table->text('kur_tanggal_lahir')->nullable();
             $table->text('bank_id')->nullable();
-            $table->text('date')->nullable();
+            $table->date('date_pending')->nullable();
+            $table->date('date_proses')->nullable();
+            $table->date('date_done')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -25,19 +25,20 @@
             <div class="row gy-4 d-flex justify-content-end">
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="250">
 
-                    <form action="/pengajuan-kur" method="post" role="form">
+                    <form action="/pengajuan" method="post" role="form">
                         <br>
                         @csrf
+                        <input type="hidden" name="jenis_pengajuan" value="KUR">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <label>Nama*</label>
                                 <p> </p>
-                                <input type="text" name="kur_nama" value="{{ old('kur_nama') }}"
-                                    class="form-control  @error('kur_nama') is-invalid @enderror" id="kur_nama"
+                                <input type="text" name="nama" value="{{ old('nama') }}"
+                                    class="form-control  @error('nama') is-invalid @enderror" id="nama"
                                     placeholder="Masukan Nama Lengkap"
                                     style="font-size: 14px;  border-radius: 0; height: 44px" pattern="[a-zA-Z ]+"
                                     title="Masukan Nama Menggunakan Alphabet" required maxlength="60" />
-                                @error('kur_nama')
+                                @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -46,8 +47,8 @@
                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                 <label>E-Mail*</label>
                                 <p> </p>
-                                <input type="email" name="kur_email" value="{{ old('kur_email') }}"
-                                    class="form-control  @error('kur_email') is-invalid @enderror" id="kur_email"
+                                <input type="email" name="email" value="{{ old('email') }}"
+                                    class="form-control  @error('email') is-invalid @enderror" id="email"
                                     placeholder="Masukan E-mail"
                                     style="font-size: 14px;  border-radius: 0; height: 44px"
                                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Masukan E-Mail Yang Benar"
@@ -59,8 +60,8 @@
                             <div class="col-md-6 form-group">
                                 <label>NIK (Nomor Induk Kependudukan)*</label>
                                 <p> </p>
-                                <input type="text" name="kur_nik" value="{{ old('kur_nik') }}"
-                                    class="form-control  @error('kur_nik') is-invalid @enderror" id="kur_nik"
+                                <input type="text" name="nik" value="{{ old('nik') }}"
+                                    class="form-control  @error('nik') is-invalid @enderror" id="nik"
                                     placeholder="Masukan NIK" style="font-size: 14px;  border-radius: 0; height: 44px"
                                     pattern="[0-9]{16}" title="Masukan NIK Menggunakan Angka (16 Digit)" required
                                     maxlength="16" />
@@ -68,11 +69,11 @@
                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                 <label>Jenis Kelamin*</label>
                                 <p> </p>
-                                <select name="kur_gender" id="kur_gender" class="form-control"
+                                <select name="gender" id="gender" class="form-control"
                                     style="font-size: 14px;  border-radius: 0; height: 44px" required>
                                     <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="L" {{ (old('citizenship')=='L' )?'selected':'' }}>Laki-Laki</option>
-                                    <option value="P" {{ (old('citizenship')=='P' )?'selected':'' }}>Perempuan</option>
+                                    <option value="L" {{ (old('gender')=='L' )?'selected':'' }}>Laki-Laki</option>
+                                    <option value="P" {{ (old('gender')=='P' )?'selected':'' }}>Perempuan</option>
                                 </select>
                             </div>
                         </div>
@@ -81,21 +82,23 @@
                             <div class="col-md-6 form-group">
                                 <label>No Telepon*</label>
                                 <p> </p>
-                                <input type="text" name="kur_no_telepon" value="{{ old('kur_no_telepon') }}"
-                                    class="form-control  @error('kur_no_telepon') is-invalid @enderror"
-                                    id="kur_no_telepon" placeholder="Masukan Nomor Telepon"
+                                <input type="text" name="no_telpon" value="{{ old('no_telpon') }}"
+                                    class="form-control  @error('no_telpon') is-invalid @enderror"
+                                    id="no_telpon" placeholder="Masukan Nomor Telepon"
                                     style="font-size: 14px;  border-radius: 0; height: 44px" pattern="[0-9]{12}"
                                     title="Masukan No Telepon Menggunakan Angka (12 Digit)" required maxlength="12" />
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                 <label>Tanggal Lahir</label>
                                 <p> </p>
-                                <input type="date" name="kur_tanggal_lahir" value="{{ old('kur_tanggal_lahir') }}"
-                                    class="form-control  @error('kur_tanggal_lahir') is-invalid @enderror"
-                                    id="kur_tanggal_lahir" required
+                                <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
+                                    class="form-control  @error('tanggal_lahir') is-invalid @enderror"
+                                    id="tanggal_lahir" required
                                     style="font-size: 14px;  border-radius: 0; height: 44px" />
                             </div>
                         </div>
+                        <br>
+                        
                         <br>
                         <div class="row">
                             <div class="col-md-6 form-group" style=" padding-bottom: 8px;">
@@ -105,10 +108,12 @@
                                     style="font-size: 14px;  border-radius: 0; height: 44px" required>
                                     <option value="">Pilih Bank Penyalur</option>
                                     @foreach($banks as $bank)
+                                    @if($id == $bank->id)
+                                    <option selected value="{{ $bank->id }}">{{ $bank->bank_name }}</option>
+                                    @else
                                     <option value="{{ $bank->id }}">{{ $bank->bank_name }}</option>
+                                    @endif
                                     @endforeach
-
-
                                 </select>
                             </div>
                         </div>
@@ -126,6 +131,7 @@
                                 </label>
                             </div>
                         </div>
+
 
                         <div class="text-left"><button type="submit">AJUKAN</button></div>
                         {{-- <div class="my-2">
@@ -147,6 +153,10 @@
                                 <li><a href="#">> Pengajuan KUR</a></li>
                                 <li><a href="#">> Informasi K/PMR</a></li>
                                 <li><a href="#">> Pengajuan K/PMR</a></li>
+                                <li><a href="#">> Pengajuan Pinjaman</a></li>
+                                <li><a href="#">> Pembukaan Rekening</a></li>
+                                <li><a href="#">> Bank Terdekat</a></li>
+                                <li><a href="#">> Cek Pengajuan</a></li> 
                             </ul>
                         </div><!-- End sidebar categories-->
 

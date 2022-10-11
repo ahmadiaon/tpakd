@@ -2,85 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\BankOperational;
-use App\Http\Requests\StoreBankOperationalRequest;
-use App\Http\Requests\UpdateBankOperationalRequest;
 
 class BankOperationalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function store(Request $request){
+        $validatedData = $request->validate([
+            'id'         => '',
+            'bank_operational'       => ''
+        ]);
+        $store = BankOperational::updateOrCreate(['id' => $validatedData['id']], $validatedData);
+        return response()->json(['code'=>200, 'message'=>'Data Storeed','data' => $validatedData], 200);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function show($id){
+        $data = BankOperational::where('id', $id)->get()->first();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreBankOperationalRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreBankOperationalRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\BankOperational  $bankOperational
-     * @return \Illuminate\Http\Response
-     */
-    public function show(BankOperational $bankOperational)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BankOperational  $bankOperational
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BankOperational $bankOperational)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBankOperationalRequest  $request
-     * @param  \App\Models\BankOperational  $bankOperational
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateBankOperationalRequest $request, BankOperational $bankOperational)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\BankOperational  $bankOperational
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(BankOperational $bankOperational)
-    {
-        //
+    public function delete(Request $request){
+        $data = BankOperational::where('id', $request->id)->delete();
+        
+        return response()->json(['code'=>200, 'message'=>'Data Get','data' => $data], 200);
     }
 }

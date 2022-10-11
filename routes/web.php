@@ -3,15 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PublicController;
+use App\Http\Controllers\GrafikController;
+use App\Http\Controllers\PubController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\BankAdminController;
+use App\Http\Controllers\PengajuanController;
+use App\Http\Controllers\BankOperationalController;
+use App\Http\Controllers\DatIIController;
+use App\Http\Controllers\DatIController;
+use App\Http\Controllers\BankOwnerController;
+use App\Http\Controllers\OfficeStatusController;
 use App\Http\Controllers\BankGroupController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\PengajuanKurController;
+use App\Http\Controllers\TpakdKaltengController;
+use App\Http\Controllers\FinancialInformationController;
 
 // authentication admin
 
@@ -21,33 +30,56 @@ Route::post('/login', [AdminAuthController::class, 'cekLogin']);
 Route::get('pdf-generate', [PDFController::class, 'generatePDF']);
 
 
-Route::get('/', [PublicController::class, 'index']);
-Route::get('/latar-belakang', [PublicController::class, 'latar_belakang']);
-Route::get('/dasar-pembentukan', [PublicController::class, 'dasar_pembentukan']);
-Route::get('/road-map', [PublicController::class, 'roadmap']);
-Route::get('/tpakd-kalteng', [PublicController::class, 'tpakd_kalteng']);
-Route::get('/infografis-keuangan', [PublicController::class, 'infografis_keuangan']);
-Route::get('/berita', [PublicController::class, 'berita']);
-Route::get('/layanan-konsumen', [PublicController::class, 'layanan_konsumen']);
-Route::get('/pengajuan-kur', [PublicController::class, 'pengajuan_kur']);
-Route::get('/pengajuan-sukses/{no_pengajuan}', [PublicController::class, 'pengajuanSukses']);
-Route::get('/informasi-kpmr', [PublicController::class, 'informasi_kpmr']);
-Route::get('/informasi-kur', [PublicController::class, 'informasi_kur']);
-Route::get('/berita/{slug}', [PublicController::class, 'detail_berita']);
+Route::get('/', [PubController::class, 'index']);
+Route::get('/latar-belakang', [PubController::class, 'latar_belakang']);
+Route::get('/dasar-pembentukan', [PubController::class, 'dasar_pembentukan']);
+Route::get('/road-map', [PubController::class, 'roadmap']);
+Route::get('/tpakd-kalteng', [PubController::class, 'tpakd_kalteng']);
+Route::get('/infografis-keuangan', [PubController::class, 'infografis_keuangan']);
+Route::get('/berita', [PubController::class, 'berita']);
+Route::get('/layanan-konsumen', [PubController::class, 'layanan_konsumen']);
+Route::get('/pengajuan-kur', [PubController::class, 'pengajuan_kur']);
+Route::get('/pengajuan-kur/{id}', [PubController::class, 'pengajuan_kur']);
+Route::get('/pengajuan-kpmr', [PengajuanController::class, 'pengajuan_kpmr']);
+Route::get('/pengajuan-kpmr/{id}', [PengajuanController::class, 'pengajuan_kpmr']);
+Route::get('/pengajuan-simpel', [PengajuanController::class, 'pengajuan_simpel']);
+Route::get('/pengajuan-simpel/{id}', [PengajuanController::class, 'pengajuan_simpel']);
 
-Route::get('/maps', [PublicController::class, 'mapsIndex']);
+Route::get('/pengajuan-rekening', [PubController::class, 'pengajuan_rekening']);
+Route::get('/pengajuan-rekening/{id}', [PubController::class, 'pengajuan_rekening']);
 
+Route::get('/pengajuan-qris', [PubController::class, 'pengajuan_qris']);
+Route::get('/pengajuan-qris/{id}', [PubController::class, 'pengajuan_qris']);
+
+Route::get('/pengajuan-pinjaman', [PubController::class, 'pengajuan_pinjaman']);
+Route::get('/pengajuan-pinjaman/{id}', [PubController::class, 'pengajuan_pinjaman']);
+Route::get('/pengajuan-sukses/{no_pengajuan}', [PubController::class, 'pengajuanSukses']);
+Route::get('/informasi-kpmr', [PubController::class, 'informasi_kpmr']);
+Route::get('/informasi-kur', [PubController::class, 'informasi_kur']);
+Route::get('/informasi-qris', [PubController::class, 'informasi_qris']);
+Route::get('/informasi-simpel', [PubController::class, 'informasi_simpel']);
+Route::get('/berita/{slug}', [PubController::class, 'detail_berita']);
+// Route::get('/maps', [PubController::class, 'maps']);
+
+Route::get('/maps', [PubController::class, 'maps']);
+Route::get('/pilih/{id}', [PubController::class, 'pilih']);
+Route::get('/pengajuan', [PengajuanController::class, 'store']);
+Route::post('/pengajuan', [PengajuanController::class, 'store']);
 
 Route::post('/pengajuan-kur', [PengajuanKurController::class, 'store']);
+Route::get('/pengajuan-saya', [PubController::class, 'pengajuanSaya']);
+Route::get('/pengajuan-saya/{id_pengajuan}', [PubController::class, 'cariPengajuanSaya']);
+
+
+Route::get('/maps', [PubController::class, 'maps']);
 
 
 // Route::get('/admin/', [AdminController::class, 'index']);
 
 
 
-
 Route::get('/bank/', [BankController::class, 'index']);
-Route::post('/bank/', [BankController::class, 'store']);
+Route::post('/bank-store', [BankController::class, 'store']);
 Route::get('/bank/create', [BankController::class, 'create']);
 
 
@@ -66,23 +98,53 @@ Route::middleware(['islogin'])->group(function () {
 
         Route::get('/superadmin/bank',  [BankController::class, 'index']);     
         Route::get('/superadmin/admin-bank',  [AdminController::class, 'adminBank']);  
+        Route::post('/superadmin/setup/bank-owner/store', [BankOwnerController::class, 'store']);
+
+        Route::get('/superadmin/setup/bank-owner/{id}/get', [BankOwnerController::class, 'show']);   
+        Route::get('/superadmin/setup/dat-i/{id}/get', [DatIController::class, 'show']);   
+        Route::get('/superadmin/setup/dat-i-i/{id}/get', [DatIIController::class, 'show']);   
+        Route::get('/superadmin/setup/bank-operational/{id}/get', [BankOperationalController::class, 'show']);  
+        Route::get('/superadmin/setup/office-status/{id}/get', [OfficeStatusController::class, 'show']); 
+
+        Route::post('/superadmin/bank-owner/delete', [BankOwnerController::class, 'delete']);
+        Route::post('/superadmin/dat-i/delete', [DatIController::class, 'delete']);
+        Route::post('/superadmin/dat-i-i/delete', [DatIIController::class, 'delete']);
+        Route::post('/superadmin/bank-operational/delete', [BankOperationalController::class, 'delete']);
+        Route::post('/superadmin/office-status/delete', [OfficeStatusController::class, 'delete']);
+
+        Route::post('/superadmin/dat-i/store', [DatIController::class, 'store']); 
+        Route::post('/superadmin/dat-i-i/store', [DatIIController::class, 'store']); 
+        Route::post('/superadmin/bank-operational/store', [BankOperationalController::class, 'store']); 
+        Route::post('/superadmin/office-status/store', [OfficeStatusController::class, 'store']); 
 
         Route::get('/superadmin/berita',  [NewsController::class, 'index']);  
+        Route::get('/superadmin/berita/{slug}/edit',  [NewsController::class, 'show']);  
         Route::get('/superadmin/berita/create',  [NewsController::class, 'create']);  
         Route::post('/superadmin/berita',  [NewsController::class, 'store']);  
 
 
         // tentang tpakd
-        Route::get('/superadmin/latar-belakang',  [PublicController::class, 'createLatar_belakang']);  
-        Route::post('/superadmin/latar-belakang',  [PublicController::class, 'storeLatar_belakang']); 
         
-        Route::get('/superadmin/dasar-pembentukan',  [PublicController::class, 'createDasarPembentukan']);  
-        Route::post('/superadmin/dasar-pembentukan',  [PublicController::class, 'storeDasarPembentukan']);  
+        Route::get('/superadmin/dasar-pembentukan',  [PubController::class, 'createDasarPembentukan']);  
+        Route::post('/superadmin/dasar-pembentukan',  [PubController::class, 'storeDasarPembentukan']);  
 
+        Route::get('superadmin/tpakd-kalteng',  [TpakdKaltengController::class, 'index']); 
+        Route::get('/superadmin/tpakd-kalteng/edit/{slug}',  [TpakdKaltengController::class, 'show']); 
+        Route::post('/superadmin/tpakd-kalteng', [TpakdKaltengController::class, 'store']);
+
+
+        Route::get('/superadmin/grafik',  [GrafikController::class, 'index']); 
+        Route::post('/superadmin/grafik-1',  [GrafikController::class, 'store']);
+        Route::post('/superadmin/grafik-2',  [GrafikController::class, 'storeDua']);
        
         Route::get('/bank-name-create', [BankController::class, 'createBank']);
         Route::post('/bank-group', [BankGroupController::class, 'store']);
         Route::get('/bank-group/create', [BankGroupController::class, 'create']);
+
+        Route::get('/superadmin/financial-information', [FinancialInformationController::class, 'index']);
+        Route::get('/superadmin/financial-information/{id}/edit', [FinancialInformationController::class, 'show']);
+        Route::post('/superadmin/financial-information', [FinancialInformationController::class, 'store']);
+        
     });
     
     Route::middleware(['isAdminBank'])->group(function () {
@@ -92,9 +154,9 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/admin/our-bank',  [BankController::class, 'index']);  
     });
     Route::middleware(['isAdmin'])->group(function () {
-        Route::get('/bank-admin', [AdminAuthController::class, 'indexBank'])->name('bank-page');
-        
+        Route::get('/bank-admin', [AdminAuthController::class, 'indexBank']);
+        Route::get('/bank-admin/kur', [PengajuanKurController::class, 'pengajuanKur'])->name('bank-page');
     });
-    Route::get('/bank-admin/kur', [PengajuanKurController::class, 'pengajuanKur'])->name('bank-page');
+    
     
 });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

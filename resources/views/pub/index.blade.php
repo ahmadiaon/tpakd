@@ -85,37 +85,16 @@
             <div class="section-header">
                 <h2>Infografis Keuangan Terbaru</h2>
             </div>
-            <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
+            <div class="portfolio-isotope text-center" data-portfolio-filter="*" data-portfolio-layout="masonry"
                 data-portfolio-sort="original-order">
-                <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="300">
-
-                    <div class="col-lg-6 col-md-6 portfolio-item filter-app">
-                        <img src="{{ env('APP_URL') }}assets/img/info1.jpeg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Infografis TPAKD Kalimantan Tengah</h4>
-                            <p>Periode Agustus 2021</p>
-                            <a href="{{ env('APP_URL') }}assets/img/info1.jpeg"
-                                title="Infografis TPAKD Kalimantan Tengah" data-gallery="portfolio-gallery-app"
-                                class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                    class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div><!-- End Portfolio Item -->
-
-                    <div class="col-lg-6 col-md-6 portfolio-item filter-product">
-                        <img src="{{ env('APP_URL') }}assets/img/info2.jpeg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Kondisi IJK Kalimantan Tengah</h4>
-                            <p>Periode Agustus 2021</p>
-                            <a href="{{ env('APP_URL') }}assets/img/info2.jpeg" title="Kondisi IJK Kalimantan Tengah"
-                                data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                    class="bi bi-zoom-in"></i></a>
-                            <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                    class="bi bi-link-45deg"></i></a>
-                        </div>
-                    </div><!-- End Portfolio Item -->
-
-                </div><!-- End Portfolio Container -->
+                <div class="row">
+                    <div class="col-5 mr-30">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-5">
+                        <canvas id="myChart2" width="400" height="400"></canvas>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -144,11 +123,6 @@
                     </div>
                 </div>
                 @endforeach
-
-
-
-
-
             </div>
 
         </div>
@@ -164,7 +138,6 @@
 
             <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-
                     <div class="swiper-slide">
                         <div class="testimonial-item">
                             <p>
@@ -230,4 +203,86 @@
     </section><!-- End Testimonials Section -->
 
 </main><!-- End #main -->
+@endsection
+
+@section('js')
+<script>
+    // var label_name = {{ $grafik1->name}}
+    var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["{{ $grafik1->name_value_1 }}", "{{ $grafik1->name_value_2 }}", "{{ $grafik1->name_value_3 }}", "{{ $grafik1->name_value_4 }}"],
+          datasets: [
+            {
+              label: "{{ $grafik1->name}}",
+              data: [{{ $grafik1->value_1 }}, {{ $grafik1->value_2 }}, {{ $grafik1->value_3 }}, {{ $grafik1->value_4 }}],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255,99,132,1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+</script>
+<script>
+    var ctx = document.getElementById("myChart2").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["{{ $grafik2->name_value_1 }}", "{{ $grafik2->name_value_2 }}", "{{ $grafik2->name_value_3 }}", "{{ $grafik2->name_value_4 }}"],
+          datasets: [
+            {
+              label:  "{{ $grafik2->name}}",
+              data: [{{ $grafik2->value_1 }}, {{ $grafik2->value_2 }}, {{ $grafik2->value_3 }}, {{ $grafik2->value_4 }}],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255,99,132,1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+</script>
 @endsection

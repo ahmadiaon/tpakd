@@ -13,7 +13,7 @@
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet" />
@@ -26,3 +26,5 @@
     <link rel="stylesheet" type="text/css"
         href="{{ env('APP_URL') }}src/plugins/datatables/css/responsive.bootstrap4.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ env('APP_URL') }}vendors/styles/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>

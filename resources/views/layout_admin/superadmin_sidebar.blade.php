@@ -89,9 +89,9 @@
 </div>
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
-            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
-            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
+        <a href="/">
+            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="dark-logo" />
+            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -116,11 +116,11 @@
                         <span class="micon bi bi-house"></span><span class="mtext">Home</span>
                     </a>
                     <ul class="submenu " style="display:block">
-                        <li><a href="/superadmin/beranda">Beranda</a></li>
                         <li><a href="/superadmin/grafik">Grafik</a></li>
-                        <li><a href="/superadmin/tentang">Tentang TPAKD</a></li>
+                        <li><a href="/superadmin/setup">Setup</a></li>
+                        <li><a href="/superadmin/tpakd-kalteng">TPAKD Kalteng</a></li>
                         <li><a href="/superadmin/berita">Berita</a></li>
-                        <li><a href="/superadmin/berita">Berita</a></li>
+                        <li><a href="/superadmin/financial-information">Financial Service Information</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -128,11 +128,10 @@
                         <span class="micon bi bi-house"></span><span class="mtext">Tentang TPAKD</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="/superadmin/latar-belakang">Latar Belakang</a></li>
-                        <li><a href="/superadmin/dasar-pembentukan">Dasar Pembentukan</a></li>
-                        <li><a href="/superadmin/tentang">Tentang TPAKD</a></li>
-                        <li><a href="/superadmin/berita">Berita</a></li>
-                        <li><a href="/superadmin/berita">Berita</a></li>
+                        <li><a href="/superadmin/financial-information/latar-belakang/edit">Latar Belakang</a></li>
+                        <li><a href="/superadmin/financial-information/dasar-pembentukan/edit">Dasar Pembentukan</a>
+                        </li>
+                        <li><a href="/superadmin/financial-information/road-map/edit">Tentang TPAKD</a></li>
                     </ul>
                 </li>
 

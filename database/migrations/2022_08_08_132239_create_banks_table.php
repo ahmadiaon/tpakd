@@ -26,7 +26,8 @@ return new class extends Migration
             $table->integer('job_desk_id')->nullable();
 
             $table->string('bank_name')->nullable();
-            $table->string('bank_address')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->string('bank_maps')->nullable();
             $table->string('bank_pos_code')->nullable();
             $table->string('bank_no_phone')->nullable();

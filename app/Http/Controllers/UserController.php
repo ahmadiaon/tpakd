@@ -32,13 +32,15 @@ class UserController extends Controller
     }
 
     public function create(){
-        $roles = Role::latest()->get();
+        
+        $roles = Role::where('role','!=','superadmin')->latest()->get();
         // dd(session('dataUser')->role);
         if(session('dataUser')->role == "admin-bank"){
             $role = 3;
-        }else if(session('dataUser')->role == "superuser"){
+        }else if(session('dataUser')->role == "superadmin"){
             $role = 2;
         }
+        // return $role;
         return view('admin.bank_group.create_user', [
             'title'         => 'Index',
             'roles'=> $roles,
@@ -54,13 +56,11 @@ class UserController extends Controller
             'password'       => 'required',
             'role_id'    => 'required',
         ]);
-        
 
-        // dd($validatedData);
         $user = User::create([
             'name' => $request->name,
             'password' =>Hash::make($request->password) ,
-            'role_id' => 3
+            'role_id' => $request->role_id
         ]);
 
         $bank_admin = BankAdmin::create([
@@ -68,10 +68,6 @@ class UserController extends Controller
             'user_id' => $user->id 
         ]);
         return redirect('/superadmin/admin-bank')->with('success', 'Group Added!');  
-        // return $bank_admin;
-
-
-        
     }
 
     public function adminBank(){

@@ -41,6 +41,7 @@ class BankController extends Controller
 
     public function create()
     {
+        
         $bank_names = BankName::latest()->get();
         $office_status = OfficeStatus::latest()->get();
         $bank_operationals = BankOperational::latest()->get();
@@ -62,6 +63,7 @@ class BankController extends Controller
     }
     public function createBank()
     {
+        // dd('udin');
         $bank_names = BankName::latest()->get();
         $office_status = OfficeStatus::latest()->get();
         $bank_operationals = BankOperational::latest()->get();
@@ -69,6 +71,76 @@ class BankController extends Controller
         $dat_i_s = DatI::latest()->get();
         $dat_i_i_s = DatII::latest()->get();
         $krs = kr::latest()->get();
+
+        $dd = [
+            'title'=> "Create Bank",
+            'description'=> 'kantor '
+        ];
+       
+
+        $ddd = json_encode($dd);
+        $dddd = [
+            'coordinates'=>'[113.89518001044064, -2.2192465933650283]'
+        ];
+        $ddddd = json_encode($dddd);
+
+        $ddd_d = [
+                'type'=> 'Feature',
+                'properties' => $dd,
+                'geometry' => $ddddd,
+        ];
+        $ddd_dd = json_encode($ddd_d);
+
+        $banks = Bank::all();
+        
+        // dd($banks);
+        $maps = "";
+        $bank_coordinates = array();
+        foreach($banks as $bank){
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
+
+        }
+        // dd($bank_coordinates);
+ 
+        // $ahmadiString = '['.$maps.']';
+        // $ahmadi = [
+        //     [
+        //         'type' => 'Feature',
+        //         'properties'=>  [
+        //             'title '=> "Anjing Udin",
+        //             'description' => 'kantor',
+        //         ],
+        //         'geometry'=> [
+        //             'coordinates' =>[113.89518001044064, -2.2192465933650283],
+        //         ]
+        //     ],
+        //     [
+        //         'type' => "Feature",
+        //         'properties'=>  [
+        //             'title'=> "Anjing Udin",
+        //             'description' => 'kantor',
+        //         ],
+        //         'geometry'=> [
+        //             'coordinates' => [113.89518001044064, -2.2192465933650283],
+        //         ]
+        //     ],
+        // ];
+        $ahmadies = json_encode($bank_coordinates);
+        // dd($ahmadiString);
         $job_desks = JobDesk::latest()->get();
         return view('admin.bank.create',[
             'bank_names'    => $bank_names,
@@ -78,6 +150,7 @@ class BankController extends Controller
             'dat_i_s'    => $dat_i_s,
             'dat_i_i_s'    => $dat_i_i_s,
             'krs'    => $krs,
+            'test'  => $ahmadies,
             'job_desks'    => $job_desks,
             'bank_name_id' => (session('dataUser')->role_id == 2) ? session('dataUser')->bank_name_id:0
         ]);
@@ -102,7 +175,7 @@ class BankController extends Controller
     }
     public function store(Request $request)
     {
-        
+        // dd($request);
         $request->validate([
             'id_bank'      => 'required',
         ]);
@@ -131,6 +204,8 @@ class BankController extends Controller
                 'bank_date_change' => $request->bank_date_change ,
                 'bank_date_close' => $request->bank_date_close ,
                 'bank_no_close' => $request->bank_no_close ,
+                'latitude' => $request->latitute ,
+                'longitude' => $request->longituted ,
                 'bank_status' => 'active' ,
 
             ]

@@ -16,8 +16,12 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-            $table->text('description')->nullable();
+            $table->text('little_description')->nullable();
             $table->string('photo_path')->nullable();
+            
+            $table->text('paragrafh_1')->nullable();
+            $table->text('paragrafh_2')->nullable();
+            $table->text('paragrafh_3')->nullable();
             $table->string('status')->nullable();
             $table->string('slug')->nullable();
             $table->string('excerpt')->nullable();

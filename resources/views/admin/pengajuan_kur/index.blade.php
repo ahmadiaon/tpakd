@@ -31,9 +31,8 @@
                         </td>
                         <td>{{ $data->kur_nama }}</td>
                         <td>{{ $data->kur_no_telepon }}</td>
-
                         <td>{{ $data->kur_nik }}</td>
-                        <td>Pending</td>
+                        <td>{{ $data->status }}</td>
                         <td>
                             <div class="table-actions">
                                 <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
