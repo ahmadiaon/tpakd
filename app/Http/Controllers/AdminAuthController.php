@@ -25,6 +25,8 @@ class AdminAuthController extends Controller
         if($dataUser){
             if(Hash::check($request->password, $dataUser->password)){
                 $request->session()->put('dataUser', $dataUser);
+
+                // dd($dataUser);
                 switch($dataUser->role) {
                     case('superadmin'):
                         return redirect()->intended('/superadmin/setup');
@@ -45,7 +47,20 @@ class AdminAuthController extends Controller
                         return redirect()->route('admin-page');
                         break;
                     case('bank'):
-                        return redirect()->route('bank-page');
+                        $dataUser = DB::table('users')
+                        ->join('roles', 'roles.id', '=', 'users.role_id')
+                        ->join('bank_admins', 'bank_admins.user_id', '=', 'users.id')
+                        ->where('users.name', $request->name)
+                        ->get(['roles.role', 'users.*','bank_admins.bank_id'])
+                        ->first();
+                        $bankName_id = DB::table('banks')
+                        ->join('bank_admins', 'bank_admins.bank_id', '=', 'banks.id')
+                        ->where('bank_admins.user_id', $dataUser->id )
+                        ->get()->first();
+                        $dataUser->bank_name_id= $bankName_id->bank_name_id;
+                        // dd($dataUser);
+                        $request->session()->put('dataUser', $dataUser);
+                        return redirect()->intended('list-pengajuan/kur');
                         break;
                     
                     default:

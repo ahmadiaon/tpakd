@@ -88,8 +88,18 @@ Route::post('/bank-admin/', [BankAdminController::class, 'store']);
 Route::get('/bank-admin/create', [BankAdminController::class, 'create']);
 Route::get('send-mail', [MailController::class, 'index']);
 Route::middleware(['islogin'])->group(function () {
+    Route::get('/list-pengajuan/{jenis_pengajuan}', [PengajuanController::class, 'show']);
+    Route::post('/export-list-pengajuan/{jenis_pengajuan}', [PengajuanController::class, 'export']);
+
+    Route::get('/my-bank', [BankController::class, 'show']);
+    Route::post('/my-bank', [BankController::class, 'store']);
+    Route::get('/profile', [UserController::class, 'show']);
+
+
+
     Route::get('/add-user', [UserController::class, 'create']);
     Route::post('/add-user', [UserController::class, 'storeUser']);
+    Route::post('/update-user', [UserController::class, 'updateUser']);
 
     Route::middleware(['isSuperAdmin'])->group(function () {
         Route::get('/superadmin', [AdminAuthController::class, 'indexSuperAdmin']);

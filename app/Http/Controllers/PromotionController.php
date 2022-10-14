@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\News;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class NewsController extends Controller
+class PromotionController extends Controller
 {
     public function index()
     {   
@@ -49,7 +46,7 @@ class NewsController extends Controller
         $created = News::updateOrCreate(['id' => $request->id], $validatedData);
 
         if ($request->file('image')) {
-            $imageName =  $created->id .'.'. $request->image->extension();
+            $imageName =  $created->id . $request->image->extension();
             $name = 'image/berita/'.$imageName;
             if(file_exists($name)){
                  $da = unlink($name);

@@ -52,7 +52,7 @@ class PengajuanKurController extends Controller
         $bank = Bank::where('id',$bank_admin->bank_id )->first();
         $pengajuanKurs = PengajuanKur::join('banks','banks.id','=','pengajuan_kurs.bank_id')->where('bank_id', $bank->id)->get();
         // return $pengajuanKurs;
-        return view('admin.pengajuan_kur.index',[
+        return view('admin.pengajuan.index',[
             'title'=>'pengajuan kur',
             'active' => 'home',
             'datas'  => $pengajuanKurs]);

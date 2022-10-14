@@ -50,11 +50,11 @@ class UserController extends Controller
         
     }
     public function storeUser(Request $request){
- 
+        return $request;
         $validatedData = $request->validate([
             'name'         => 'required|max:255',
             'password'       => 'required',
-            'role_id'    => 'required',
+            'role_id'    => '',
         ]);
 
         $user = User::create([
@@ -70,11 +70,52 @@ class UserController extends Controller
         return redirect('/superadmin/admin-bank')->with('success', 'Group Added!');  
     }
 
-    public function adminBank(){
+    public function updateUser(Request $request){
+        // return $request;
+        $validatedData = $request->validate([
+            'name'         => 'required|max:255',
+            'password'       => '',
+            'id'    => '',
+        ]);
+        if($validatedData['password'] == ''){
+            $user = User::updateOrCreate(['id'=>$validatedData['id']],[
+                'name' => $request->name,
+            ]);
+        }else{
+            $user = User::updateOrCreate(['id'=>$validatedData['id']],[
+                'name' => $request->name,
+                'password' =>Hash::make($request->password) 
+            ]);
+        }
+
         
+
+        return redirect('/profile')->with('success', 'Group Added!');  
     }
-    public function createBank(){
-      
+    
+
+    public function show(){
+        $role=0;
+        $dataUser = DB::table('users')
+        ->join('roles', 'roles.id', '=', 'users.role_id')
+        ->join('bank_admins', 'bank_admins.user_id', '=', 'users.id')
+        ->where('users.id',  session('dataUser')->id)
+        ->get(['roles.role', 'users.*','bank_admins.bank_id'])
+        ->first();
+        // dd(session('dataUser')->role);
+        if(session('dataUser')->role == "admin-bank"){
+            $role = 3;
+        }else if(session('dataUser')->role == "superadmin"){
+            $role = 2;
+        }
+        // return $dataUser;
+        return view('admin.bank_group.edit', [
+            'title'         => 'Index',
+            'active'    => 'profile',
+            'role_id'   =>$role,
+            'datauser'  => $dataUser
+        ]);
     }
+
     
 }

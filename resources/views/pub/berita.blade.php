@@ -120,6 +120,7 @@
         
         var lengthData =data.length
         
+
         if(page != 1){
             var activeList = document.querySelector("li.active")
             activeList.classList.remove("active");
@@ -133,18 +134,22 @@
         var lastNews = pageNumber * 4;
         //4 //2
         if(lastNews > lengthData){
-            var startNews = lastNews - 4 +(lastNews - lengthData) -1
-            lastNews = lengthData -1;
-            
+            var startNews =  lastNews- lengthData 
+            lastNews = lengthData-1;
+            console.log('here')
             var i = startNews - 1
         }else{
             var startNews = lastNews - 4;
             var i = startNews + 1
         }
+
+
         console.log('pageNumber')
         console.log(pageNumber)
         console.log('lastNews')
-        console.log(lastNews)
+        console.log(lengthData)
+        console.log('startNews')
+        console.log(startNews)
         
 
         var e = document.querySelector("#list_news");
@@ -159,7 +164,7 @@
         while( i <= lastNews){
             const event = new Date(data[1].date);
             var element = data[i]
-            console.log(i)
+            console.log(element)
             // console.log(element)
             
             var articles = `<div class="col-lg-6">

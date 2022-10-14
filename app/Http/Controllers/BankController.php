@@ -17,11 +17,6 @@ use Illuminate\Support\Facades\DB;
 
 class BankController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         // return session('dataUser');
@@ -35,12 +30,38 @@ class BankController extends Controller
         }
         // return $banks;
         return view('admin.bank.index', [
-            'banks'=>$banks
+            'banks'=>$banks,
+            'active'    => 'bank'
         ]);
     }
 
     public function create()
     {
+        $banks = Bank::all();
+        
+        // dd($banks);
+        $maps = "";
+        $bank_coordinates = array();
+        foreach($banks as $bank){
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
+
+        }
+
+        $ahmadies = json_encode($bank_coordinates);
         
         $bank_names = BankName::latest()->get();
         $office_status = OfficeStatus::latest()->get();
@@ -58,6 +79,7 @@ class BankController extends Controller
             'dat_i_s'    => $dat_i_s,
             'dat_i_i_s'    => $dat_i_i_s,
             'krs'    => $krs,
+            'test'  => $ahmadies,
             'job_desks'    => $job_desks,
         ]);
     }
@@ -114,31 +136,7 @@ class BankController extends Controller
             ];
 
         }
-        // dd($bank_coordinates);
- 
-        // $ahmadiString = '['.$maps.']';
-        // $ahmadi = [
-        //     [
-        //         'type' => 'Feature',
-        //         'properties'=>  [
-        //             'title '=> "Anjing Udin",
-        //             'description' => 'kantor',
-        //         ],
-        //         'geometry'=> [
-        //             'coordinates' =>[113.89518001044064, -2.2192465933650283],
-        //         ]
-        //     ],
-        //     [
-        //         'type' => "Feature",
-        //         'properties'=>  [
-        //             'title'=> "Anjing Udin",
-        //             'description' => 'kantor',
-        //         ],
-        //         'geometry'=> [
-        //             'coordinates' => [113.89518001044064, -2.2192465933650283],
-        //         ]
-        //     ],
-        // ];
+
         $ahmadies = json_encode($bank_coordinates);
         // dd($ahmadiString);
         $job_desks = JobDesk::latest()->get();
@@ -173,13 +171,18 @@ class BankController extends Controller
         ]);
         return "ourBank";
     }
+
     public function store(Request $request)
     {
         // dd($request);
-        $request->validate([
-            'id_bank'      => 'required',
-        ]);
-        $createBank = Bank::create(
+       
+            $request->validate([
+                'id_bank'      => '',
+            ]);
+        
+        
+
+        $createBank = Bank::updateOrCreate(['id'=> $request->id],
             [
                 'id_bank' => $request->id_bank ,
                 'bank_name_id' => $request->bank_name_id ,
@@ -210,8 +213,66 @@ class BankController extends Controller
 
             ]
         );
-
+        if($request->isedit){
+            return redirect('/my-bank');
+        }
         return redirect('/add-user/')->with('bank_id',$createBank->id );
+    }
+    
+    public function show(){
+        // $role=0;
+        // return session('dataUser');
+        $banks = Bank::all();
+        
+        // dd($banks);
+        $maps = "";
+        $bank_coordinates = array();
+        foreach($banks as $bank){
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
+
+        }
+
+        $ahmadies = json_encode($bank_coordinates);
+        $data = Bank::where('id', session('dataUser')->bank_id)->get()->first();
+        // return $data;
+        // return $dataUser;
+        $bank_names = BankName::latest()->get();
+        $office_status = OfficeStatus::latest()->get();
+        $bank_operationals = BankOperational::latest()->get();
+        $bank_owners = BankOwner::latest()->get();
+        $dat_i_s = DatI::latest()->get();
+        $dat_i_i_s = DatII::latest()->get();
+        $krs = kr::latest()->get();
+        $job_desks = JobDesk::latest()->get();
+        return view('admin.bank.edit',[
+            'bank_names'    => $bank_names,
+            'office_statuss'    => $office_status,
+            'bank_operationals'    => $bank_operationals,
+            'bank_owners'    => $bank_owners,
+            'dat_i_s'    => $dat_i_s,
+            'dat_i_i_s'    => $dat_i_i_s,
+            'krs'    => $krs,
+            'job_desks'    => $job_desks,
+            'title'         => 'My Bank',
+            'active'    => 'my-bamk',
+            'test'  => $ahmadies,
+            'bank'  => $data
+        ]);
+    
     }
    
 }

@@ -74,8 +74,8 @@
                                 <select name="gender" id="gender" class="form-control"
                                     style="font-size: 14px;  border-radius: 0; height: 44px" required>
                                     <option value="">Pilih Jenis Kelamin</option>
-                                    <option value="L" {{ (old('gender')=='L' )?'selected':'' }}>Laki-Laki</option>
-                                    <option value="P" {{ (old('gender')=='P' )?'selected':'' }}>Perempuan</option>
+                                    <option value="Laki-laki" {{ (old('gender')=='Laki-laki' )?'selected':'' }}>Laki-Laki</option>
+                                    <option value="Perempuan" {{ (old('gender')=='Perempuan' )?'selected':'' }}>Perempuan</option>
                                 </select>
                             </div>
                         </div>

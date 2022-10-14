@@ -102,6 +102,7 @@ return array(
     'App\\Models\\Pengajuan' => $baseDir . '/app/Models/Pengajuan.php',
     'App\\Models\\PengajuanKur' => $baseDir . '/app/Models/PengajuanKur.php',
     'App\\Models\\Profile' => $baseDir . '/app/Models/Profile.php',
+    'App\\Models\\Promotion' => $baseDir . '/app/Models/Promotion.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\TpakdKalteng' => $baseDir . '/app/Models/TpakdKalteng.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

@@ -8,18 +8,17 @@
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="pd-20 card-box mb-30">
 
-            <form action="/add-user" method="POST" enctype="multipart/form-data">
+            <form action="/update-user" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="hidden" name="bank_id" id="bank_id" value="{{ $bank_id }}">
-                    <input id="name" name="name" class="form-control" type="text" placeholder="bri-admin">
+                    <input type="hidden" name="id" id="id" value="{{$datauser->id}}">
+                    <input id="name" name="name" class="form-control" type="text" placeholder="bri-admin" value="{{ $datauser->name}}">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input id="password" name="password" class="form-control" placeholder="BRI" type="text">
-                </div>
-             
+                    <input id="password" name="password" class="form-control" placeholder="**********" type="text">
+                </div>             
 
                 <a href="/admin/setup">
                     <button type="button" class="btn btn-secondary">Batal</button>

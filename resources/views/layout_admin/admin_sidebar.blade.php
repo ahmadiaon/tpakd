@@ -110,11 +110,21 @@
                         <span class="micon bi bi-house"></span><span class="mtext">My Bank</span>
                     </a>
                     <ul class="submenu " style="display:block">
-                        <li><a href="/bank-admin/kur">KUR</a></li>
-                        <li><a href="/superadmin/grafik">K/PMR</a></li>
-                        <li><a href="/superadmin/tentang">Rek. Baru</a></li>
-                        <li><a href="/superadmin/berita">Ajuan Pinjaman</a></li>
-                        <li><a href="/superadmin/berita">SIMPLE</a></li>
+                        <li><a class="{{ ( $active == 'KUR')? 'active' : '' }}" href="/list-pengajuan/kur">KUR</a></li>
+                        <li><a class="{{ ( $active == 'KPMR')? 'active' : '' }}"  href="/list-pengajuan/kpmr">K/PMR</a></li>
+                        <li><a class="{{ ( $active == 'BARU')? 'active' : '' }}"  href="/list-pengajuan/baru">Rek. Baru</a></li>
+                        <li><a class="{{ ( $active == 'PINJAMAN')? 'active' : '' }}"  href="/list-pengajuan/pinjaman">Ajuan Pinjaman</a></li>
+                        <li><a class="{{ ( $active == 'SIMPLE')? 'active' : '' }}"  href="/list-pengajuan/simpel">SimPel</a></li>
+                        <li><a class="{{ ( $active == 'QEIS')? 'active' : '' }}"  href="/list-pengajuan/qris">QRIS</a></li>
+                    </ul>
+                </li>
+                  <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-house"></span><span class="mtext">My Profile</span>
+                    </a>
+                    <ul class="submenu " >
+                        <li><a class="{{ ( $active == 'my-bank')? 'active' : '' }}" href="/my-bank">Bank</a></li>
+                        <li><a class="{{ ( $active == 'profile')? 'active' : '' }}"  href="/profile">Profile</a></li>
                     </ul>
                 </li>
 

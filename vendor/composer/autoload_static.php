@@ -734,6 +734,7 @@ class ComposerStaticInit5426b5b775175485cb69ff0414254095
         'App\\Models\\Pengajuan' => __DIR__ . '/../..' . '/app/Models/Pengajuan.php',
         'App\\Models\\PengajuanKur' => __DIR__ . '/../..' . '/app/Models/PengajuanKur.php',
         'App\\Models\\Profile' => __DIR__ . '/../..' . '/app/Models/Profile.php',
+        'App\\Models\\Promotion' => __DIR__ . '/../..' . '/app/Models/Promotion.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\TpakdKalteng' => __DIR__ . '/../..' . '/app/Models/TpakdKalteng.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
