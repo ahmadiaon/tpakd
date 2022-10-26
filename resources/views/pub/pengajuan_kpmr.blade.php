@@ -20,7 +20,7 @@
     <section id="contact" class="contact">
         <div class="container position-relative" data-aos="fade-up">
             <p>
-            <h3>Form Pengajuan Kredit Usaha Rakyat</h3>
+            <h3>Form Pengajuan K-PMR</h3>
             </p>
             <div class="row gy-4 d-flex justify-content-end">
                 <div class="col-lg-8" data-aos="fade-up" data-aos-delay="250">
@@ -125,7 +125,7 @@
                                     <br>
                                     <p style="font-size: 12px; margin-top: 10px;"><i>*Pengajuan melalui website ini
                                             gratis<br>*Proses analisa dan persetujuan ditindaklanjuti oleh Bank Penyalur
-                                            KUR<br>*Pastikan No. HP dan E-mail Anda sudah benar dan aktif</i>
+                                            K-PMR<br>*Pastikan No. HP dan E-mail Anda sudah benar dan aktif</i>
                                 </label>
                             </div>
                         </div>
@@ -147,10 +147,13 @@
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Pintasan</h3>
                             <ul class="mt-3">
-                                <li><a href="#">> Informasi KUR</a></li>
-                                <li><a href="#">> Pengajuan KUR</a></li>
-                                <li><a href="#">> Informasi K/PMR</a></li>
-                                <li><a href="#">> Pengajuan K/PMR</a></li>
+                                <li><a href="/pengajuan-kur">> Pengajuan KUR</a></li>
+                                <li><a href="/pengajuan-kpmr">> Pengajuan K/PMR</a></li>
+                                <li><a href="/pengajuan-simpel">> Pengajuan SimPel</a></li>
+                                <li><a href="/pengajuan-pinjaman">> Pengajuan Pinjaman</a></li>
+                                <li><a href="/pengajuan-rekening">> Pembukaan Rekening</a></li>
+                                <li><a href="/maps">> Maps</a></li>
+                                <li><a href="/pengajuan-saya">> Cek Ajuan</a></li>
                             </ul>
                         </div><!-- End sidebar categories-->
 
@@ -186,7 +189,7 @@
     <section id="portfolio" class="portfolio">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h3>Bank Penyalur KUR</h3>
+                <h3>Bank Penyalur K-PMR</h3>
                 <p>Provinsi Kalimantan Tengah</p>
             </div>
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"

@@ -9,20 +9,19 @@
             <div class="pd-20 card-box mb-30">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Tpakd</h4>
+                        <h4 class="text-blue h4">Berita</h4>
                     </div>
                 </div>
-                <form action="/superadmin/tpakd-kalteng" method="POST" enctype="multipart/form-data">
+                <form action="/superadmin/berita" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="id" id="id" value="{{ $tpakd_kalteng->id }}">
-                    <input type="hidden" name="slug" id="slug" value="{{ $tpakd_kalteng->slug }}">
+                    <input type="hidden" name="id" id="id" value="{{ $news->id }}">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input required name="name" type="text"
-                            class="form-control  @error('name') is-invalid @enderror"
-                            value="{{ old('name', $tpakd_kalteng->name) }}" id="name"
+                        <label>Judul</label>
+                        <input required name="title" type="text"
+                            class="form-control  @error('title') is-invalid @enderror"
+                            value="{{ old('title', $news->title) }}" id="title"
                             placeholder="Rupiah Menguat hingga Rp. 1" />
-                        @error('name')
+                        @error('title')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
@@ -31,24 +30,47 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                                <label class="weight-600">Status Tpakd</label>
+                                <label class="weight-600">Status Berita</label>
                                 <div class="custom-control custom-radio mb-5">
-                                    <input type="radio" id="customRadio1" value="1" name="status" {{  $tpakd_kalteng->status == '1' ? 'checked': '' }} 
+                                    <input type="radio" id="customRadio1" value="1" name="status" checked
                                         class="custom-control-input" />
                                     <label class="custom-control-label" for="customRadio1">Aktif</label>
                                 </div>
                                 <div class="custom-control custom-radio mb-5">
-                                    <input type="radio" id="customRadio2" value="0" name="status" {{  $tpakd_kalteng->status != '1' ? 'checked': '' }}
+                                    <input type="radio" id="customRadio2" value="0" name="status"
                                         class="custom-control-input" />
                                     <label class="custom-control-label" for="customRadio2">Non-Aktif</label>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label>Little Description</label>
+                        <textarea class="form-control  @error('description') is-invalid @enderror"
+                            name="little_description" id="little_description" cols="100"
+                            rows="20">{{ old('little_description', $news->little_description) }}</textarea>
+                        @error('little_description')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label>Paragrafh 1</label>
+                        <textarea name="paragrafh_1" class="form-control">{{ $news->paragrafh_1 }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Paragrafh 2</label>
+                        <textarea name="paragrafh_2" class="form-control">{{ $news->paragrafh_2 }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Paragrafh 3</label>
+                        <textarea name="paragrafh_3" class="form-control">{{ $news->paragrafh_3 }}</textarea>
+                    </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Post Image</label>
-                        <img class="img-preview img-fluid mb-3 col-sm-5"
-                            src="{{  env('APP_URL').$tpakd_kalteng->path_image }}" alt="">
+                        <img class="img-preview img-fluid mb-3 col-sm-5" src="{{  env('APP_URL').$news->photo_path }}"
+                            alt="">
                         <input name="image" class="form-control  @error('image') is-invalid @enderror" type="file"
                             id="image" onchange="previewImage()">
                         @error('image')
@@ -61,7 +83,16 @@
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </div>
                 </form>
-
+                <div class="collapse collapse-box" id="horizontal-basic-form1">
+                    <div class="code-box">
+                        <div class="clearfix">
+                            <a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"
+                                data-clipboard-target="#horizontal-basic"><i class="fa fa-clipboard"></i> Copy Code</a>
+                            <a href="#horizontal-basic-form1" class="btn btn-primary btn-sm pull-right" rel="content-y"
+                                data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- horizontal Basic Forms End -->
         </div>

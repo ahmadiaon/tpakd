@@ -7,6 +7,9 @@ use App\Models\Pengajuan;
 use Mail;
 use Carbon\Carbon;
 use App\Models\Bank;
+use App\Models\BankAdmin;
+
+use App\Models\User;
 use App\Mail\SendMail;
 use Illuminate\Support\Facades\DB;
 
@@ -115,12 +118,23 @@ class PengajuanController extends Controller
 
         $id_kur = $validatedData['jenis_pengajuan'].'-'.$Pengajuan->id;
         $mailData = [
-            'title' => 'Pengajuan KUR TPKAD',
+            'title' => 'Pengajuan TPKAD',
             'id_pengajuan'  => $id_kur,
             'body' => 'Anda telah melakukan pengajuan, dengan nomor pengajuan :'.$id_kur.' Silahkan cek secara berkala pada web,'
-        ];   
+        ]; 
+        $mailDataMasuk = [
+            'title' => 'Pengajuan TPKAD',
+            'id_pengajuan'  => $id_kur,
+            'body' => 'Pengajuan masuk :'.$id_kur.' ,'
+        ];    
         //  dd($mailData);
-        Mail::to($Pengajuan->email)->send(new SendMail($mailData));
+        $delete = Bank::where('id', $validatedData['bank_id'])->get()->first();
+        $data = BankAdmin::where('bank_id', $delete->id)->get()->first();
+        $admindata = User::where('id' , $data->user_id)->get()->first();
+
+
+        Mail::to($Pengajuan->email)->send(new SendMail($mailData));        
+        Mail::to($admindata->email)->send(new SendMail($mailDataMasuk));
         return view('pub.pengajuan_sukses',[
             'title'=>'pengajuan kur',
             'active' => 'home',
@@ -135,7 +149,7 @@ class PengajuanController extends Controller
         if(session('dataUser')->role_id == 2 ||session('dataUser')->role_id == 3 ){
             $bank_id = session('dataUser')->bank_id; 
         }
-        // dd($bank_id);
+        // dd($jenis_pengajuan);
         $jenis_pengajuan = strtoupper($jenis_pengajuan);
         $data = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
         ->latest()
@@ -152,6 +166,152 @@ class PengajuanController extends Controller
             'active' => $jenis_pengajuan,
             'jenis_pengajuan'   => $jenis_pengajuan,
             'datas'  => $data]);
+    }
+
+    public function showAdmin($jenis_pengajuan, $id_bank){
+        $datasss = [
+            'jenis_pengajuan'   => $jenis_pengajuan,
+            'id_bank'       => $id_bank
+        ];
+        
+        // if(session('dataUser')->role_id == 2 ||session('dataUser')->role_id == 3 ){
+        //     $bank_id = session('dataUser')->bank_id; 
+        // }
+        // dd($jenis_pengajuan);
+         $bank = Bank::where('id', $id_bank)->get()->first();
+        $jenis_pengajuan = strtoupper($jenis_pengajuan);
+        $data = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$id_bank)
+        ->where('jenis_pengajuan',$jenis_pengajuan)
+        ->get([
+            'pengajuans.*',
+            'banks.bank_name'
+        ]);
+
+        // dd($data);
+        return view('admin.pengajuan.indexAdmin',[
+            'title'=>'pengajuan kur',
+            'banks' => $bank,
+            'active' => $jenis_pengajuan,
+            'jenis_pengajuan'   => $jenis_pengajuan,
+            'datas'  => $data
+        ]);
+    }
+
+    public function countPengajuan(){
+        // dd(session('dataUser'));
+        if(session('dataUser')->role_id == 2 ||session('dataUser')->role_id == 3 ){
+            $bank_id = session('dataUser')->bank_id; 
+        }
+        // dd($jenis_pengajuan);
+        $kur = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','KUR')
+        ->where('status','pending')
+        ->count();
+        $kpmr = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','KPMR')
+        ->where('status','pending')
+        ->count();
+        $baru = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','BARU')
+        ->where('status','pending')
+        ->count();
+        $pinjaman = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','PINJAMAN')
+        ->where('status','pending')
+        ->count();
+        $simpel = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','SIMPEL')
+        ->where('status','pending')
+        ->count();
+        $qris = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','QRIS')
+        ->where('status','pending')
+        ->count();
+
+        $done_kur = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','KUR')
+        ->where('status','done')
+        ->count();
+        $done_kpmr = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','KPMR')
+        ->where('status','done')
+        ->count();
+        $done_baru = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','BARU')
+        ->where('status','done')
+        ->count();
+        $done_pinjaman = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','PINJAMAN')
+        ->where('status','done')
+        ->count();
+        $done_simpel = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','SIMPEL')
+        ->where('status','done')
+        ->count();
+        $done_qris = Pengajuan::join('banks', 'banks.id', 'pengajuans.bank_id')
+        ->latest()
+        ->where('bank_id',$bank_id)
+        ->where('jenis_pengajuan','QRIS')
+        ->where('status','done')
+        ->count();
+
+        $dataa = [
+            'pending_kur'   => $kur,
+            'pending_kpmr'   => $kpmr,
+            'pending_baru'   => $baru,
+            'pending_pinjaman'   => $pinjaman,
+            'pending_simpel'   => $simpel,
+            'pending_qris'   => $qris,
+
+            'done_kur'   => $done_kur,
+            'done_kpmr'   => $done_kpmr,
+            'done_baru'   => $done_baru,
+            'done_pinjaman'   => $done_pinjaman,
+            'done_simpel'   => $done_simpel,
+            'done_qris'   => $done_qris,
+        ];
+
+       return view('admin.pengajuan.list_index',[
+            'title'=>'pengajuan kur',
+            'active' => 'list',
+            'pending_kur'   => $kur,
+            'pending_kpmr'   => $kpmr,
+            'pending_baru'   => $baru,
+            'pending_pinjaman'   => $pinjaman,
+            'pending_simpel'   => $simpel,
+            'pending_qris'   => $qris,
+
+            'done_kur'   => $done_kur,
+            'done_kpmr'   => $done_kpmr,
+            'done_baru'   => $done_baru,
+            'done_pinjaman'   => $done_pinjaman,
+            'done_simpel'   => $done_simpel,
+            'done_qris'   => $done_qris,
+        ]);
     }
 
     public function export(Request $request, $jenis_pengajuan){
@@ -235,16 +395,16 @@ class PengajuanController extends Controller
             }
             if($item->date_done == ''){
                 $the_data = ['date_done'=>$date_done,'status'=> 'done'];
-                return $Pengajuan = Pengajuan::updateOrCreate(['id' => $item->id],$the_data);
+                $Pengajuan = Pengajuan::updateOrCreate(['id' => $item->id],$the_data);
             }
             $cell++;
 
         }
-
+        $date_now =Carbon::now('Asia/Jakarta');
 
         $crateWriter = new Xls($createSpreadsheet);
-        $crateWriter->save('udin.xlsx');
-        return response()->download('udin.xlsx');
+        $crateWriter->save($date_now.'-pengajuan.xlsx');
+        return response()->download($date_now.'-pengajuan.xlsx');
     }
     
     

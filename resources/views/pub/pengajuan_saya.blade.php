@@ -72,15 +72,14 @@
 
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Pintasan</h3>
-                            <ul class="mt-3">
-                                <li><a href="#">> Informasi KUR</a></li>
-                                <li><a href="#">> Pengajuan KUR</a></li>
-                                <li><a href="#">> Informasi K/PMR</a></li>
-                                <li><a href="#">> Pengajuan K/PMR</a></li>
-                                <li><a href="#">> Pengajuan Pinjaman</a></li>
-                                <li><a href="#">> Pembukaan Rekening</a></li>
-                                <li><a href="#">> Bank Terdekat</a></li>
-                                <li><a href="#">> Cek Pengajuan</a></li> 
+                           <ul class="mt-3">
+                                <li><a href="/pengajuan-kur">> Pengajuan KUR</a></li>
+                                <li><a href="/pengajuan-kpmr">> Pengajuan K/PMR</a></li>
+                                <li><a href="/pengajuan-simpel">> Pengajuan SimPel</a></li>
+                                <li><a href="/pengajuan-pinjaman">> Pengajuan Pinjaman</a></li>
+                                <li><a href="/pengajuan-rekening">> Pembukaan Rekening</a></li>
+                                <li><a href="/maps">> Maps</a></li>
+                                <li><a href="/pengajuan-saya">> Cek Ajuan</a></li>
                             </ul>
                         </div><!-- End sidebar categories-->
 

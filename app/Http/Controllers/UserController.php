@@ -44,50 +44,67 @@ class UserController extends Controller
         return view('admin.bank_group.create_user', [
             'title'         => 'Index',
             'roles'=> $roles,
+            'active'    => 'create-user',
             'role_id'   =>$role,
             'bank_id'   => session('bank_id')
         ]);
         
     }
     public function storeUser(Request $request){
-        return $request;
+        
         $validatedData = $request->validate([
             'name'         => 'required|max:255',
             'password'       => 'required',
+            'email'         => '',
             'role_id'    => '',
         ]);
+        if(session('dataUser')->role == "admin-bank"){
+            $role = 3;
+        }else if(session('dataUser')->role == "superadmin"){
+            $role = 2;
+        }
 
         $user = User::create([
             'name' => $request->name,
+            'email' => $request->email,
             'password' =>Hash::make($request->password) ,
-            'role_id' => $request->role_id
+            'role_id' => $role
         ]);
 
         $bank_admin = BankAdmin::create([
             'bank_id' => $request->bank_id,
             'user_id' => $user->id 
         ]);
-        return redirect('/superadmin/admin-bank')->with('success', 'Group Added!');  
+        if(session('dataUser')->role == "admin-bank"){
+            return redirect('/admin/our-bank')->with('success', 'Group Added!');  
+        }else if(session('dataUser')->role == "superadmin"){
+            return redirect('/superadmin/admin-bank')->with('success', 'Group Added!');  
+        }
+        
     }
 
     public function updateUser(Request $request){
-        // return $request;
+        
         $validatedData = $request->validate([
             'name'         => 'required|max:255',
             'password'       => '',
+            'email' => '',
             'id'    => '',
         ]);
+        
         if($validatedData['password'] == ''){
             $user = User::updateOrCreate(['id'=>$validatedData['id']],[
                 'name' => $request->name,
+                'email' => $request->email,
             ]);
         }else{
             $user = User::updateOrCreate(['id'=>$validatedData['id']],[
                 'name' => $request->name,
-                'password' =>Hash::make($request->password) 
+                'password' =>Hash::make($request->password) ,
+                'email' => $request->email,
             ]);
         }
-
+        // return $request;
         
 
         return redirect('/profile')->with('success', 'Group Added!');  
@@ -97,8 +114,8 @@ class UserController extends Controller
     public function show(){
         $role=0;
         $dataUser = DB::table('users')
-        ->join('roles', 'roles.id', '=', 'users.role_id')
-        ->join('bank_admins', 'bank_admins.user_id', '=', 'users.id')
+        ->leftJoin('roles', 'roles.id', '=', 'users.role_id')
+        ->leftJoin('bank_admins', 'bank_admins.user_id', '=', 'users.id')
         ->where('users.id',  session('dataUser')->id)
         ->get(['roles.role', 'users.*','bank_admins.bank_id'])
         ->first();

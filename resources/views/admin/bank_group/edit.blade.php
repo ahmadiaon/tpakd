@@ -18,7 +18,11 @@
                 <div class="form-group">
                     <label>Password</label>
                     <input id="password" name="password" class="form-control" placeholder="**********" type="text">
-                </div>             
+                </div>            
+                   <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" name="email" class="form-control" type="email" placeholder="bank@admin.com" value="{{ $datauser->email}}">
+                </div> 
 
                 <a href="/admin/setup">
                     <button type="button" class="btn btn-secondary">Batal</button>

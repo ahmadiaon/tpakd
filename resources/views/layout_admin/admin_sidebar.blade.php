@@ -90,8 +90,8 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="/">
-            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="dark-logo" />
-            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="light-logo" />
+            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
+            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -101,8 +101,13 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li>
+                    <a href="/beranda" class="dropdown-toggle no-arrow">
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Beranda</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/admin/our-bank" class="dropdown-toggle no-arrow">
-                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Our Bank Team</span>
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Team</span>
                     </a>
                 </li>
                 <li class="dropdown">

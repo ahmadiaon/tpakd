@@ -9,7 +9,7 @@
             <h2>Roadmap</h2>
             <ol>
                 <li><a href="/">Tentang TPAKD</a></li>
-                <li>Roadmap</li>
+                <li>Roadmasp</li>
             </ol>
 
         </div>
@@ -30,7 +30,6 @@
                                 <div class="row gy-12" data-aos="fade-up">
                                     <img src="{{ env('APP_URL') }}{{ $profile->path_image }}" class="img-fluid" alt="">
                                 </div>
-
 
 
                                 <div class="content">
@@ -83,10 +82,10 @@
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Pintasan</h3>
                             <ul class="mt-3">
-                                <li><a href="#">> Latar Belakang</a></li>
-                                <li><a href="#">> Dasar Pembentukan</a></li>
-                                <li><a href="#">> Roadmap TPAKD</a></li>
-                                <li><a href="#">> TPAKD Prov. Kalteng</a></li>
+                                <li><a href="/latar-belakang">> Latar Belakang</a></li>
+                                <li><a href="/dasar-pembentukan">> Dasar Pembentukan</a></li>
+                                <li><a href="/road-map">> Roadmap TPAKD</a></li>
+                                <li><a href="/tpakd-kalteng">> TPAKD Prov. Kalteng</a></li>
                             </ul>
                         </div><!-- End sidebar categories-->
 

@@ -19,9 +19,6 @@ return new class extends Migration
             $table->text('little_description')->nullable();
             $table->string('photo_path')->nullable();
             
-            $table->text('paragrafh_1')->nullable();
-            $table->text('paragrafh_2')->nullable();
-            $table->text('paragrafh_3')->nullable();
             $table->string('status')->nullable();
             $table->string('slug')->nullable();
             $table->string('excerpt')->nullable();

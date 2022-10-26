@@ -21,11 +21,11 @@
                 <div class="col-lg-2 col-6 footer-links">
                     <h4>Pintasan</h4>
                     <ul>
-                        <li><i class="bi bi-dash"></i> <a href="#">Roadmap TPAKD</a></li>
-                        <li><i class="bi bi-dash"></i> <a href="#">Infografis Keuangan</a></li>
-                        <li><i class="bi bi-dash"></i> <a href="#">Informasi KUR</a></li>
-                        <li><i class="bi bi-dash"></i> <a href="#">Berita</a></li>
-                        <li><i class="bi bi-dash"></i> <a href="#">Layanan Konsumen</a></li>
+                        <li><i class="bi bi-dash"></i> <a href="/road-map">Roadmap TPAKD</a></li>
+                        <li><i class="bi bi-dash"></i> <a href="/infografis-keuangan">Infografis Keuangan</a></li>
+                        <li><i class="bi bi-dash"></i> <a href="/informasi-kur">Informasi KUR</a></li>
+                        <li><i class="bi bi-dash"></i> <a href="/berita">Berita</a></li>
+                        <li><i class="bi bi-dash"></i> <a href="/maps">Maps</a></li>
                     </ul>
                 </div>
 
@@ -47,7 +47,7 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/ TPKAD-bootstrap-business-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="https://bootstrapmade.com/">Steve IT</a>
             </div>
         </div>
     </div>

@@ -29,35 +29,40 @@
                     <table class="data-table table nowrap">
                         <thead>
                             <tr>
-                                <th class="table-plus">Bank</th>
                                 <th>Name</th>
-                                <th>Phone Number</th>
-                                <th>Address</th>
+                                <th>Username</th>
                                 <th class="datatable-nosort">Actions</th>
                             </tr>
                         </thead>
+                        {{-- @dd($banks) --}}
                         <tbody>
                             @foreach($banks as $bank)
                             <tr>
                                 <td class="table-plus">
                                     <div class="name-avatar d-flex align-items-center">
-                                        {{-- <div class="avatar mr-2 flex-shrink-0">
-                                            <img src="{{ env('APP_URL') }}vendors/images/photo4.jpg"
-                                                class="border-radius-100 shadow" width="40" height="40" alt="" />
-                                        </div> --}}
                                         <div class="txt">
                                             <div class="weight-600">{{ $bank->bank_name }}</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td>{{ $bank->bank_address }}</td>
-                                <td>{{ $bank->bank_no_phone }}</td>
-                                <td>{{ $bank->bank_date_permission }}</td>
-
+                                <td class="table-plus">
+                                    <div class="name-avatar d-flex align-items-center">
+                                        <div class="txt">
+                                            <div class="weight-600">{{ $bank->name }}</div>
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="table-actions">
-                                        <a href="#" data-color="#265ed7"><i class="icon-copy dw dw-edit2"></i></a>
-                                        <a href="#" data-color="#e95959"><i class="icon-copy dw dw-delete-3"></i></a>
+                                     <a href="#" onclick="resetAdminBank('{{$bank->id}}')"  data-color="#e95959">
+                                            <button class="btn btn-success">reset pass</button>
+                                        </a>
+                                        <a href="/bank/edit/{{$bank->id}}"   data-color="#e95959">
+                                            <button class="btn btn-warning">edit</button>
+                                        </a>
+                                        <a href="#" onclick="deleteAdminBank('{{$bank->id}}')"  data-color="#e95959">
+                                              <button class="btn btn-danger">hapus</button>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -83,8 +88,84 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18">
+                
+                <h4 class="padding-top-30 mb-30 weight-500">
+                    <input type="hidden" id="id_delete" name="uuid_delete">
+                    Are you sure you want to continue?
+                </h4>
+                <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-secondary border-radius-100 btn-block confirmation-btn"
+                            data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        NO
+                    </div>
+                    <div class="col-6">
+                        <a href="" id="href-id">  
+                         <button   type="button" class="btn btn-primary border-radius-100 btn-block confirmation-btn"
+                           >
+                            <i class="fa fa-check"></i>
+                        </button>
+                        </a>
+                        YES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="reset-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18">
+                
+                <h4 class="padding-top-30 mb-30 weight-500">
+                    <input type="hidden" id="id_delete" name="uuid_delete">
+                    Are you sure you want to continue?
+                </h4>
+                <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-secondary border-radius-100 btn-block confirmation-btn"
+                            data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        NO
+                    </div>
+                    <div class="col-6">
+                        <a href="" id="href-reset-id">  
+                         <button   type="button" class="btn btn-primary border-radius-100 btn-block confirmation-btn"
+                           >
+                            <i class="fa fa-check"></i>
+                        </button>
+                        </a>
+                        YES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('js')
+<script>
+function deleteAdminBank(uuid){
+            let _url = '/superadmin/database/delete'
+            $('#confirm-modal').modal('show')
+            $('#href-id').attr('href', '/superadmin/admin-bank/delete/'+uuid)
+       }
 
+       function resetAdminBank(uuid){
+            let _url = '/superadmin/database/delete'
+            $('#reset-modal').modal('show')
+            $('#href-reset-id').attr('href', '/superadmin/admin-bank/reset/'+uuid)
+       }
+</script>
 @endsection

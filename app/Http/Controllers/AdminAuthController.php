@@ -29,7 +29,7 @@ class AdminAuthController extends Controller
                 // dd($dataUser);
                 switch($dataUser->role) {
                     case('superadmin'):
-                        return redirect()->intended('/superadmin/setup');
+                        return redirect()->intended('/superadmin');
                         break;
                     case('admin-bank'):
                          $dataUser = DB::table('users')
@@ -42,8 +42,13 @@ class AdminAuthController extends Controller
                         ->join('bank_admins', 'bank_admins.bank_id', '=', 'banks.id')
                         ->where('bank_admins.user_id', $dataUser->id )
                         ->get()->first();
+                        if(empty($bankName_id)){
+                            return redirect()->route('login');
+                        }
                         $dataUser->bank_name_id= $bankName_id->bank_name_id;
                         $request->session()->put('dataUser', $dataUser);
+                        
+                        return redirect()->intended('/beranda');
                         return redirect()->route('admin-page');
                         break;
                     case('bank'):

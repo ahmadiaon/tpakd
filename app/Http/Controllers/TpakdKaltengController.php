@@ -17,6 +17,14 @@ class TpakdKaltengController extends Controller
         // dd($data);
         return view('admin.superadmin.tpakd_kalteng.index', $data);
     }
+    public function create(){
+        // dd($tpakd_kalteng);
+        $data = [
+            'title' => 'Tpakd Information'
+        ];
+        // dd($financialInformations);
+        return view('admin.superadmin.tpakd_kalteng.create', $data);
+    }
     public function show($id){
         $tpakd_kalteng = TpakdKalteng::where('slug', $id)->get()->first();
         // dd($tpakd_kalteng);
@@ -35,11 +43,13 @@ class TpakdKaltengController extends Controller
             'name'      => 'required',
             'status'      => 'required',
         ]);
-
-        $slug =str_replace(' ', '-', $request->name);
-        $slug_tolower = strtolower($slug);
-
-        $validatedData['slug'] = $slug_tolower;
+        if($validatedData['slug']  == ''){
+            $slug =str_replace(' ', '-', $request->name);
+            $slug_tolower = strtolower($slug);
+    
+            $validatedData['slug'] = $slug_tolower;
+        }
+       
 
         // return $validatedData;
         $created = TpakdKalteng::updateOrCreate(['id' => $request->id], $validatedData);
@@ -59,6 +69,11 @@ class TpakdKaltengController extends Controller
             $created = TpakdKalteng::updateOrCreate(['id' => $created->id], $validatedData);
         }
 
+        return redirect('/superadmin/tpakd-kalteng')->with('success', 'Done');   
+    }
+
+    public function delete($slug){
+        TpakdKalteng::where('slug', $slug)->delete();
         return redirect('/superadmin/tpakd-kalteng')->with('success', 'Done');   
     }
 }

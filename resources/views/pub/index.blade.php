@@ -58,7 +58,7 @@
                                     <p>Program Kredit Usaha Rakyat (KUR) adalah salah satu program pemerintah dalam
                                         meningkatkan akses pembiayaan kepada Usaha Mikro, Kecil, dan Menengah (UMKM)
                                         yang disalurkan melalui lembaga keuangan dengan pola penjaminan.</p>
-                                    <a href="#about" class="btn-get-started">Ajukan KUR</a>
+                                    <a href="/pengajuan-kur" class="btn-get-started">Ajukan KUR</a>
                                 </div>
                             </div>
                             <br>
@@ -69,7 +69,7 @@
                                         formal kepada pelaku Usaha Mikro dan Kecil (UMK) dengan proses cepat, mudah,
                                         dan berbiaya rendah, untuk mengurangi ketergantungan serta pengaruh entitas
                                         kredit informasi ilegal.</p>
-                                    <a href="#about" class="btn-get-started">Ajukan K/PMR</a>
+                                    <a href="/pengajuan-kpmr" class="btn-get-started">Ajukan K/PMR</a>
                                 </div>
                             </div>
                         </div>

@@ -50,10 +50,13 @@
                         <div class="sidebar-item categories">
                             <h3 class="sidebar-title">Pintasan</h3>
                             <ul class="mt-3">
-                                <li><a href="#">> Latar Belakang</a></li>
-                                <li><a href="#">> Dasar Pembentukan</a></li>
-                                <li><a href="#">> Roadmap TPAKD</a></li>
-                                <li><a href="#">> TPAKD Prov. Kalteng</a></li>
+                                <li><a href="/pengajuan-kur">> Pengajuan KUR</a></li>
+                                <li><a href="/pengajuan-kpmr">> Pengajuan K/PMR</a></li>
+                                <li><a href="/pengajuan-simpel">> Pengajuan SimPel</a></li>
+                                <li><a href="/pengajuan-pinjaman">> Pengajuan Pinjaman</a></li>
+                                <li><a href="/pengajuan-rekening">> Pembukaan Rekening</a></li>
+                                <li><a href="/maps">> Maps</a></li>
+                                <li><a href="/pengajuan-saya">> Cek Ajuan</a></li>
                             </ul>
                         </div><!-- End sidebar categories-->
 

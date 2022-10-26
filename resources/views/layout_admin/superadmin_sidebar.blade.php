@@ -90,8 +90,8 @@
 <div class="left-side-bar">
     <div class="brand-logo">
         <a href="/">
-            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="dark-logo" />
-            <img src="{{ env('APP_URL') }}vendorss/images/favicon-32x32.png" alt="" class="light-logo" />
+            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="dark-logo" />
+            <img src="{{ env('APP_URL') }}vendors/images/favicon-32x32.png" alt="" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>
@@ -100,7 +100,11 @@
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
             <ul id="accordion-menu">
-
+                    <li>
+                    <a href="/superadmin" class="dropdown-toggle no-arrow ">
+                        <span class="micon bi bi-calendar4-week"></span><span class="mtext">Beranda</span>
+                    </a>
+                </li>
                 <li>
                     <a href="/superadmin/admin-bank" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">Admin Bank</span>
@@ -118,6 +122,7 @@
                     <ul class="submenu " style="display:block">
                         <li><a href="/superadmin/grafik">Grafik</a></li>
                         <li><a href="/superadmin/setup">Setup</a></li>
+                        <li><a href="/superadmin/promosi">Promosi</a></li>
                         <li><a href="/superadmin/tpakd-kalteng">TPAKD Kalteng</a></li>
                         <li><a href="/superadmin/berita">Berita</a></li>
                         <li><a href="/superadmin/financial-information">Financial Service Information</a></li>
@@ -134,8 +139,18 @@
                         <li><a href="/superadmin/financial-information/road-map/edit">Tentang TPAKD</a></li>
                     </ul>
                 </li>
+                 </li>
+                  <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-house"></span><span class="mtext">My Profile</span>
+                    </a>
+                    <ul class="submenu " >
+                        <li><a class=""  href="/profile">Profile</a></li>
+                    </ul>
+                </li>
 
             </ul>
+            
         </div>
     </div>
 </div>

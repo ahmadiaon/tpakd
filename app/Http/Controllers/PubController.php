@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use App\Models\News;
+use App\Models\Promotion;
 use App\Models\Grafik;
 use App\Models\Profile;
 use App\Models\GrafikDua;
@@ -32,7 +33,7 @@ class PubController extends Controller
         $crateWriter = new Xls($createSpreadsheet);
         $crateWriter->save('udin.xlsx');
 
-        $newss = News::latest()->get()->take(4);
+        $newss = News::where('status',1)->latest()->get()->take(4);
         $grafik1 = Grafik::where('is_aktif', 1)->get()->first();
         $grafik2 = GrafikDua::where('is_aktif', 1)->get()->first();
         $data = [
@@ -135,7 +136,7 @@ class PubController extends Controller
         return view('pub.dasar_pembentukan',$data);
     }
     public function roadmap(){
-        $profile = FinancialInformation::where('financial', 'Latar Belakang')->get()->first();
+        $profile = FinancialInformation::where('financial', 'Road Map')->get()->first();
         $data = [
             'title' => 'Roadmap',
             'profile'   => $profile,
@@ -144,7 +145,7 @@ class PubController extends Controller
         return view('pub.roadmap',$data);
     }
     public function tpakd_kalteng(){
-        $tpkad_kaltengs = TpakdKalteng::all();
+        $tpkad_kaltengs = TpakdKalteng::where('status',1)->latest()->get();
         $data = [
             'title' => 'Tpakd Kalteng',
             'tpkad_kaltengs'    =>$tpkad_kaltengs,
@@ -160,7 +161,7 @@ class PubController extends Controller
         return view('pub.infografis_keuangan',$data);
     }
     public function berita(){
-        $data = News::latest()->take(40)->get();
+        $data = News::where('status',1)->latest()->take(40)->get();
         // dd($data);
         $data = [
             'title' => 'Tpakd Berita',
@@ -168,6 +169,16 @@ class PubController extends Controller
             'active'=> 'berita'
         ];
         return view('pub.berita',$data);
+    }
+    public function promosi(){
+        $data = Promotion::where('status',1)->latest()->take(40)->get();
+        // dd($data);
+        $data = [
+            'title' => 'Tpakd Berita',
+            'data'  => $data,
+            'active'=> 'promosi'
+        ];
+        return view('pub.promosi',$data);
     }
     public function layanan_konsumen(){
         $data = [
@@ -213,7 +224,7 @@ class PubController extends Controller
         return view('pub.informasi_qris',$data);
     }
     public function detail_berita($slug){
-        $datas = News::latest()->take(4)->get();
+        $datas = News::where('status',1)->latest()->take(4)->get();
         $data = [
             'title' => 'Berita',
             'active'=> 'berita',

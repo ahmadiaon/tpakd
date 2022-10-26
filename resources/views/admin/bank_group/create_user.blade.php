@@ -13,8 +13,13 @@
                 <div class="form-group">
                     <label>Username</label>
                     <input type="hidden" name="bank_id" id="bank_id" value="{{ $bank_id }}">
-                    <input id="name" name="name" class="form-control" type="text" placeholder="bri-admin">
+                    <input id="name" name="name" class="form-control" type="text" placeholder="bank-ojk-admin">
                 </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" name="email" class="form-control" type="email" placeholder="bank@admin.com">
+                </div>
+            
                 <div class="form-group">
                     <label>Password</label>
                     <input id="password" name="password" class="form-control" placeholder="BRI" type="text">

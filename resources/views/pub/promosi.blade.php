@@ -6,7 +6,7 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/blog-header.jpg');">
         <div class="container position-relative d-flex flex-column align-items-center">
 
-            <h2>Berita</h2>
+            <h2>Promosi</h2>
 
         </div>
     </div><!-- End Breadcrumbs -->
@@ -151,14 +151,6 @@
         console.log('news for this page from :',startNews,'until: ',lastNews)
 
 
-       
-
-
-
-
-       
-        
-
         var e = document.querySelector("#list_news");
         
         var child = e.lastElementChild; 
@@ -173,7 +165,7 @@
             console.log(element)
             // console.log(element)
             
-            var articles = `<div class="col-lg-6">
+            var articles = `<div class="col-lg-12">
                             <article class="d-flex flex-column">
                                 <div class="post-img">
                                     <img src="{{ env('APP_URL') }}${data[j].photo_path}" alt="" class="img-fluid">
@@ -189,16 +181,6 @@
                                                 href="/berita/${element.slug}"><time datetime="2022-01-01">${event.toDateString()}</time></a></li>
                                        
                                     </ul>
-                                </div>
-
-                                <div class="content">
-                                    <p>
-                                       ${element.little_description}
-                                    </p>
-                                </div>
-
-                                <div class="read-more mt-auto align-self-end">
-                                    <a href="/berita/${element.slug}">Selengkapnya <i class="bi bi-arrow-right"></i></a>
                                 </div>
 
                             </article>

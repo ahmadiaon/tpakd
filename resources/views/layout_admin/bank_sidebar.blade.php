@@ -105,6 +105,7 @@
                         <span class="micon bi bi-house"></span><span class="mtext">My Bank</span>
                     </a>
                     <ul class="submenu " style="display:block">
+                        <li><a class="{{ ( $active == 'list')? 'active' : '' }}" href="/index-pengajuan">Total Pengajuan</a></li>
                         <li><a class="{{ ( $active == 'KUR')? 'active' : '' }}" href="/list-pengajuan/kur">KUR</a></li>
                         <li><a class="{{ ( $active == 'KPMR')? 'active' : '' }}"  href="/list-pengajuan/kpmr">K/PMR</a></li>
                         <li><a class="{{ ( $active == 'BARU')? 'active' : '' }}"  href="/list-pengajuan/baru">Rek. Baru</a></li>

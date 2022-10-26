@@ -21,6 +21,7 @@ use App\Http\Controllers\BankGroupController;
 use App\Http\Controllers\PengajuanKurController;
 use App\Http\Controllers\TpakdKaltengController;
 use App\Http\Controllers\FinancialInformationController;
+use App\Http\Controllers\PromotionController;
 
 // authentication admin
 
@@ -59,6 +60,7 @@ Route::get('/informasi-kur', [PubController::class, 'informasi_kur']);
 Route::get('/informasi-qris', [PubController::class, 'informasi_qris']);
 Route::get('/informasi-simpel', [PubController::class, 'informasi_simpel']);
 Route::get('/berita/{slug}', [PubController::class, 'detail_berita']);
+Route::get('/promosi', [PubController::class, 'promosi']);
 // Route::get('/maps', [PubController::class, 'maps']);
 
 Route::get('/maps', [PubController::class, 'maps']);
@@ -88,7 +90,12 @@ Route::post('/bank-admin/', [BankAdminController::class, 'store']);
 Route::get('/bank-admin/create', [BankAdminController::class, 'create']);
 Route::get('send-mail', [MailController::class, 'index']);
 Route::middleware(['islogin'])->group(function () {
+    Route::get('/admin/pengajuan/{jenis_pengajuan}/{id_bank}', [PengajuanController::class, 'showAdmin']);
+
+
+
     Route::get('/list-pengajuan/{jenis_pengajuan}', [PengajuanController::class, 'show']);
+    Route::get('/index-pengajuan', [PengajuanController::class, 'countPengajuan']);
     Route::post('/export-list-pengajuan/{jenis_pengajuan}', [PengajuanController::class, 'export']);
 
     Route::get('/my-bank', [BankController::class, 'show']);
@@ -100,13 +107,16 @@ Route::middleware(['islogin'])->group(function () {
     Route::get('/add-user', [UserController::class, 'create']);
     Route::post('/add-user', [UserController::class, 'storeUser']);
     Route::post('/update-user', [UserController::class, 'updateUser']);
-
+    Route::get('/superadmin/admin-bank/delete/{id}',  [BankController::class, 'delete']);    
+    Route::get('/superadmin/admin-bank/reset/{id}',  [BankController::class, 'resetPass']);    
+    Route::get('/bank/edit/{id}',  [BankController::class, 'showAdmin']);    
     Route::middleware(['isSuperAdmin'])->group(function () {
-        Route::get('/superadmin', [AdminAuthController::class, 'indexSuperAdmin']);
+        Route::get('/superadmin', [AdminController::class, 'index']);
         Route::get('/superadmin/setup', [AdminController::class, 'setup'])->name('superadmin-page'); 
         Route::get('/superadmin/bank/create', [BankController::class, 'createBank']); 
 
         Route::get('/superadmin/bank',  [BankController::class, 'index']);     
+        
         Route::get('/superadmin/admin-bank',  [AdminController::class, 'adminBank']);  
         Route::post('/superadmin/setup/bank-owner/store', [BankOwnerController::class, 'store']);
 
@@ -131,6 +141,13 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/superadmin/berita/{slug}/edit',  [NewsController::class, 'show']);  
         Route::get('/superadmin/berita/create',  [NewsController::class, 'create']);  
         Route::post('/superadmin/berita',  [NewsController::class, 'store']);  
+        Route::get('/superadmin/berita/delete/{slug}',  [NewsController::class, 'delete']);
+        
+        Route::get('/superadmin/promosi',  [PromotionController::class, 'index']);  
+        Route::get('/superadmin/promosi/{slug}/edit',  [NewsController::class, 'show']);  
+        Route::get('/superadmin/promosi/create',  [PromotionController::class, 'create']);  
+        Route::post('/superadmin/promosi',  [PromotionController::class, 'store']);  
+        Route::get('/superadmin/promosi/delete/{slug}',  [NewsController::class, 'delete']); 
 
 
         // tentang tpakd
@@ -138,8 +155,10 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/superadmin/dasar-pembentukan',  [PubController::class, 'createDasarPembentukan']);  
         Route::post('/superadmin/dasar-pembentukan',  [PubController::class, 'storeDasarPembentukan']);  
 
+        Route::get('/superadmin/tpakd-kalteng/create',  [TpakdKaltengController::class, 'create']); 
         Route::get('superadmin/tpakd-kalteng',  [TpakdKaltengController::class, 'index']); 
         Route::get('/superadmin/tpakd-kalteng/edit/{slug}',  [TpakdKaltengController::class, 'show']); 
+        Route::get('/superadmin/tpakd-kalteng/delete/{slug}',  [TpakdKaltengController::class, 'delete']); 
         Route::post('/superadmin/tpakd-kalteng', [TpakdKaltengController::class, 'store']);
 
 
@@ -158,6 +177,7 @@ Route::middleware(['islogin'])->group(function () {
     });
     
     Route::middleware(['isAdminBank'])->group(function () {
+        Route::get('/beranda', [AdminController::class, 'index']);
         Route::get('/admin', [AdminAuthController::class, 'indexAdmin']);
         Route::get('/admin/bank',  [BankController::class, 'index'])->name('admin-page');
         Route::get('/admin/bank/create',  [BankController::class, 'createBank']);      

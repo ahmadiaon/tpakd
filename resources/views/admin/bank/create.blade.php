@@ -43,7 +43,7 @@
                     {{-- id --}}
                     <div class="col-2">
                         <div class="form-group">
-                            <label>IDss</label>
+                            <label>ID</label>
                             <input autofocus name="id_bank" type="text"
                                 class="form-control  @error('id_bank') is-invalid @enderror"
                                 value="{{ old('id_bank') }}" id="id_bank">
@@ -358,7 +358,7 @@
                 <div class="row">
                     {{-- id --}}
                     {{-- Bank name --}}
-                    <div class="col-2">
+                    <div class="col-4">
                         <div class="form-group">
                             <label>Nomor Izin</label>
                             <div class="form-group" data-select2-id="7">
@@ -375,7 +375,7 @@
                         </div>
                     </div>
                     {{-- Bank name --}}
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="form-group">
                             <label>Tanggal Izin</label>
                             <div class="form-group" data-select2-id="7">
@@ -385,72 +385,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="form-group">
                             <label>Tanggal Mulai Operasi</label>
                             <div class="form-group" data-select2-id="7">
                                 <input name="bank_date_operation" class="form-control date-picker"
                                     placeholder="Select Date" type="text">
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    {{-- id --}}
-                    {{-- Bank name --}}
-                    <div class="col-2">
-                        <div class="form-group">
-                            <label>Surat Penutupan</label>
-                            <div class="form-group" data-select2-id="7">
-                                <input autofocus name="bank_no_close" type="text"
-                                    class="form-control  @error('bank_no_close') is-invalid @enderror"
-                                    value="{{ old('bank_no_close') }}" id="bank_no_close">
-                                @error('bank_no_close')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Bank name --}}
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Tanggal Penutupan</label>
-                            <div class="form-group" data-select2-id="7">
-                                <input name="bank_date_close" class="form-control date-picker" placeholder="Select Date"
-                                    type="text">
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- id --}}
-                    {{-- Bank name --}}
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Surat Perubahan Status</label>
-                            <div class="form-group" data-select2-id="7">
-                                <input autofocus name="bank_close_permission" type="text"
-                                    class="form-control  @error('bank_close_permission') is-invalid @enderror"
-                                    value="{{ old('bank_close_permission') }}" id="bank_close_permission">
-                                @error('bank_close_permission')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Bank name --}}
-                    <div class="col-3">
-                        <div class="form-group">
-                            <label>Tanggal Perubahan</label>
-                            <div class="form-group" data-select2-id="7">
-                                <input name="bank_date_change" class="form-control date-picker"
-                                    placeholder="Select Date" type="text">
                             </div>
                         </div>
                     </div>
@@ -484,9 +425,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/admin/setup">
-                    <button type="button" class="btn btn-secondary">Batal</button>
-                </a>
+                
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
         </div>

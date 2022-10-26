@@ -9,7 +9,7 @@ class FinancialInformationController extends Controller
 {
     
     public function index(){
-        $financialInformations = FinancialInformation::all();
+        $financialInformations = FinancialInformation::whereNot('financial', 'Latar Belakang')->whereNot('financial', 'Dasar Pembentukan')->whereNot('financial', 'Road Map')->get();
         
         $data = [
             'financialInformations'=> $financialInformations,

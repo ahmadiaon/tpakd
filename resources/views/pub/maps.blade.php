@@ -138,16 +138,7 @@
     });
   
   
-    // console.log(map.getCenter().wrap());
-    map.on("style.load", function () {
-        map.on("click", function (e) {
-        var coordinates = e.lngLat;
-        new mapboxgl.Popup()
-            .setLngLat(coordinates)
-            .setHTML("Coordinate Here: <br/>" + coordinates)
-            .addTo(map);
-        });
-    });
+   
     map.on("move", function (e) {
         // document.getElementById("center").innerHTML = map
         // .getCenter()

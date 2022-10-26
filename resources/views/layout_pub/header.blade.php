@@ -64,9 +64,8 @@
                     </ul>
                 </li>
                 <li><a class="{{ ($active == 'berita')?'active':'' }}" href="/berita">Berita</a></li>
-                <li><a class="{{ ($active == 'layanan_konsumen')?'active':'' }}" href="/layanan-konsumen">Layanan
-                        Konsumen</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a class="{{ ($active == 'promosi')?'active':'' }}" href="/promosi">Promosi</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </nav><!-- .navbar -->
 

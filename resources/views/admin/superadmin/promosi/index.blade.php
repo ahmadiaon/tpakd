@@ -8,11 +8,11 @@
             <div class="pd-20">
                 <div class="row">
                     <div class="col-6">
-                        <h4 class="text-blue h4">Berita</h4>
+                        <h4 class="text-blue h4">Promosi</h4>
                     </div>
                     <div class="col-6">
-                        <a href="/superadmin/berita/create">
-                            <button class="btn btn-primary float-right">Tambah Berita</button>
+                        <a href="/superadmin/promosi/create">
+                            <button class="btn btn-primary float-right">Tambah Promosi</button>
                         </a>
                     </div>
                 </div>
@@ -31,9 +31,8 @@
                         <tr>
                             <th class="table-plus datatable-nosort">Judul</th>
                             <th>Image</th>
-                            <th>Description</th>
-                            <th>status</th>
                             <th>Tanggal</th>
+                            <th>Status</th>
                             <th class="datatable-nosort">Action</th>
                         </tr>
                     </thead>
@@ -49,10 +48,8 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>{{ Illuminate\Support\Str::limit($value->little_description, 40, $end='...') }}</td>
-                            <td>{{ $value->status }}</td>
                             <td>{{ $value->date }}</td>
-
+                            <td>{{ $value->status }}</td>
                             <td>
                                 <div class="dropdown">
                                     <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"

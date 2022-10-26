@@ -169,13 +169,9 @@
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20">
         <div class="row">
-
-
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-20">
-                <div class="card-box height-100-p pd-20 min-height-200px">
-                    <div class="d-flex justify-content-between pb-10">
+            <div class="col-lg-6 col-md-6 mb-20">
+                <div class="card-box height-100-p min-height-200px">
+                    <div class="d-flex justify-content-between pd-20 ">
                         <div class="h5 mb-0">Berdasarkan Kepemilikan</div>
                         <div class="dropdown">
                             <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -189,88 +185,88 @@
                             </div>
                         </div>
                     </div>
-                    <div class="user-list">
-                        <ul>
-                            @foreach($bank_owners as $bank_owner)
-                            <li class="d-flex align-items-center justify-content-between">
-                                <div class="name-avatar d-flex align-items-center pr-2">
+                    <table class="data-table  table stripe hover nowrap" id="a">
+                        <thead>
+                            <tr>
+                                <th class="table-plus">Name</th>
+                                <th class="datatable-nosort">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                         @foreach($bank_owners as $bank_owner)
+                            <tr>
 
-                                    <div class="txt">
-                                        <div class="font-12 weight-500" data-color="#b2b1b6">
-                                            {{ $bank_owner->bank_owner }}
+                                <td>{{ $bank_owner->bank_owner }}</td>
+
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="btn-group">
+                                            <div class="cta flex-shrink-0 mr-2">
+                                                 <a href="#" onclick="editBankOwner({{ $bank_owner->id }})"
+                                            class="btn btn-sm btn-outline-primary"><i
+                                                class="icon-copy ion-edit"></i></a>
+                                                </div>
+                                            <div class="cta flex-shrink-0">
+                                                  <a href="#" onclick="toDelete('bank-owner',{{ $bank_owner->id }})"
+                                            class="btn btn-sm btn-outline-danger"><i
+                                                class="icon-copy ion-trash-b"></i></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="btn-group">
-                                    <div class="cta flex-shrink-0 mr-2">
-                                        <a href="#" onclick="editBankOwner({{ $bank_owner->id }})"
-                                            class="btn btn-sm btn-outline-primary"><i
-                                                class="icon-copy ion-edit"></i></a>
-                                    </div>
-                                    <div class="cta flex-shrink-0">
-                                        <a href="#" onclick="toDelete('bank-owner',{{ $bank_owner->id }})"
-                                            class="btn btn-sm btn-outline-danger"><i
-                                                class="icon-copy ion-trash-b"></i></a>
-                                    </div>
-                                </div>
-                            </li>
+                                </td>
+                            </tr>
                             @endforeach
-                            <div class="d-flex justify-content-end">
-                                {{ $bank_owners->links() }}
-                            </div>
-                        </ul>
-                    </div>
+                           
+                        </tbody>
+                    </table> 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-20">
-                <div class="card-box height-100-p pd-20 min-height-200px">
-                    <div class="d-flex justify-content-between pb-10">
+            <div class="col-lg-6 col-md-6 mb-20">
+                <div class="card-box height-100-p   min-height-200px">
+                    <div class="d-flex justify-content-between pd-20">
                         <div class="h5 mb-0">Dat I</div>
-                        <div class="dropdown">
-                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-                                data-color="#1b3133" href="#" role="button" data-toggle="dropdown">
-                                <i class="dw dw-more"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalDatI"><i
-                                        class="icon-copy ion-android-add-circle"></i> Add</a>
-                            </div>
-                        </div>
+                        
                     </div>
-                    <div class="user-list">
-                        <ul>
-                            @foreach($dat_i_s as $dat_i)
-                            <li class="d-flex align-items-center justify-content-between">
-                                <div class="name-avatar d-flex align-items-center pr-2">
-                                    <div class="txt">
-                                        <div class="font-14 weight-600">{{ $dat_i->dat_i_code }} - {{ $dat_i->dat_i_name
-                                            }}</div>
-                                    </div>
-                                </div>
-                                <div class="btn-group">
-                                    <div class="cta flex-shrink-0 mr-2">
-                                        <a href="#" onclick="editDatI({{ $dat_i->id }})"
+                    <table class="data-table  table stripe hover nowrap" id="aa">
+                        <thead>
+                            <tr>
+                                <th class="table-plus">Name</th>
+                                <th class="datatable-nosort">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach($dat_i_s as $dat_i)
+                            <tr>
+
+                                <td>{{ $dat_i->dat_i_code }} - {{ $dat_i->dat_i_name }}</td>
+
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="btn-group">
+                                            <div class="cta flex-shrink-0 mr-2">
+                                                  <a href="#" onclick="editDatI({{ $dat_i->id }})"
                                             class="btn btn-sm btn-outline-primary"><i
                                                 class="icon-copy ion-edit"></i></a>
-                                    </div>
-                                    <div class="cta flex-shrink-0">
-                                        <a href="#" onclick="toDelete('dat-i',{{ $dat_i->id }})"
+                                                </div>
+                                            <div class="cta flex-shrink-0">
+                                                  <a href="#" onclick="toDelete('dat-i',{{ $dat_i->id }})"
                                             class="btn btn-sm btn-outline-danger"><i
                                                 class="icon-copy ion-trash-b"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </td>
+                            </tr>
                             @endforeach
-                            <div class="d-flex justify-content-end">
-                                {{ $dat_i_s->links() }}
-                            </div>
-                        </ul>
-                    </div>
+                           
+                        </tbody>
+                    </table> 
+                    
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-20">
-                <div class="card-box height-100-p pd-20 min-height-200px">
-                    <div class="d-flex justify-content-between pb-10">
+            <div class="col-lg-7 col-md-6 mb-20">
+                <div class="card-box height-100-p  min-height-200px">
+                    <div class="d-flex justify-content-between pd-20">
                         <div class="h5 mb-0">Kegiatan Operasional</div>
                         <div class="dropdown">
                             <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -283,59 +279,8 @@
                                     Add</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="user-list">
-                        <ul>
-                            @foreach($bank_operationals as $bank_operational)
-                            <li class="d-flex align-items-center justify-content-between">
-                                <div class="name-avatar d-flex align-items-center pr-2">
-                                    {{-- <div class="avatar mr-2 flex-shrink-0">
-                                        <img src="{{ env('APP_URL') }}{{ $office_statu->photo_path }}"
-                                            class="border-radius-100 box-shadow" width="50" height="50" alt="" />
-                                    </div> --}}
-                                    <div class="txt">
-                                        <div class="font-14 weight-600">{{ $bank_operational->bank_operational }}</div>
-
-                                    </div>
-                                </div>
-                                <div class="btn-group">
-                                    <div class="cta flex-shrink-0 mr-2">
-                                        <a href="#" onclick="editBankOperational({{ $bank_operational->id }})"
-                                            class="btn btn-sm btn-outline-primary"><i
-                                                class="icon-copy ion-edit"></i></a>
-                                    </div>
-                                    <div class="cta flex-shrink-0">
-                                        <a href="#" onclick="toDelete('bank-operational',{{ $bank_operational->id }})"
-                                            class="btn btn-sm btn-outline-danger"><i
-                                                class="icon-copy ion-trash-b"></i></a>
-                                    </div>
-                                </div>
-                            </li>
-                            @endforeach
-                            <div class="d-flex justify-content-end">
-                                {{ $bank_operationals->links() }}
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-30">
-            <div class="col-md-7">
-                <div class="card-box">
-                    <div class="row pd-20 ">
-                        <div class="col-md-4">
-                            <div class="h5  mb-0">Dat II</div>
-                        </div>
-                        <div class="col-md-8 text-right">
-                            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalDatII"><i
-                                    class="icon-copy ion-android-add-circle"></i>
-                                Add</a>
-                        </div>
-                    </div>
-
-
-                    <table class="data-table table nowrap">
+                    </div>  
+                    <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
                                 <th class="table-plus">Name</th>
@@ -343,35 +288,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($dat_i_i_s as $dat_i_i)
+                            @foreach($bank_operationals as $bank_operational)
                             <tr>
 
-                                <td>{{ $dat_i_i->dat_i_i_code }}-{{ $dat_i_i->dat_i_i_name }}</td>
+                                <td>{{ $bank_operational->bank_operational }}</td>
 
                                 <td>
                                     <div class="table-actions">
                                         <div class="btn-group">
                                             <div class="cta flex-shrink-0 mr-2">
-                                                <a href="#" onclick="editDatII({{ $dat_i_i->id }})"
-                                                    class="btn btn-sm btn-outline-primary"><i
-                                                        class="icon-copy ion-edit"></i></a>
+                                                  <a href="#" onclick="editBankOperational({{ $bank_operational->id }})"
+                                            class="btn btn-sm btn-outline-primary"><i
+                                                class="icon-copy ion-edit"></i></a>
                                             </div>
                                             <div class="cta flex-shrink-0">
-                                                <a href="#" onclick="toDelete('dat-i-i',{{ $dat_i_i->id }})"
-                                                    class="btn btn-sm btn-outline-danger"><i
-                                                        class="icon-copy ion-trash-b"></i></a>
+                                                 <a href="#" onclick="toDelete('bank-operational',{{ $bank_operational->id }})"
+                                            class="btn btn-sm btn-outline-danger"><i
+                                                class="icon-copy ion-trash-b"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             @endforeach
-                            <div class="d-flex justify-content-end">
-                                {{ $dat_i_i_s->links() }}
-                            </div>
+                           
                         </tbody>
-                    </table>
+                    </table>                 
                 </div>
+                
             </div>
             <div class="col-lg-5 col-md-6 mb-20">
                 <div class="card-box height-100-p pd-20 min-height-200px">
@@ -424,6 +368,59 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row mb-30">
+            <div class="col-md-7">
+                <div class="card-box">
+                    <div class="row pd-20 ">
+                        <div class="col-md-4">
+                            <div class="h5  mb-0">Dat II</div>
+                        </div>
+                        <div class="col-md-8 text-right">
+                            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modalDatII"><i
+                                    class="icon-copy ion-android-add-circle"></i>
+                                Add</a>
+                        </div>
+                    </div>
+
+
+                    <table class="data-table table stripe hover nowrap">
+                        <thead>
+                            <tr>
+                                <th class="table-plus">Name</th>
+                                <th class="datatable-nosort">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($dat_i_i_s as $dat_i_i)
+                            <tr>
+
+                                <td>{{ $dat_i_i->dat_i_i_code }}-{{ $dat_i_i->dat_i_i_name }}</td>
+
+                                <td>
+                                    <div class="table-actions">
+                                        <div class="btn-group">
+                                            <div class="cta flex-shrink-0 mr-2">
+                                                <a href="#" onclick="editDatII({{ $dat_i_i->id }})"
+                                                    class="btn btn-sm btn-outline-primary"><i
+                                                        class="icon-copy ion-edit"></i></a>
+                                            </div>
+                                            <div class="cta flex-shrink-0">
+                                                <a href="#" onclick="toDelete('dat-i-i',{{ $dat_i_i->id }})"
+                                                    class="btn btn-sm btn-outline-danger"><i
+                                                        class="icon-copy ion-trash-b"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
 
         </div>
         <div class="footer-wrap pd-20 mb-20 card-box" id="udin">
@@ -597,8 +594,7 @@
                 <div class="mb-30 text-center">
                     <img src="/vendors/images/success.png" />
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod
+             Data Berhasil
             </div>
             <div class="modal-footer justify-content-center">
                 <button onclick="goto()" type="button" class="btn btn-primary" data-dismiss="modal">
@@ -618,9 +614,7 @@
                     <i class="fa fa-exclamation-triangle"></i> Alert
                 </h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua.
+                 Data Berhasil
                 </p>
                 <button type="button" class="btn btn-light" data-dismiss="modal">
                     Ok
@@ -648,7 +642,7 @@
                         NO
                     </div>
                     <div class="col-6">
-                        <button type="button" onclick="confirmedDelete()"
+                        <button type="submit" onclick="confirmedDelete()"
                             class="btn btn-primary border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
                             <i class="fa fa-check"></i>
                         </button>
@@ -782,15 +776,16 @@
         let id = $('#id_delete').val();
         let _url = $('#urls').val();
         _url = '/superadmin/'+_url+'/delete'
-        $('#confirmation-modal').modal('hide');
-        $.ajax({
-              url: _url,
-              type: "POST",
+         $.ajax({
+            url: _url,
+            type: "POST",
+              
               data: {
                 id :id,
-				_token: _token
+                _token: _token
               },
               success: function(response) {
+                console.log(response)
                 $('#success-modal').modal('show');
                 
               },
@@ -798,7 +793,9 @@
                 console.log(response)
                 $('#alert-modal').modal('show')
               }
-            })
+            }); 
+        $('#confirmation-modal').modal('hide');
+       
     }
 </script>
 

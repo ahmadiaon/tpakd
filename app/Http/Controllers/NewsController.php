@@ -74,4 +74,9 @@ class NewsController extends Controller
         ];
         return view('admin.superadmin.berita.edit', $data);
     }
+
+    public function delete($slug){
+        News::where('slug', $slug)->delete();
+        return redirect('/superadmin/berita')->with('success', 'Done');   
+    }
 }
