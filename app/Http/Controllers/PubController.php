@@ -10,6 +10,8 @@ use App\Models\Profile;
 use App\Models\GrafikDua;
 use Illuminate\Http\File;
 use App\Models\PengajuanKur;
+use App\Models\DatII;
+use App\Models\Kecamatan;
 use App\Models\TpakdKalteng;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -46,9 +48,12 @@ class PubController extends Controller
         return view('pub.index',$data);
     }
     public function pilih($id){
-      
+        // return $id;
+        $data_bank = Bank::where('id', $id)->get()->first();
+        // return $data_bank;
         $data = [
             'title' => 'Home',
+            'data_bank' => $data_bank,
             'active'=> 'home',
             'id'    => $id
         
@@ -59,7 +64,20 @@ class PubController extends Controller
     public function maps(){
         // return 'usij';
         $banks = Bank::all();
+
+        $dat_i_i_s = DatII::latest()->get();
         $maps = "";
+        $kabupatens = [];
+
+        foreach($dat_i_i_s as $item){
+            $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        }
+
+        // dd($kabupatens);
+
+        
+
+
         $bank_coordinates = array();
         foreach($banks as $bank){
             // if($maps == ""){
@@ -88,11 +106,61 @@ class PubController extends Controller
         $data = [
             'title' => 'Maps',
             'active'=> 'maps',
-            'test'  => $ahmadies
+            'test'  => $ahmadies,
+            'kabupatens'    => $dat_i_i_s,
+            'kecamatans'    => $kabupatens
             
 
         ];
         return view('pub.maps',$data);
+    }
+
+    public function mapsData(Request $request){
+        // return 'usij';
+        $banks = Bank::where('kecamatan_id', $request->kecamatan_id)->get();
+
+        
+        
+        $dat_i_i_s = DatII::latest()->get();
+        $maps = "";
+        $kabupatens = [];
+
+        foreach($dat_i_i_s as $item){
+            $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        }
+
+        // dd($kabupatens);
+
+        
+
+
+        $bank_coordinates = array();
+        foreach($banks as $bank){
+            // if($maps == ""){
+            //     $maps = $maps.'{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }else{
+            //     $maps = $maps.',{"type" : "Feature","properties": {"title ": "'.$bank->bank_name.'","description" : "kantor" }, "geometry": {"coordinates" : [113.89518001044064, -2.2192465933650283]}},{"type" : "Feature","properties": {"title ": "Anjing Udin","description" : "kantor" }, "geometry": {"coordinates" : ['.$bank->longitude.', '.$bank->latitude.']}}';
+            // }
+            $bank_coordinates[] = [
+                'type' => 'Feature',
+                'properties'=>  [
+                    'bank_id'   => $bank->id,
+                    'title'=> $bank->bank_name,
+                    'description' => $bank->bank_address,
+                ],
+                'geometry'=> [
+                    'coordinates' =>[$bank->longitude, $bank->latitude],
+                ]
+            ];
+
+        }
+        // dd($bank_coordinates);
+ 
+        // $ahmadiString = '['.$maps.']';
+        $ahmadies = json_encode($bank_coordinates);
+        // dd($ahmadies);
+
+        return response()->json(['code'=>200, 'message'=>'aa','data' => $ahmadies], 200);
     }
 
     public function mapsIndex(){
@@ -259,12 +327,21 @@ class PubController extends Controller
         AND`bank_admins`.`bank_id` = `banks`.`id` 
         AND users.id = bank_admins.user_id
         AND users.role_id = roles.id');
+
+        // $kabupatens = DatII::latest()->get();
+        // $kecamatans = [];
+
+        // foreach($kabupatens as $item){
+        //     $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        // }
+
         $data = [
             'title' => 'Pengajuan KUR',
             'active'=> 'akses_keuangan',
             'banks' => $banks,
             'id' => $id
         ];
+        // dd($data);
         // return redirect()->route('/pengajuan-sukses/'.$data->id);
         return view('pub.pengajuan_kur',$data);
     }

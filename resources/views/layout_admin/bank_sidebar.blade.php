@@ -106,12 +106,31 @@
                     </a>
                     <ul class="submenu " style="display:block">
                         <li><a class="{{ ( $active == 'list')? 'active' : '' }}" href="/index-pengajuan">Total Pengajuan</a></li>
-                        <li><a class="{{ ( $active == 'KUR')? 'active' : '' }}" href="/list-pengajuan/kur">KUR</a></li>
-                        <li><a class="{{ ( $active == 'KPMR')? 'active' : '' }}"  href="/list-pengajuan/kpmr">K/PMR</a></li>
+                        @if(!empty(session('dataUser')->kur))
+                            <li><a class="{{ ( $active == 'KUR')? 'active' : '' }}" href="/list-pengajuan/kur">KUR</a></li>
+                        @endif
+                        @if(!empty(session('dataUser')->kpmr))
+                            <li><a class="{{ ( $active == 'KPMR')? 'active' : '' }}"  href="/list-pengajuan/kpmr">K/PMR</a></li>
+                        @endif
+                        @if(!empty(session('dataUser')->baru))
                         <li><a class="{{ ( $active == 'BARU')? 'active' : '' }}"  href="/list-pengajuan/baru">Rek. Baru</a></li>
-                        <li><a class="{{ ( $active == 'PINJAMAN')? 'active' : '' }}"  href="/list-pengajuan/pinjaman">Ajuan Pinjaman</a></li>
-                        <li><a class="{{ ( $active == 'SIMPLE')? 'active' : '' }}"  href="/list-pengajuan/simpel">SimPel</a></li>
-                        <li><a class="{{ ( $active == 'QEIS')? 'active' : '' }}"  href="/list-pengajuan/qris">QRIS</a></li>
+                        @endif
+                        @if(!empty(session('dataUser')->pinjaman))
+                            <li><a class="{{ ( $active == 'PINJAMAN')? 'active' : '' }}"  href="/list-pengajuan/pinjaman">Ajuan Pinjaman</a></li>
+                        @endif
+                        @if(!empty(session('dataUser')->simpel))
+                            <li><a class="{{ ( $active == 'SIMPLE')? 'active' : '' }}"  href="/list-pengajuan/simpel">SimPel</a></li>
+                        @endif
+                        @if(!empty(session('dataUser')->qris))
+                            <li><a class="{{ ( $active == 'QEIS')? 'active' : '' }}"  href="/list-pengajuan/qris">QRIS</a></li>
+                        @endif
+                        
+                        
+                        
+                        
+                       
+                        
+                        
                     </ul>
                 </li>
                 <li class="dropdown">

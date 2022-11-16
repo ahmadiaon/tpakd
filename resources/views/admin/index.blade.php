@@ -22,7 +22,7 @@
 			</div>
 		</div>
         <div class="title pb-20">
-			<h2 class="h3 mb-0">Hospital Overview</h2>
+			<h2 class="h3 mb-0">Data Overview</h2>
 		</div>
 
 		<div class="row pb-10">
@@ -96,7 +96,7 @@
 			</div>
 		</div> 
         <div class="card-box pb-10">
-			<div class="h5 pd-20 mb-0">Recent Patient</div>
+			<div class="h5 pd-20 mb-0">Data Pengajuan</div>
 			<table class="data-table table nowrap">
 				<thead>
 					<tr>
@@ -124,7 +124,7 @@
 						<td> <a href="admin/pengajuan/kur/{{$bank->id}}" > {{$bank->total_kur_done}}/{{$bank->total_kur_done+$bank->total_kur_pending}}</a></td>
 						<td><a href="admin/pengajuan/kpmr/{{$bank->id}}" >{{$bank->total_kpmr_done}}/{{$bank->total_kpmr_done+$bank->total_kpmr_pending}}</a></td>
 						<td><a href="admin/pengajuan/pinjaman/{{$bank->id}}" >{{$bank->total_pinjaman_done}}/{{$bank->total_pinjaman_done+$bank->total_pinjaman_pending}}</a></td>
-						<td<a href="admin/pengajuan/baru/{{$bank->id}}" >{{$bank->total_baru_done}}/{{$bank->total_baru_done+$bank->total_baru_pending}}</a></td>
+						<td><a href="admin/pengajuan/baru/{{$bank->id}}" >{{$bank->total_baru_done}}/{{$bank->total_baru_done+$bank->total_baru_pending}}</a></td>
 						<td><a href="admin/pengajuan/qris/{{$bank->id}}" >{{$bank->total_qris_done}}/{{$bank->total_qris_done+$bank->total_qris_pending}}</a></td>
 						<td><a href="admin/pengajuan/simpel/{{$bank->id}}" >{{$bank->total_simpel_done}}/{{$bank->total_simpel_done+$bank->total_simpel_pending}}</a></td>
 					</tr>

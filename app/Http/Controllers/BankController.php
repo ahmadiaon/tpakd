@@ -7,6 +7,7 @@ use App\Models\Bank;
 use App\Models\User;
 use App\Models\DatI;
 use App\Models\DatII;
+use App\Models\Kecamatan;
 use App\Models\JobDesk;
 use App\Models\BankName;
 use App\Models\BankAdmin;
@@ -39,6 +40,41 @@ class BankController extends Controller
             $banks = Bank::join('bank_admins','bank_admins.bank_id', 'banks.id')
             ->join('users','users.id', 'bank_admins.user_id')
             ->latest()->where('bank_name_id', $bank->bank_name_id)->get([
+                'banks.*',
+                'users.name',
+                'bank_admins.user_id'
+            ]);
+        }
+        // dd($banks) ;
+        return view('admin.bank.index', [
+            'banks'=>$banks,
+            'active'    => 'bank'
+        ]);
+    }
+
+    public function indexList($bank_name_id)
+    {
+
+        $bank;
+        if(session('dataUser')->role == "superadmin"){
+            // $banks = Bank::latest()->get();
+            
+            $banks = Bank::join('bank_admins','bank_admins.bank_id', 'banks.id')
+            ->join('users','users.id', 'bank_admins.user_id')
+            ->where('banks.bank_name_id', $bank_name_id)
+            ->latest()->get([
+                'banks.*',
+                'users.name',
+                'bank_admins.user_id'
+            ]);
+            // dd($banks);
+        }else if(session('dataUser')->role == "admin-bank"){
+            $bank_admin = BankAdmin::where('user_id',session('dataUser')->id )->first();
+            $bank = Bank::where('id',$bank_admin->bank_id )->first();
+            $banks = Bank::join('bank_admins','bank_admins.bank_id', 'banks.id')
+            ->join('users','users.id', 'bank_admins.user_id')
+            ->latest()
+            ->where('bank_name_id', $bank->bank_name_id)->get([
                 'banks.*',
                 'users.name',
                 'bank_admins.user_id'
@@ -101,6 +137,7 @@ class BankController extends Controller
     }
     public function createBank()
     {
+
         // dd('udin');
         $bank_names = BankName::latest()->get();
         $office_status = OfficeStatus::latest()->get();
@@ -109,11 +146,18 @@ class BankController extends Controller
         $dat_i_s = DatI::latest()->get();
         $dat_i_i_s = DatII::latest()->get();
         $krs = kr::latest()->get();
+        $kabupatens = [];
+
+        foreach($dat_i_i_s as $item){
+            $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        }
+
 
         $dd = [
             'title'=> "Create Bank",
             'description'=> 'kantor '
         ];
+        // dd($dat_i_i_s);
        
 
         $ddd = json_encode($dd);
@@ -166,6 +210,7 @@ class BankController extends Controller
             'dat_i_i_s'    => $dat_i_i_s,
             'krs'    => $krs,
             'test'  => $ahmadies,
+            'kabupatens'    => $kabupatens,
             'job_desks'    => $job_desks,
             'bank_name_id' => (session('dataUser')->role_id == 2) ? session('dataUser')->bank_name_id:0
         ]);
@@ -184,7 +229,8 @@ class BankController extends Controller
         }
         // return session('dataUser');
         return view('admin.bank.index', [
-            'banks'=>$banks
+            'banks'=>$banks,
+            'active'    => 'our-bank'
         ]);
         return "ourBank";
     }
@@ -203,16 +249,16 @@ class BankController extends Controller
             [
                 'id_bank' => $request->id_bank ,
                 'bank_name_id' => $request->bank_name_id ,
-                'office_status_id' => $request->office_status_id ,
-                'bank_operational_id' => $request->bank_operational_id ,
-                'bank_owner_id' => $request->bank_owner_id ,
-                'dat_i_id' => $request->dat_i_id ,
+                'office_status_id' => 1,
+                'bank_operational_id' => 1,
+                'bank_owner_id' => 1,
+                'dat_i_id' => 1,
                 'dat_i_i_id' => $request->dat_i_i_id ,
-                'kr_id' => $request->kr_id ,
-                'job_desk_id' => $request->job_desk_id ,
+                'kr_id' => 1,
+                'job_desk_id' => 1,
                 'bank_name' => $request->bank_name ,
+                'kecamatan_id' => $request->kecamatan_id ,
                 'bank_address' => $request->bank_address ,
-
                 'bank_maps' => $request->bank_maps ,
                 'bank_pos_code' => $request->bank_pos_code ,
                 'bank_no_phone' => $request->bank_no_phone ,
@@ -227,10 +273,16 @@ class BankController extends Controller
                 'latitude' => $request->latitute ,
                 'longitude' => $request->longituted ,
                 'bank_status' => 'active' ,
+                'kur' => $request->kur,
+                'kpmr' => $request->kpmr,
+                'baru' => $request->baru,
+                'pinjaman' => $request->pinjaman,
+                'simpel' => $request->simpel,
+                'qris' => $request->qris,
 
             ]
         );
-
+        // dd($createBank);
       
         if($request->isedit){
             
@@ -285,6 +337,12 @@ class BankController extends Controller
         $dat_i_i_s = DatII::latest()->get();
         $krs = kr::latest()->get();
         $job_desks = JobDesk::latest()->get();
+        
+        $kabupatens = [];
+
+        foreach($dat_i_i_s as $item){
+            $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        }
         return view('admin.bank.edit',[
             'bank_names'    => $bank_names,
             'office_statuss'    => $office_status,
@@ -297,6 +355,7 @@ class BankController extends Controller
             'title'         => 'My Bank',
             'active'    => 'my-bamk',
             'test'  => $ahmadies,
+            'kabupatens' => $kabupatens,
             'bank'  => $data
         ]);
     
@@ -341,6 +400,13 @@ class BankController extends Controller
         $dat_i_i_s = DatII::latest()->get();
         $krs = kr::latest()->get();
         $job_desks = JobDesk::latest()->get();
+
+        $kabupatens = [];
+
+        foreach($dat_i_i_s as $item){
+            $kabupatens[$item->id] = Kecamatan::where('kabupaten_id', $item->id)->get();
+        }
+        // dd($data);
         return view('admin.bank.edit',[
             'bank_names'    => $bank_names,
             'office_statuss'    => $office_status,
@@ -352,6 +418,7 @@ class BankController extends Controller
             'job_desks'    => $job_desks,
             'title'         => 'My Bank',
             'active'    => 'my-bamk',
+            'kabupatens'    => $kabupatens,
             'test'  => $ahmadies,
             'bank'  => $data
         ]);

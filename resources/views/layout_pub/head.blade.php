@@ -30,7 +30,7 @@
 
   <!- web Main CSS File -->
     <link href="{{ env('APP_URL') }}assets/css/main.css" rel="stylesheet">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 
     <!-- =======================================================

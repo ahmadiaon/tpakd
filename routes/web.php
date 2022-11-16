@@ -22,6 +22,7 @@ use App\Http\Controllers\PengajuanKurController;
 use App\Http\Controllers\TpakdKaltengController;
 use App\Http\Controllers\FinancialInformationController;
 use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\KecamatanController;
 
 // authentication admin
 
@@ -64,6 +65,7 @@ Route::get('/promosi', [PubController::class, 'promosi']);
 // Route::get('/maps', [PubController::class, 'maps']);
 
 Route::get('/maps', [PubController::class, 'maps']);
+Route::post('/maps/data', [PubController::class, 'mapsData']);
 Route::get('/pilih/{id}', [PubController::class, 'pilih']);
 Route::get('/pengajuan', [PengajuanController::class, 'store']);
 Route::post('/pengajuan', [PengajuanController::class, 'store']);
@@ -116,9 +118,11 @@ Route::middleware(['islogin'])->group(function () {
         Route::get('/superadmin/bank/create', [BankController::class, 'createBank']); 
 
         Route::get('/superadmin/bank',  [BankController::class, 'index']);     
+        Route::get('/superadmin/bank/{bank_id}/list',  [BankController::class, 'indexList']);    
         
         Route::get('/superadmin/admin-bank',  [AdminController::class, 'adminBank']);  
         Route::post('/superadmin/setup/bank-owner/store', [BankOwnerController::class, 'store']);
+        Route::post('/superadmin/setup/kecamatan/store', [KecamatanController::class, 'store']);
 
         Route::get('/superadmin/setup/bank-owner/{id}/get', [BankOwnerController::class, 'show']);   
         Route::get('/superadmin/setup/dat-i/{id}/get', [DatIController::class, 'show']);   

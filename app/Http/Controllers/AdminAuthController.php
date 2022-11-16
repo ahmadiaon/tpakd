@@ -29,6 +29,7 @@ class AdminAuthController extends Controller
                 // dd($dataUser);
                 switch($dataUser->role) {
                     case('superadmin'):
+                        // dd($dataUser);
                         return redirect()->intended('/superadmin');
                         break;
                     case('admin-bank'):
@@ -46,8 +47,14 @@ class AdminAuthController extends Controller
                             return redirect()->route('login');
                         }
                         $dataUser->bank_name_id= $bankName_id->bank_name_id;
+                        $dataUser->kur= $bankName_id->kur;
+                        $dataUser->kpmr= $bankName_id->kpmr;
+                        $dataUser->baru= $bankName_id->baru;
+                        $dataUser->pinjaman= $bankName_id->pinjaman;
+                        $dataUser->simpel= $bankName_id->simpel;
+                        $dataUser->qris= $bankName_id->qris;
                         $request->session()->put('dataUser', $dataUser);
-                        
+                        // dd($dataUser);
                         return redirect()->intended('/beranda');
                         return redirect()->route('admin-page');
                         break;
@@ -63,8 +70,16 @@ class AdminAuthController extends Controller
                         ->where('bank_admins.user_id', $dataUser->id )
                         ->get()->first();
                         $dataUser->bank_name_id= $bankName_id->bank_name_id;
+                        $dataUser->kur= $bankName_id->kur;
+                        $dataUser->kpmr= $bankName_id->kpmr;
+                        $dataUser->baru= $bankName_id->baru;
+                        $dataUser->pinjaman= $bankName_id->pinjaman;
+                        $dataUser->simpel= $bankName_id->simpel;
+                        $dataUser->qris= $bankName_id->qris;
                         // dd($dataUser);
                         $request->session()->put('dataUser', $dataUser);
+                        // dd($dataUser);
+
                         return redirect()->intended('list-pengajuan/kur');
                         break;
                     

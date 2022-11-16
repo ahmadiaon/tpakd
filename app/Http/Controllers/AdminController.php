@@ -13,6 +13,7 @@ use App\Models\BankOwner;
 use App\Models\OfficeStatus;
 use Illuminate\Http\Request;
 use App\Models\BankOperational;
+use App\Models\Kecamatan;
 use App\Models\User;
 use App\Models\Pengajuan;
 use Illuminate\Support\Facades\DB;
@@ -103,6 +104,11 @@ class AdminController extends Controller
         $bank_owners = BankOwner::latest()->simplePaginate(4);
         $dat_i_s = DatI::latest()->simplePaginate(4);
         $dat_i_i_s = DatII::latest()->simplePaginate(4);
+        $kecamatans = Kecamatan::join('dat_i_i_s','dat_i_i_s.id','kecamatans.kabupaten_id')
+        ->latest()->get([
+            'dat_i_i_s.dat_i_i_name',
+            'kecamatans.*'
+        ]);
         $bank_admins = DB::table('bank_admins')
         ->join('users', 'users.id' ,'=','bank_admins.user_id')
         ->join('banks', 'banks.id' ,'=','bank_admins.bank_id')
@@ -116,7 +122,8 @@ class AdminController extends Controller
             'bank_owners'   => $bank_owners,
             'dat_i_s'   => $dat_i_s,
             'dat_i_i_s'   => $dat_i_i_s,
-            'bank_admins'   => $bank_admins
+            'bank_admins'   => $bank_admins,
+            'kecamatans'    => $kecamatans
         ]);
     }
 

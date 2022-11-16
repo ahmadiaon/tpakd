@@ -6,7 +6,7 @@
         <div class="card-box pd-20">
             <div class="row mb-20">
                 <div class="col">
-                    <h3>BANK</h3>
+                    <h3>Daftar BANK</h3>
                 </div>
                 <div class="col">
 
@@ -52,9 +52,36 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td class="form-inline">
+                                    <div class="dropdown mr-1">
+                                                <a class="btn btn-info  dropdown-toggle"
+                                                    href="#" role="button" data-toggle="dropdown">
+                                                    Pengajuan
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                                    @if($bank->kur)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/kur/{{$bank->id}}"> KUR</a>
+                                                    @endif
+                                                    @if($bank->kpmr)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/kpmr/{{$bank->id}}"> KPMR</a>
+                                                    @endif
+                                                    @if($bank->pinjaman)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/pinjaman/{{$bank->id}}">Pinjaman</a>
+                                                    @endif
+                                                    @if($bank->baru)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/baru/{{$bank->id}}">Rek. Baru</a>
+                                                    @endif
+                                                    @if($bank->qris)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/qris/{{$bank->id}}">QRIS</a>
+                                                    @endif
+                                                    @if($bank->simpel)
+                                                     <a class="dropdown-item" href="/admin/pengajuan/simpel/{{$bank->id}}"> SimPel</a>
+                                                    @endif
+                                                  
+                                                </div>
+                                            </div>
                                     <div class="table-actions">
-                                     <a href="#" onclick="resetAdminBank('{{$bank->id}}')"  data-color="#e95959">
+                                        <a href="#" onclick="resetAdminBank('{{$bank->id}}')"  data-color="#e95959">
                                             <button class="btn btn-success">reset pass</button>
                                         </a>
                                         <a href="/bank/edit/{{$bank->id}}"   data-color="#e95959">
@@ -63,7 +90,10 @@
                                         <a href="#" onclick="deleteAdminBank('{{$bank->id}}')"  data-color="#e95959">
                                               <button class="btn btn-danger">hapus</button>
                                         </a>
+                                       
                                     </div>
+                                    
+                                 
                                 </td>
                             </tr>
                             @endforeach

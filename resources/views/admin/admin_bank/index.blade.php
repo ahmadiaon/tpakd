@@ -3,12 +3,11 @@
 <div class="main-container">
     <div class="xs-pd-20-10 pd-ltr-20 mb-30">
         <div class="card-box pb-10 mb-30">
-         <div class="row mb-20 pb-20">
+         <div class="row mb-20 pd-20">
                 <div class="col">
                     <h3>Admin BANK</h3>
                 </div>
                 <div class="col">
-
                     @if(session('dataUser')->role_id == 1) {{-- superadmin --}}
                     <a href="{{ (session('dataUser')->role_id == 1) ?'/bank-group/create':'/admin/bank/create' }}">
                         <button class="btn btn-primary float-right">Tambah Bank Group</button>
@@ -49,12 +48,13 @@
                         <td>{{ $bank->email }}</td>
                             <td>
                             <div class="table-actions">
-                             <a href="#" onclick="resetAdminBank('{{$bank->id}}')"  data-color="#e95959">
+                                <a href="#" onclick="resetAdminBank('{{$bank->id}}')"  data-color="#e95959">
                                             <button class="btn btn-success">reset pass</button>
                                 </a>
                                 <a href="/bank/edit/{{$bank->id}}"   data-color="#e95959">
                                     <button class="btn btn-warning">edit</button>
                                 </a>
+                                <a href="/superadmin/bank/{{$bank->bank_name_id}}/list" class="btn btn-dark text-white " >anggota</a>
                                 <a href="#" class="btn btn-danger" onclick="deleteAdminBank('{{$bank->id}}')">delete</a>
                             </div>
                         </td>

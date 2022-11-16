@@ -106,12 +106,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/superadmin/admin-bank" class="dropdown-toggle no-arrow">
+                    <a href="/superadmin/admin-bank" class="dropdown-toggle no-arrow {{ $active == 'admin-bank' ? 'active' : '' }} ">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">Admin Bank</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/superadmin/bank" class="dropdown-toggle no-arrow">
+                    <a href="/superadmin/bank" class="dropdown-toggle no-arrow  {{ $active == 'bank' ? 'active' : '' }} ">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">Bank</span>
                     </a>
                 </li>
@@ -121,7 +121,7 @@
                     </a>
                     <ul class="submenu " style="display:block">
                         <li><a href="/superadmin/grafik">Grafik</a></li>
-                        <li><a href="/superadmin/setup">Setup</a></li>
+                        <li><a class="{{ $active == 'setup' ? 'active' : '' }}" href="/superadmin/setup">Setup</a></li>
                         <li><a href="/superadmin/promosi">Promosi</a></li>
                         <li><a href="/superadmin/tpakd-kalteng">TPAKD Kalteng</a></li>
                         <li><a href="/superadmin/berita">Berita</a></li>
@@ -137,6 +137,7 @@
                         <li><a href="/superadmin/financial-information/dasar-pembentukan/edit">Dasar Pembentukan</a>
                         </li>
                         <li><a href="/superadmin/financial-information/road-map/edit">Tentang TPAKD</a></li>
+                        <li><a class="dropdown-toggle no-arrow  {{ $active == 'kabupaten-kecamatan' ? 'active' : '' }}" href="/superadmin/kabupaten-kecamatan">Kabupaten/Kecamatan</a></li>
                     </ul>
                 </li>
                  </li>

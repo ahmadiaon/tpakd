@@ -14,7 +14,8 @@ class BankGroupController extends Controller
     public function create()
     {
         return view('admin.bank_group.create', [
-            'title' =>'title'
+            'title' =>'title',
+            'active'    => 'admin-bank'
         ]);
     }
 

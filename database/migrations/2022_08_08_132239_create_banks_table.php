@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('bank_owner_id')->nullable();
             $table->integer('dat_i_id')->nullable();
             $table->integer('dat_i_i_id')->nullable();
+            
+            $table->integer('kecamatan_id')->nullable();
             $table->integer('kr_id')->nullable();
             $table->integer('job_desk_id')->nullable();
 
@@ -40,6 +42,13 @@ return new class extends Migration
             $table->string('bank_date_close')->nullable();
             $table->string('bank_no_close')->nullable();
             $table->string('bank_status')->nullable();
+
+            $table->string('kur')->nullable();
+            $table->string('kpmr')->nullable();
+            $table->string('baru')->nullable();
+            $table->string('pinjaman')->nullable();
+            $table->string('simpel')->nullable();
+            $table->string('qris')->nullable();
             $table->timestamps();
         });
     }
